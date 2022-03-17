@@ -1,5 +1,6 @@
-# d4g-season-10
-Biomimicry image search
+![D4G](https://dataforgood.fr/img/logo-dfg-new2.png)
+# Data4Good Season 10 + Ceebios: Biomimicry image search
+
 
 ## Tools
 * [Airtable](https://airtable.com/invite/l?inviteId=invsXyNdsP9vBctfw&inviteToken=9575c4a9a5423af9c3c8455a8d5bf36865a56bf129c86bc0ecb18427ee67eba7&utm_source=email) - Project management (Kanban) & Excel style collaboration
