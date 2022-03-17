@@ -1,5 +1,7 @@
+<p float="left">
 <img src="https://dataforgood.fr/img/logo-dfg-new2.png" height="100" width="100" >
 <img src="https://www.bing.com/th?id=AMMS_S_d6202e39-67f1-0881-9ed2-84dccd24401c&w=110&h=110&c=7&rs=1&qlt=95&pcl=f9f9f9&o=6&cdv=1&dpr=1.12&pid=16.1g" height="100" width="100" >
+</p>
 
 # Data4Good Season 10 + Ceebios: Biomimicry image search
 
