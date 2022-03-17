@@ -1,1 +1,8 @@
 fastapi
+numpy
+pandas
+tqdm
+fuzzywuzzy
+pytorch
+torchvision
+transformers[torch]
