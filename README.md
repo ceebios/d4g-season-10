@@ -7,9 +7,10 @@
 
 
 ## Tools
-* [Github Kanban](https://github.com/ceebios/d4g-season-10/projects/1) - Project management (Kanban) & Excel style collaboration
+* [Github Kanban](https://github.com/ceebios/d4g-season-10/projects/1) - Project management (Kanban)
 * [Drive](https://drive.google.com/drive/folders/1Cuofzm6OMu10irDNZYLIq_-9LQYiMp7p?usp=sharing) - 15Gb shared Google drive space
 * [Miro](https://miro.com/app/board/uXjVOEkuccY=/?invite_link_id=929630349930) - brainstorming
+* [Google Sheet](https://docs.google.com/spreadsheets/d/1qRU3aAArR5m_HRKkHwq1FvMkPpFYBqLx7n2IiI9EUc8/edit?usp=sharing) - Excel style collaboration
 
 ## Getting started
 Clone this repo:
