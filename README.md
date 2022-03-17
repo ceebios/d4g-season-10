@@ -10,3 +10,19 @@
 * [Airtable](https://airtable.com/invite/l?inviteId=invsXyNdsP9vBctfw&inviteToken=9575c4a9a5423af9c3c8455a8d5bf36865a56bf129c86bc0ecb18427ee67eba7&utm_source=email) - Project management (Kanban) & Excel style collaboration
 * [Drive](https://drive.google.com/drive/folders/1Cuofzm6OMu10irDNZYLIq_-9LQYiMp7p?usp=sharing) - 15Gb shared Google drive space
 * [Miro](https://miro.com/app/board/uXjVOEkuccY=/?invite_link_id=929630349930) - brainstorming
+
+## Getting started
+
+### Frontend
+If you want to work on the front end (web design) and you are familiar (or want to learn)  React and Javascript this is the place for you.
+* Install Node.js and NPM: [link](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+* Install the 'frontend' source dependencies:
+```
+cd frontend
+npm install
+```
+* Check it runs ok
+```
+cd frontend
+npm start
+```
