@@ -35,9 +35,10 @@ npm start
 ### Backend
 If you want to work on the back end (Data science pack - Python, Pytorch, HuggingFace, FastAPI) this is the place for you.
 
-* I'd recommend creating a new virtual environemnt and installing the dependencies there manually (see requirements.in). I haven't created a proper 'requirements.txt' file as Pytorch installation in particular can vary depending on whether you have a GPU, you use Windows/Linux or Mac or use Conda instead if Pip for package dependencies.
+* We'd recommend creating a new virtual environemnt and installing the dependencies there manually (see requirements.in). There is no proper 'requirements.txt' file as Pytorch installation in particular can vary depending on whether you have a GPU, you use Windows/Linux or Mac or use Conda instead if Pip for package dependencies.
 
-* Please do not check in Jupyter Notebooks to Git - they can be very tricky to verions control. Instead you can include links to Notebooks and share the notebooks natively through Colab for example.
+* Please do not try to commit Jupyter Notebooks to Git - they can be very tricky to verions control. Instead you can include links to Notebooks and share the notebooks natively through Colab for example. To keep track we can list all notebooks in the provided Google sheet.
+    - Note: you can still put your notebooks in a /notebooks folder inside git, which as it has been added to the ignores in .gitignore
 
 * If you work with scripts rather than notebooks - you can check those in the Scripts folder
 
