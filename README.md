@@ -12,6 +12,10 @@
 * [Miro](https://miro.com/app/board/uXjVOEkuccY=/?invite_link_id=929630349930) - brainstorming
 
 ## Getting started
+Clone this repo:
+```
+git clone https://github.com/ceebios/d4g-season-10.git
+```
 
 ### Frontend
 If you want to work on the front end (web design) and you are familiar (or want to learn)  React and Javascript this is the place for you.
