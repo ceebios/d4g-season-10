@@ -28,9 +28,10 @@ def extract_layout_pdf(images_dic, model, name_pdf):
 
     
 if __name__ ==  '__main__':
-    datasets_path = sys.argv[0] 
+    datasets_path = "datasets/D4G-season-10/PDF/pdf"#/Users/karinepetrus/Desktop/projectDataForGood/datasets/D4G-season-10/PDF/pdf"#sys.argv[0] 
     model = callmodel(conf_threshold=0.7)
     images_dic = convert_pdf2image(datasets_path)
+    #example name pdf
     name_pdf = '10.1101-2020.03.26.010397'
     img_predict_list = []
     figures_dic = {}
