@@ -26,9 +26,7 @@ def extract_layout_pdf(images_dic, model, name_pdf):
         figure_blocks = lp.Layout([b for b in layout if b.type=='Figure'])
         table_blocks = lp.Layout([b for b in layout if b.type=='Table'])
 
-def main():
     
-
 if __name__ ==  '__main__':
     datasets_path = sys.argv[0] 
     model = callmodel(conf_threshold=0.7)
