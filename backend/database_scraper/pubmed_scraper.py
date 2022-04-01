@@ -1,30 +1,57 @@
 from metapub import PubMedFetcher
-import os
+import requests
+import pubmed_parser as pp
 
 
 def fetch_list_pmid(keyword):
-    pubmed_fetcher = PubMedFetcher()
+    '''
+    This function will fetch a list of PMIDs based on a keyword query (considered as EXACT MATCH)
+    Not all of these articles will be available in the Open PMC dataset
+    :param keyword: (str) the keyword to search for
+    :return: (lst) list of the PMIDs found for that keyword
+    '''
 
+    fetcher = PubMedFetcher()
     pmids_to_download = None
     retry = 0
 
     while pmids_to_download is None and retry < 5:
         try:
-            pmids_to_download = pubmed_fetcher.pmids_for_query(keyword, retmax=1000000)
+            pmids_to_download = fetcher.pmids_for_query(keyword, retmax=1000000)
         except:
             retry += 1
             pass
 
-    list_of_pmids = []
-    list_of_pmids.append(pmids_to_download)
-    unique_list = list(set([j for i in list_of_pmids for j in i]))
+    unique_list = list(set(pmids_to_download))
     return unique_list
 
-def fetch_xml():
+
+def fetch_xml(pmid_number):
+    '''
+    This function checks one by one the articles by their PMID and when available downloads the xml from Open PMC and saves it.
+    :param pmid_number: (str)
+    :return: None
+    '''
+    # this is the base link to the PMC API
     PMC_BASE_URL = 'https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml'
-    path_to_download = os.path.join(PMC_BASE_URL, pmid_number, 'unicode')
 
-pmids = fetch_list_pmid('Ty1 integrase')
-print(pmids)
+    link_to_article = PMC_BASE_URL + '/' + pmid_number + '/unicode'
+    print(link_to_article)
+    r = requests.get(link_to_article)
+    if r:
+        article_info = pp.parse_xml_web(link_to_article)
+        # The DOI is needed in order to name xml files in a correct way
+        doi = article_info['doi'].replace('/', '-')
+        with open(f'xml_data/{doi}.xml', 'wb') as file:
+            file.write(r.content)
 
 
+def run(keyword):
+    pmids = fetch_list_pmid(keyword)
+    for pmid in pmids:
+        fetch_xml(pmid)
+
+
+if __name__ == "__main__":
+    keyword = 'Ty1 integrase'
+    run(keyword)
