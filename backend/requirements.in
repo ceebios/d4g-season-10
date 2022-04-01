@@ -7,3 +7,4 @@ pytorch
 torchvision
 transformers[torch]
 metapub
+pubmed_parser
