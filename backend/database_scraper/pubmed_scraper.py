@@ -52,14 +52,14 @@ def run(keyword):
     print(f'Starting downloading articles for the keyword {keyword}')
     for pmid in tqdm.tqdm(pmids):
         fetch_xml(pmid)
-
-def run_parallel(keyword):
-    pmids = fetch_list_pmid(keyword)
-
-    def fetch_xml_by_batch(i):
-        pmids_truncated = pmids[i:i+30]
-        for pmid in pmids_truncated:
-            fetch_xml(pmid)
+#
+# def run_parallel(keyword):
+#     pmids = fetch_list_pmid(keyword)
+#
+#     def fetch_xml_by_batch(i):
+#         pmids_truncated = pmids[i:i+30]
+#         for pmid in pmids_truncated:
+#             fetch_xml(pmid)
 
 
     Parallel(n_jobs=5)(delayed(fetch_xml_by_batch)(i) for i in tqdm.tqdm(range(0, len(pmids), 30)))
