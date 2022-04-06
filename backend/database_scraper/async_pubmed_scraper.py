@@ -37,6 +37,7 @@ async def get_response_with_semaphore(pmid, session, sem):
     async with sem:
         async with session.get(url) as response:
             if response.status == 200:
+                # THIS IS WHERE IT IS STUCK
                 html_body = await response.text()
             else:
                 html_body = ''
