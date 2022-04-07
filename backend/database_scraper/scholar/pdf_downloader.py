@@ -46,6 +46,7 @@ class Biorxiv():
             f.close()
             with open(os.path.join(self.location,"XML",title+'.xml'), 'wb') as f:
                 f.write(xml)
+            f.close()
 
 
 
