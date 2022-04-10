@@ -1,0 +1,9 @@
+pandas
+numpy
+Pillow 
+layoutparser
+#"layoutparser[layoutmodels]"
+#"layoutparser[ocr]"
+pytesseract
+df2image
+opencv-python
