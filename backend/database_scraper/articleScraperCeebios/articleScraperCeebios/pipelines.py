@@ -8,6 +8,6 @@
 from itemadapter import ItemAdapter
 
 
-class ScraperscrapysceebiosPipeline:
+class ArticlescraperceebiosPipeline:
     def process_item(self, item, spider):
         return item
