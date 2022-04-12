@@ -10,3 +10,4 @@ Algorithm description :
 - cosine similarity is computed as scalar product of two normalized vector, followed by a min max scaler to get score between zero and one
 - backbone of the model is a roberta-base, with weights pretrained with sequence length of 64, 128, 256 and 512 token (512 is longer than any abstract)
 - final embedding dimension is 512
+- pretrained models are stored on ggdrive under pretrained_models/sci-simberta_xx/weights
