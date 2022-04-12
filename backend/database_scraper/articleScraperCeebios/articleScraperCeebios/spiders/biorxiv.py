@@ -3,7 +3,7 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 from ..items import ArticlescraperceebiosItem
 
-## Faire une araignée avec une query de keyword: https://www.datasciencecentral.com/scrape-data-from-google-search-using-python-and-scrapy-step-by/
+## TODO: Faire une araignée avec une query de keyword: https://www.datasciencecentral.com/scrape-data-from-google-search-using-python-and-scrapy-step-by/
 
 class BiorxivSpider(CrawlSpider):
     name = 'biorxiv'
@@ -33,15 +33,14 @@ class BiorxivSpider(CrawlSpider):
         article["title"]     = response.css("h1#page-title::text").get()
         article["url"]       = response.url
         article["doi"]       = response.css("span.highwire-cite-metadata-doi::text").get()
-
-        ## TODO: Attention défaut à améliorer
+        ## TODO: Attention défaut à améliorer => nlm-given-names
         article["author"]    = response.css("span.highwire-citation-author *::text").extract()
         article["date"]      = response.css("div.pane-1 > div.pane-content::text").get()
         article["journal"]   = "biorxiv"
         article["publisher"] = "biorxiv"
         article["type"]      = "biologie"
         article["abstract"]  = response.css("p#p-2::text").extract()
-        ## A débugger => mais avec un autre start request ça marchera mieux !
-        # article["file_urls"] = response.css("a.article-dl-pdf-link::attr(href)").extract()
+        ## TIPS: Bien pensée à faire un objet url et non un str !
+        article["file_urls"] = [response.urljoin(response.css("a.article-dl-pdf-link::attr(href)").get())]
         
         yield article

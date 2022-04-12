@@ -19,5 +19,6 @@ class ArticlescraperceebiosItem(scrapy.Item):
     type      = scrapy.Field()
     abstract  = scrapy.Field()
     
+    ## Notre PDF ou XML
     file      = scrapy.Field()
     file_urls = scrapy.Field()
