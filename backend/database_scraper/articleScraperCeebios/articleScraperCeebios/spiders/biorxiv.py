@@ -1,43 +1,45 @@
+from scrapy import Request
 from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import CrawlSpider, Rule
+from scrapy.spiders import CrawlSpider
 from ..items import ArticlescraperceebiosItem
-import json
+import logging
 
-# TODO: Faire une araignée avec une query de keyword: https://www.datasciencecentral.com/scrape-data-from-google-search-using-python-and-scrapy-step-by/
-# => ,Chercher plutot dans les bests practices
-# Scrapy à la inception: https://stackoverflow.com/questions/36947822/scrapy-data-in-the-same-item-from-multiple-link-in-the-same-page        
-# Repo qui évite les mode inceptions: https://github.com/rmax/scrapy-inline-requests
-        
-
+# TODO (maybe): Repo qui évite les mode inceptions: https://github.com/rmax/scrapy-inline-requests
 
 class BiorxivSpider(CrawlSpider):
     name = 'biorxiv'
     allowed_domains = ['www.biorxiv.org', "api.biorxiv.org"]
-    start_urls = ['http://www.biorxiv.org/search/bigdata']
     api = "https://api.biorxiv.org/details/biorxiv/"
 
     custom_settings = {
         "ITEM_PIPELINES": {'scrapy.pipelines.images.FilesPipeline': 1},
-        "FILES_STORE": 'data/biorxiv', 
+        "FILES_STORE": 'data/biorxiv',
         "ROBOTSTXT_OBEY": False
     }
 
-    rules = (
-        Rule(
-            LinkExtractor(
-                    restrict_css="a.highwire-cite-linked-title"
-                ), 
-            callback='parse'
-        ),
+    link_extractor = LinkExtractor(
+        restrict_css="a.highwire-cite-linked-title"
     )
 
-    # def start_requests(self):
-    #     url = 'https://www.biorxiv.org/'
-    #     tag = getattr(self, 'search', None)
-    #     if tag is not None:
-    #         url = url + 'search/' + tag
-    #     yield Request(url, self.parse)
+    def start_requests(self):
+        url = 'https://www.biorxiv.org/'
+        tag = getattr(self, 'search', None)
+        if tag is not None:
+            url = url + 'search/' + tag
+        yield Request(url, self.parse_url)
 
+    def parse_url(self, response):
+        for link in self.link_extractor.extract_links(response):
+            yield Request(link.url, callback=self.parse)
+        
+        nb_page = getattr(self, 'num_pages', 2)
+        NEXT_PAGE = response.css(
+            "ul.pager-items-last > li > a::attr(href)").get()
+        if int(NEXT_PAGE.split("=")[-1]) <= int(nb_page):
+            yield Request(
+                url=response.urljoin(NEXT_PAGE), 
+                callback=self.parse_url
+            )
 
     def parse(self, response):
         """Parse la réponse html de l'article
@@ -47,20 +49,23 @@ class BiorxivSpider(CrawlSpider):
         :yield: _description_
         :rtype: _type_
         """
+        logging.log(logging.INFO, "1 - Open Html page")
         article = ArticlescraperceebiosItem()
-        article["name"]      = response.css("h1#page-title::text").get()
-        article["title"]     = response.css("h1#page-title::text").get()
-        article["url"]       = response.url
-        article["doi"]       = response.css("span.highwire-cite-metadata-doi::text").get()
-        article["abstract"]  = response.css("p#p-2::text").extract()
-        ## TIPS: Bien pensée à faire un objet url et non un str !
-        article["file_urls"] = [response.urljoin(response.css("a.article-dl-pdf-link::attr(href)").get())]
-        
+        article["name"] = response.css("h1#page-title::text").get()
+        article["title"] = response.css("h1#page-title::text").get()
+        article["url"] = response.url
+        article["doi"] = response.css(
+            "span.highwire-cite-metadata-doi::text").get()
+        article["abstract"] = response.css("p#p-2::text").extract()
+        article["file_urls"] = [response.urljoin(
+            response.css("a.article-dl-pdf-link::attr(href)").get())]
+
         yield response.follow(
-            url = BiorxivSpider.api + article["doi"].replace(" https://doi.org/", "")[:-1], 
-            callback = self.parse_api, 
-            meta = dict(item=article)
-            )
+            url=BiorxivSpider.api +
+            article["doi"].replace(" https://doi.org/", "")[:-1],
+            callback=self.parse_api,
+            meta=dict(item=article)
+        )
 
     def parse_api(self, response):
         """Parse la réponse json de l'api
@@ -68,21 +73,22 @@ class BiorxivSpider(CrawlSpider):
         :param response: Le retour de l'api
         :type response: TextResponse
         """
-        print(type(response))
-        data = json.loads(response.text)
+        logging.log(logging.INFO, "2 - Open Json file")
+        data = response.json()
         data = data["collection"][-1]
-        
+
         article = response.meta["item"]
-        article["author"]    = data["authors"].split(";")
-        article["date"]      = data["date"]
-        article["abstract"]  = data["abstract"]
+        article["author"] = data["authors"].split(";")
+        article["date"] = data["date"]
+        article["abstract"] = data["abstract"]
+        # BUG: l'url ne marche pas au téléchargement mais à la request après oui... bizarre..
         article["file_urls"] += [response.urljoin(data["jatsxml"])] 
-        
+
         yield response.follow(
-            url = data["jatsxml"], 
-            callback = self.parse_xml, 
-            meta = dict(item=article)
-            )
+            url=data["jatsxml"],
+            callback=self.parse_xml,
+            meta=dict(item=article)
+        )
 
     def parse_xml(self, response):
         """Parse le XML de l'article
@@ -92,9 +98,10 @@ class BiorxivSpider(CrawlSpider):
         :yield: Item Article
         :rtype: ArticlescraperceebiosItem
         """
-        
+        logging.log(logging.INFO, "3 - Open XML file")
         article = response.meta["item"]
-        article["journal"]   = response.css("journal-id::text").get()
+        article["journal"] = response.css("journal-id::text").get()
         article["publisher"] = response.css("publisher-name::text").get()
-        article["type"]      = response.css("subj-group *::text").get() # data["category"] # response.xpath("//subj-group[contains(@subj-group-type:'author-type')]")
+        article["type"] = response.css("subj-group *::text").get()
+        article["content"] = response.text
         yield article
