@@ -229,10 +229,9 @@ def generate_augmented_dataset(n_images, path_input_folder, path_output_folder, 
     os.mkdir(path_output_labels)
     composer = ImageComposer(path_input_folder, path_output_folder=path_output_folder)
     for k in tqdm(range(n_images)):
-        template, yolo_entries = composer.create_random_composed_image(base_square_resolution=400, margin=20)
-        template.save(os.path.join(path_output_folder, f"{k}.jpg"))
-        print(yolo_entries)
-        with open(os.path.join(path_output_folder, f"{k}.txt"), "w", encoding="utf-8") as f:
+        template, yolo_entries = composer.create_random_composed_image(base_square_resolution=400, margin=np.random.randint(3,20))
+        template.save(os.path.join(path_output_images, f"{k}.jpg"))
+        with open(os.path.join(path_output_labels, f"{k}.txt"), "w", encoding="utf-8") as f:
             for elem in yolo_entries:
                 f.write(f'{" ".join(elem)}\n')
     
