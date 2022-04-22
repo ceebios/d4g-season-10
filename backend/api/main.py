@@ -7,7 +7,7 @@ app = FastAPI()
 
 class SearchOptions(BaseModel):
     # text: list[str]
-    keywords: list
+    keywords: str
     options: dict
 
 
@@ -30,12 +30,12 @@ async def read_root():
 
 @app.get("/search/keywords/{text}")
 async def simple_search(text):
-    docs = mongo.simple(text)
+    #return [text]
+    docs = mongo.simple_search(text, limit=10)
     # Now perform some post-processing to get the images from the return docs
     image_url_list = get_images_from_docs(docs)
     return image_url_list
 
 @app.post("/search/options")
 async def full_Search(search:SearchOptions):
-    assert 1==0, 'Not implemented'    
     return []
