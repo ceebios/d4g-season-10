@@ -130,3 +130,14 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /data
+<<<<<<< HEAD
+=======
+.vscode/settings.json
+HiddenProject
+backend/database_scraper/articleScraperCeebios/data
+>>>>>>> babf4ec63f3ad9cb80a9b4ee0212b7bbb238fc52
+# Pycharm
+.idea/
+# Mac
+.DS_Store
+
