@@ -20,9 +20,6 @@ app.add_middleware(
     max_age=3600,
 )
 
-def get_images_from_docs(docs:list)->list[str]:
-    return []
-
 @app.get("/")
 async def read_root():
     return {"Ping": "Pong"}
@@ -30,11 +27,11 @@ async def read_root():
 
 @app.get("/search/keywords/{text}")
 async def simple_search(text):
-    #return [text]
     docs = mongo.simple_search(text, limit=10)
+    # return [text]
     # Now perform some post-processing to get the images from the return docs
-    image_url_list = get_images_from_docs(docs)
-    return image_url_list
+    figures_url_list, tables_url_list = mongo.get_images_from_docs(docs)
+    return figures_url_list, tables_url_list
 
 @app.post("/search/options")
 async def full_Search(search:SearchOptions):
