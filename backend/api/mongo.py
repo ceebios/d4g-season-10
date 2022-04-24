@@ -108,3 +108,7 @@ def get_images_from_docs(docs:list):#->list[str]:
             tables_list_global.append(set(tables_list_doc))
 
     return figures_list_global, tables_list_global
+
+if __name__=='__main__':
+    location = 'text_db.json'
+    populate_db(articles, location)
