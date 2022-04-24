@@ -133,3 +133,4 @@ dmypy.json
 .vscode/settings.json
 HiddenProject
 backend/database_scraper/articleScraperCeebios/data
+
