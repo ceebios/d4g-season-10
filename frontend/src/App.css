@@ -97,6 +97,7 @@
 .dataLogo {
   width: 13rem;
   height: 7rem;
+  margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
