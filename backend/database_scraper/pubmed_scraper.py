@@ -47,7 +47,7 @@ def fetch_xml(pmid_number):
             file.write(r.content)
 
 
-def run(keyword):
+def run_xml_download(keyword):
     pmids = fetch_list_pmid(keyword)
     print(f'Starting downloading articles for the keyword {keyword}')
     for pmid in tqdm.tqdm(pmids):
@@ -62,7 +62,7 @@ def run(keyword):
 #             fetch_xml(pmid)
 
 
-    Parallel(n_jobs=5)(delayed(fetch_xml_by_batch)(i) for i in tqdm.tqdm(range(0, len(pmids), 30)))
+    #Parallel(n_jobs=5)(delayed(fetch_xml_by_batch)(i) for i in tqdm.tqdm(range(0, len(pmids), 30)))
 
 if __name__ == "__main__":
     keyword = 'Ty1 integrase'
