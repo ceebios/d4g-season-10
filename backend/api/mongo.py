@@ -89,25 +89,37 @@ def get_images_from_docs(docs:list):#->list[str]:
     This functions purpose is, based on the figure_ref in the docs returned,
     to match the corresponding figures and tables.
     '''
-    figures_list_global, tables_list_global = [], []
+    figures_url_list, tables_url_list = [], []
     for doc in docs:
         doi = doc['meta']['doi']
+        doi = doi.replace('/', '-') # XML parser put DOI as '.../...'
         figure_ref_list = doc['meta']['figure_ref']
         table_ref_list = doc['meta']['table_ref']
+        url = ''
+        image_format = '.png'
+
+        # Names of figures and tables are not the same in XML parser and PDF parser
+        # We have to do a little trick
+        #figure_ref_list = [ for x in figure_ref_list_raw]
+        #table_ref_list = ['table' + x.split('tbl')[1] for x in table_ref_list_raw]
 
         # Check if list is not empty
         if len(figure_ref_list) > 0:
-            # The key associate to the figure is doi_figX
-            figures_list_doc = [str(doi + '_' + x) for x in doc['meta']['figure_ref']]
+            # The key associate to the figure is doi_figX but the names of figures
+            # and tables are not the same in XML parser and PDF parser
+            # So we have to do a little change
+            figures_list_doc = [url + doi + '_figure_' + x.split('fig')[1] + image_format \
+                                for x in doc['meta']['figure_ref']]
 
             # Remove the duplicates and add it to the global list
-            figures_list_global.append(set(figures_list_doc))
+            figures_url_list.append(set(figures_list_doc))
 
         if len(table_ref_list) > 0:
-            tables_list_doc = [str(doi + '_' + x) for x in doc['meta']['table_ref'] if doc['meta']['table_ref'] != []]
-            tables_list_global.append(set(tables_list_doc))
+            tables_list_doc = [url + doi + '_table_' + x.split('tbl')[1] + image_format \
+                               for x in doc['meta']['table_ref'] if doc['meta']['table_ref'] != []]
+            tables_url_list.append(set(tables_list_doc))
 
-    return figures_list_global, tables_list_global
+    return figures_url_list, tables_url_list
 
 if __name__=='__main__':
     location = 'text_db.json'
