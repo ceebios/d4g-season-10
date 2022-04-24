@@ -111,4 +111,6 @@ def get_images_from_docs(docs:list):#->list[str]:
 
 if __name__=='__main__':
     location = 'text_db.json'
+    articles.drop()
     populate_db(articles, location)
+    create_full_text_index(articles)
