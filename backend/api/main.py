@@ -31,7 +31,6 @@ async def simple_search(text):
     # return [text]
     # Now perform some post-processing to get the images from the return docs
     figures_url_list, tables_url_list = mongo.get_images_from_docs(docs)
-
     return {'figures_list':sum([list(f) for f in figures_url_list],[]), 'tables_list':sum([list(t) for t in tables_url_list],[])}
 
 @app.post("/search/options")

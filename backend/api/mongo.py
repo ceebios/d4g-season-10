@@ -95,13 +95,8 @@ def get_images_from_docs(docs:list):#->list[str]:
         doi = doi.replace('/', '-') # XML parser put DOI as '.../...'
         figure_ref_list = doc['meta']['figure_ref']
         table_ref_list = doc['meta']['table_ref']
-        url = ''
+        url = '' # TODO : change when agreement on where to store figures and tables images
         image_format = '.png'
-
-        # Names of figures and tables are not the same in XML parser and PDF parser
-        # We have to do a little trick
-        #figure_ref_list = [ for x in figure_ref_list_raw]
-        #table_ref_list = ['table' + x.split('tbl')[1] for x in table_ref_list_raw]
 
         # Check if list is not empty
         if len(figure_ref_list) > 0:
