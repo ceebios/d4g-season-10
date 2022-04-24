@@ -58,15 +58,15 @@ export default function SearchPhotos() {
       <div className="card-list">
       
          {pics.map((pic) => <div className="card" key={pic.id}>
-        <figure>
+        <figure className="figure">
          <img
-                className="card--image"
+                className="card-image"
                 alt={pic.alt_description}
                 src={pic.urls.full}
-                width="50%"
-                height="50%"
+                width="70%"
+                height="70%"
               ></img>
-             <figcaption>{pic.alt_description}</figcaption>
+             <p className="figcaption">{pic.alt_description}</p>
               </figure>
          </div>)}  
         

@@ -19,16 +19,23 @@
 
 .title {
   font-size: 6rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 1rem;
   padding-left: 1.5rem;
 }
 
 .sousTitle {
   font-size: 3rem;
-  font-family:  Calibri, "light";
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
   margin-bottom: 3rem;
   padding-left: 1.5rem;
+}
+
+.figcaption {
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 .form {
@@ -46,14 +53,14 @@
   line-height: 2.8rem;
   border-radius: 20px;
   background-color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .button {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: #3B456B;
   color: white;
   padding: 1rem 2rem;
-  border: 1px solid rgba(0, 0, 0, 0.75);
+  border: 1px solid #3B456B;
   border-radius: 20px;
   font-size: 1.4rem;
   cursor: pointer;
@@ -61,7 +68,7 @@
 }
 
 .button:hover {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: #B4D772;
 }
 
 .card-list {
@@ -69,14 +76,27 @@
 }
 
 .card {
-  margin-bottom: 1rem;
+  margin: 2rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.card--image {
-  flex: 100%;
-  margin-top: 1rem;
+.card-image {
+  margin-top: 2rem;
   border-radius: 10px;
+}
+
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem;
+}
+
+.dataLogo {
+  width: 13rem;
+  height: 7rem;
 }
 
 @media (min-width: 768px) {
