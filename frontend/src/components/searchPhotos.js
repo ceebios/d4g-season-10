@@ -50,7 +50,7 @@ export default function SearchPhotos() {
           type="text"
           name="query"
           className="input"
-          placeholder={`Try "dog" or "apple"`}
+          placeholder={`UV protection`}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -64,12 +64,12 @@ export default function SearchPhotos() {
         <figure className="figure">
          <img
                 className="card-image"
-                alt={pic.alt_description}
-                src={pic.urls.full}
+                alt={pic.alt}
+                src={pic.urls}
                 width="70%"
                 height="70%"
               ></img>
-             <p className="figcaption">{pic.alt_description}</p>
+             <p className="figcaption">{pic.alt}</p>
               </figure>
          </div>)}  
         
