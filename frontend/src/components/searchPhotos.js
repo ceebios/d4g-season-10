@@ -14,9 +14,6 @@ export default function SearchPhotos() {
     const [query, setQuery] = useState(""); 
     const [pics, setPics] = useState([]);
 
-    
-
-
     const searchPhotos = async (e) => {
       e.preventDefault();
     
