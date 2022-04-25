@@ -17,16 +17,21 @@ export default function SearchPhotos() {
     
 
 
-   const searchPhotos = async (e) => {
+    const searchPhotos = async (e) => {
       e.preventDefault();
     
-     /* axios.get(`http://34.135.15.52:8000/search/keywords/`+encodeURIComponent(query))
+     axios.get(`http://34.135.15.52:8000/search/keywords/`+encodeURIComponent(query))
       .then(res => {
-
-        const urls = res.urls;
-        setPics(res.urls);
-        console.log(res);
-      })*/  
+        const figures = res.data.figures;
+        const figs = figures.map(f=>f.replace('/','-').replace('_fig','.pdf_figure_'))
+        const urls = figs.map(f=>'/figures/'+f)
+        setPics(urls.map((f,i)=>{
+          return {url:f+'.png', alt:f, id:f+i}
+        }
+        ))
+        console.log(urls)
+      })  
+      /*
       unsplash.search
         .photos(query)
         .then(3)
@@ -35,6 +40,7 @@ export default function SearchPhotos() {
           setPics(json.results);
         });
       console.log("Submitting the Form");
+      */
     };
     
 
