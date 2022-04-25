@@ -65,7 +65,7 @@ export default function SearchPhotos() {
          <img
                 className="card-image"
                 alt={pic.alt}
-                src={pic.urls}
+                src={pic.url}
                 width="70%"
                 height="70%"
               ></img>

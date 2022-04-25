@@ -134,3 +134,4 @@ dmypy.json
 HiddenProject
 backend/database_scraper/articleScraperCeebios/data
 *.zip
+figures/
