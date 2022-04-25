@@ -7,10 +7,9 @@ export default function App() {
   return (
     <div className="App">
       <NavBar/>
-      <div className="container">
-        
+      <div className="container">        
         <h1 className="title">Gawdi</h1>
-        <h2 className="sousTitle">Biometric Search Engine</h2>
+        <h2 className="sousTitle">Biomimetic Image Search Engine</h2>
         <SearchPhotos />
       </div>
     </div>
