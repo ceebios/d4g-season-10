@@ -87,7 +87,6 @@
   border-radius: 10px;
 }
 
-
 .navBar {
   display: flex;
   justify-content: space-between;
@@ -116,3 +115,4 @@
         column-count: 1;
     }
 }
+
