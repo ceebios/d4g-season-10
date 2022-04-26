@@ -1,23 +1,22 @@
 import React, { useState } from "react";
-import Unsplash, { toJson } from "unsplash-js";
 import axios from "axios";
+const data = require("./figure_captions.json")
 
 export default function SearchPhotos() {
-
- //states to save information    
     const [query, setQuery] = useState(""); 
     const [pics, setPics] = useState([]);
     const [summary, setSummary] = useState({index:0,text:''})
 
     const searchPhotos = async (e) => {
-      e.preventDefault();
-    
+      e.preventDefault();    
+      console.log(data)
      axios.get(`http://127.0.0.1:8000/search/`+encodeURIComponent(query)) //34.135.15.52
       .then(res => {
         const figs = res.data.map(f=>f.figure.replace('/','-').replace('_fig','.pdf_figure_'))
         const urls = figs.map(f=>'/figures/'+f)
         setPics(urls.map((f,i)=>{
-          return {url:f+'.png', alt:res.data[i].caption, id:f+i,paragraph:res.data[i].paragraph}
+          console.log(f+'.png')
+          return {url:f+'.png', alt:data[figs[i]+'.png'], id:f+i,paragraph:res.data[i].paragraph}
         }
         ))
       })  
