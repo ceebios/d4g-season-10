@@ -25,7 +25,7 @@ export default function SearchPhotos() {
     const getSummary = async(e,i)=>{
       e.preventDefault();
       console.log(pics[i].paragraph)
-      axios.post("http://127.0.0.1:8000/summarize",{text:pics[i].paragraph}).then(res=>setSummary({index:i,text:res.data[0]}))
+      axios.post("http://34.105.13.154:8000/summarize",{text:pics[i].paragraph}).then(res=>setSummary({index:i,text:res.data[0]}))
     }
 
   return (
