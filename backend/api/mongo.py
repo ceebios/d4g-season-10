@@ -89,25 +89,19 @@ def get_images_from_docs(docs:list):#->list[str]:
     This functions purpose is, based on the figure_ref in the docs returned,
     to match the corresponding figures and tables.
     '''
-    figures_list_global, tables_list_global = [], []
+    figures_dict = {}
     for doc in docs:
         doi = doc['meta']['doi']
         figure_ref_list = doc['meta']['figure_ref']
-        table_ref_list = doc['meta']['table_ref']
 
         # Check if list is not empty
         if len(figure_ref_list) > 0:
             # The key associate to the figure is doi_figX
-            figures_list_doc = [str(doi + '_' + x) for x in doc['meta']['figure_ref']]
+            figures_list = list(set([str(doi + '_' + x) for x in doc['meta']['figure_ref']]))
 
-            # Remove the duplicates and add it to the global list
-            figures_list_global.append(set(figures_list_doc))
-
-        if len(table_ref_list) > 0:
-            tables_list_doc = [str(doi + '_' + x) for x in doc['meta']['table_ref'] if doc['meta']['table_ref'] != []]
-            tables_list_global.append(set(tables_list_doc))
-
-    return figures_list_global, tables_list_global
+            # Add it to the global dictionnary
+            [figures_dict.update({f:{'paragraph':doc['text'],'caption':''}}) for f in figures_list]
+    return figures_dict
 
 if __name__=='__main__':
     location = 'text_db.json'
