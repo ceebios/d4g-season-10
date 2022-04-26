@@ -10,7 +10,7 @@ export default function SearchPhotos() {
     const searchPhotos = async (e) => {
       e.preventDefault();    
       console.log(data)
-     axios.get(`http://127.0.0.1:8000/search/`+encodeURIComponent(query)) //34.135.15.52
+     axios.get(`http://34.105.13.154:8000/search/`+encodeURIComponent(query)) //34.135.15.52
       .then(res => {
         const figs = res.data.map(f=>f.figure.replace('/','-').replace('_fig','.pdf_figure_'))
         const urls = figs.map(f=>'/figures/'+f)
