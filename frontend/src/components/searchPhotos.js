@@ -17,16 +17,15 @@ export default function SearchPhotos() {
     const searchPhotos = async (e) => {
       e.preventDefault();
     
-     axios.get(`http://34.135.15.52:8000/search/keywords/`+encodeURIComponent(query))
+     axios.get(`http://127.0.0.1:8000/search/keywords/`+encodeURIComponent(query)) //34.135.15.52
       .then(res => {
-        const figures = res.data.figures;
-        const figs = figures.map(f=>f.replace('/','-').replace('_fig','.pdf_figure_'))
+        console.log(res.data)
+        const figs = res.data.map(f=>f.figure.replace('/','-').replace('_fig','.pdf_figure_'))
         const urls = figs.map(f=>'/figures/'+f)
         setPics(urls.map((f,i)=>{
-          return {url:f+'.png', alt:f, id:f+i}
+          return {url:f+'.png', alt:res.data[i].caption, id:f+i,paragraph:res.data[i].paragraph}
         }
         ))
-        console.log(urls)
       })  
       /*
       unsplash.search
@@ -68,6 +67,7 @@ export default function SearchPhotos() {
                 src={pic.url}
                 width="70%"
                 height="70%"
+                onerror="this.onerror=null; this.remove();"
               ></img>
              <p className="figcaption">{pic.alt}</p>
               </figure>
