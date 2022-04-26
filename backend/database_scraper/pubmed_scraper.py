@@ -4,6 +4,8 @@ import pubmed_parser as pp
 import tqdm
 from joblib import Parallel, delayed
 from xml.etree import ElementTree
+from lxml import html
+import urllib.request
 
 def fetch_list_pmid(keyword):
     '''
@@ -50,11 +52,21 @@ def fetch_xml(pmid_number):
         tree.write(f'xml_data/{doi}.xml')
 
 
+def fetch_pdf(pmid_number):
+    link_to_article = f'https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id={pmid_number}'
+    r = requests.get(link_to_article)
+    webpage = html.fromstring(r.content)
+    ftp_path = webpage.xpath('//@href')[-1]
+    if 'pdf' in ftp_path:
+        urllib.request.urlretrieve(ftp_path, f'pdf_data/{pmid_number}.pdf')
+
+
 def run(keyword):
     pmids = fetch_list_pmid(keyword)
     print(f'Starting downloading articles for the keyword {keyword}')
     for pmid in tqdm.tqdm(pmids):
         fetch_xml(pmid)
+        fetch_pdf(pmid)
 #
 # def run_parallel(keyword):
 #     pmids = fetch_list_pmid(keyword)
