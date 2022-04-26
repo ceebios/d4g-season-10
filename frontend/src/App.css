@@ -85,6 +85,11 @@
 .card-image {
   margin-top: 2rem;
   border-radius: 10px;
+  transition: transform .2s;
+}
+
+.card-image:hover {
+  transform: scale(2.5);
 }
 
 .navBar {
