@@ -6,8 +6,7 @@ export default function SearchPhotos() {
     const [query, setQuery] = useState(""); 
     const [pics, setPics] = useState([]);
     const [summary, setSummary] = useState({index:0,text:''})
-    const [showMore, setShowMore] = useState(false)
-
+    
     const searchPhotos = async (e) => {
       e.preventDefault();    
       console.log(data)
@@ -62,7 +61,7 @@ export default function SearchPhotos() {
             ></img>
             <p className="figcaption">{pic.alt}</p>
           </figure>
-          {i===summary.index?<p className="figcaption">{summary.text}</p>:<></>}
+          {/* {i===summary.index?<p className="figcaption">{summary.text}</p>:<></>} */}
         </div>)
         }  
         
