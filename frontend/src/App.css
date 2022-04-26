@@ -36,7 +36,15 @@
   font-size: 1rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 3rem;
+  cursor: pointer;
 }
+.figcaption:hover {
+  overflow:visible;
+}
+
 
 .form {
   display: grid;

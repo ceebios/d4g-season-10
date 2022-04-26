@@ -6,6 +6,7 @@ export default function SearchPhotos() {
     const [query, setQuery] = useState(""); 
     const [pics, setPics] = useState([]);
     const [summary, setSummary] = useState({index:0,text:''})
+    const [showMore, setShowMore] = useState(false)
 
     const searchPhotos = async (e) => {
       e.preventDefault();    
@@ -27,6 +28,8 @@ export default function SearchPhotos() {
       console.log(pics[i].paragraph)
       axios.post("http://34.105.13.154:8000/summarize",{text:pics[i].paragraph}).then(res=>setSummary({index:i,text:res.data[0]}))
     }
+
+    console.log(pics.alt)
 
   return (
     <>
