@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 const data = require("./figure_captions.json")
 
 export default function SearchPhotos() {
@@ -58,10 +61,12 @@ export default function SearchPhotos() {
                 width="70%"
                 height="70%"
                 onError={(event) => event.target.style.display = 'none'}
-            ></img>
-            <p className="figcaption">{pic.alt}</p>
-          </figure>
-          {/* {i===summary.index?<p className="figcaption">{summary.text}</p>:<></>} */}
+              ></img>
+              <Popup trigger={<button className="buttonShow">Show more</button>} position="right center">
+                <div><p className="figcaption">{pic.alt}</p></div>
+              </Popup>
+            </figure>
+          {i===summary.index?<p className="figcaption">{summary.text}</p>:<></>}
         </div>)
         }  
         
