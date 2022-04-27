@@ -81,12 +81,13 @@ def add_information(result:list, dataset:list, model_name:str) -> list:
 
 
 if __name__ == "__main__":
+
     parser = argparse.ArgumentParser()
     parser.add_argument("path_input", default="./xml", help="Path of xml file")
     parser.add_argument("path_output", default="./result.json",
                         help="Path of file output")
     parser.add_argument("model", default="all",
-                        help="Use all for use all algorithme otherwise use the these names: \n- 'pegasus'\n- 'other'")
+                        help=f"Use 'all' to use all models otherwise use these following names: { '; '.join(models.keys()) }")
     args = parser.parse_args()
     xml_files = glob(args.path_input+"/*.xml")
 
@@ -110,8 +111,8 @@ if __name__ == "__main__":
     
     result = []
     for m_name in choose_models:
-        model = models[m_name]
-        model = model()
+        model  = models[m_name]
+        model  = model()
         result = model.make_outputs(dataset)
         result.append(add_information(result, dataset_with_meta, model_name = m_name))
 
