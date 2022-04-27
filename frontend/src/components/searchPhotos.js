@@ -11,6 +11,7 @@ export default function SearchPhotos() {
     const [summary, setSummary] = useState({index:0,text:''})
     
     const searchPhotos = async (e) => {
+      setSummary({...summary, index:-1,summary:""})
       e.preventDefault();    
       console.log(data)
      axios.get(`http://34.105.13.154:8000/search/`+encodeURIComponent(query)) //34.135.15.52
