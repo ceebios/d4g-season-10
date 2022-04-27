@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="3.0" xml:lang="EN">
+<front>
+<journal-meta><journal-id journal-id-type="nlm-ta">PLoS ONE</journal-id><journal-id journal-id-type="publisher-id">plos</journal-id><journal-id journal-id-type="pmc">plosone</journal-id><!--===== Grouping journal title elements =====--><journal-title-group><journal-title>PLoS ONE</journal-title></journal-title-group><issn pub-type="epub">1932-6203</issn><publisher>
+<publisher-name>Public Library of Science</publisher-name>
+<publisher-loc>San Francisco, USA</publisher-loc></publisher></journal-meta>
+<article-meta><article-id pub-id-type="publisher-id">09-PONE-RA-11016R1</article-id><article-id pub-id-type="doi">10.1371/journal.pone.0007298</article-id><article-categories><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group><subj-group subj-group-type="Discipline"><subject>Biochemistry</subject><subject>Ecology/Marine and Freshwater Ecology</subject><subject>Immunology/Immune Response</subject></subj-group></article-categories><title-group><article-title>Coral Fluorescent Proteins as Antioxidants</article-title><alt-title alt-title-type="running-head">Coral Fluorescence Antioxidant</alt-title></title-group><contrib-group>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Palmer</surname><given-names>Caroline V.</given-names></name><xref ref-type="aff" rid="aff1"><sup>1</sup></xref><xref ref-type="aff" rid="aff2"><sup>2</sup></xref><xref ref-type="corresp" rid="cor1"><sup>*</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Modi</surname><given-names>Chintan K.</given-names></name><xref ref-type="aff" rid="aff3"><sup>3</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Mydlarz</surname><given-names>Laura D.</given-names></name><xref ref-type="aff" rid="aff4"><sup>4</sup></xref></contrib>
+</contrib-group><aff id="aff1"><label>1</label><addr-line>School of Biology, Newcastle University, Newcastle upon Tyne, United Kingdom</addr-line>       </aff><aff id="aff2"><label>2</label><addr-line>ARC Centre of Excellence for Coral Reef Studies and School of Marine and Tropical Biology, James Cook University, Townsville, Queensland, Australia</addr-line>       </aff><aff id="aff3"><label>3</label><addr-line>Integrative Biology, University of Texas at Austin, Austin, Texas, United States of America</addr-line>       </aff><aff id="aff4"><label>4</label><addr-line>Department of Biology, University of Texas at Arlington, Arlington, Texas, United States of America</addr-line>       </aff><contrib-group>
+<contrib contrib-type="editor" xlink:type="simple"><name name-style="western"><surname>Bruno</surname><given-names>John F.</given-names></name>
+<role>Editor</role>
+<xref ref-type="aff" rid="edit1"/></contrib>
+</contrib-group><aff id="edit1">University of North Carolina at Chapel Hill, United States of America</aff><author-notes>
+<corresp id="cor1">* E-mail: <email xlink:type="simple">Caroline.palmer@jcu.edu.au</email></corresp>
+<fn fn-type="con"><p>Conceived and designed the experiments: CVP. Performed the experiments: CVP LDM. Analyzed the data: CVP LDM. Contributed reagents/materials/analysis tools: CKM LDM. Wrote the paper: CVP.</p></fn>
+<fn fn-type="conflict"><p>The authors have declared that no competing interests exist.</p></fn></author-notes><pub-date pub-type="collection"><year>2009</year></pub-date><pub-date pub-type="epub"><day>6</day><month>10</month><year>2009</year></pub-date><volume>4</volume><issue>10</issue><elocation-id>e7298</elocation-id><history>
+<date date-type="received"><day>14</day><month>6</month><year>2009</year></date>
+<date date-type="accepted"><day>8</day><month>9</month><year>2009</year></date>
+</history><!--===== Grouping copyright info into permissions =====--><permissions><copyright-year>2009</copyright-year><copyright-holder>Palmer et al</copyright-holder><license><license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</license-p></license></permissions><abstract><sec>
+<title>Background</title>
+<p>A wide array of fluorescent proteins (FP) is present in anthozoans, although their biochemical characteristics and function in host tissue remain to be determined. Upregulation of FP's frequently occurs in injured or compromised coral tissue, suggesting a potential role of coral FPs in host stress responses.</p>
+</sec><sec>
+<title>Methodology/Principal Findings</title>
+<p>The presence of FPs was determined and quantified for a subsample of seven healthy Caribbean coral species using spectral emission analysis of tissue extracts. FP concentration was correlated with the <italic>in vivo</italic> antioxidant potential of the tissue extracts by quantifying the hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>) scavenging rates. FPs of the seven species varied in both type and abundance and demonstrated a positive correlation between H<sub>2</sub>O<sub>2</sub> scavenging rate and FP concentration. To validate this data, the H<sub>2</sub>O<sub>2</sub> scavenging rates of four pure scleractinian FPs, cyan (CFP), green (GFP), red (RFP) and chromoprotein (CP), and their mutant counterparts (without chromophores), were investigated. <italic>In vitro</italic>, each FP scavenged H<sub>2</sub>O<sub>2</sub> with the most efficient being CP followed by equivalent activity of CFP and RFP. Scavenging was significantly higher in all mutant counterparts.</p>
+</sec><sec>
+<title>Conclusions/Significance</title>
+<p>Both naturally occurring and pure coral FPs have significant H<sub>2</sub>O<sub>2</sub> scavenging activity. The higher scavenging rate of RFP and the CP <italic>in vitro</italic> is consistent with observed increases of these specific FPs in areas of compromised coral tissue. However, the greater scavenging ability of the mutant counterparts suggests additional roles of scleractinian FPs, potentially pertaining to their color. This study documents H<sub>2</sub>O<sub>2</sub> scavenging of scleractinian FPs, a novel biochemical characteristic, both <italic>in vivo</italic> across multiple species and <italic>in vitro</italic> with purified proteins. These data support a role for FPs in coral stress and immune responses and highlights the multi-functionality of these conspicuous proteins.</p>
+</sec></abstract><funding-group><funding-statement>The authors acknowledge funding provided by University of Texas at Arlington start-up funds to LDM. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.</funding-statement></funding-group><counts><page-count count="9"/></counts></article-meta>
+</front>
+<body><sec id="s1">
+<title>Introduction</title>
+<p>Pigments and coloration patterns in nature are both numerous and diverse <xref ref-type="bibr" rid="pone.0007298-Protas1">[1]</xref>, with an equally diverse set of functions and roles. Pigment functions include visual stimuli; as a warning to predators or to attract con-specifics <xref ref-type="bibr" rid="pone.0007298-Protas1">[1]</xref>, direct protection from solar radiation and in immune resistance <xref ref-type="bibr" rid="pone.0007298-Roulin1">[2]</xref>. Invertebrate pigments include small molecules such as carotenoids <xref ref-type="bibr" rid="pone.0007298-Vershinin1">[3]</xref>, <xref ref-type="bibr" rid="pone.0007298-Cornet1">[4]</xref>, insoluble polymers such as melanin <xref ref-type="bibr" rid="pone.0007298-Sderhll1">[5]</xref>, <xref ref-type="bibr" rid="pone.0007298-Meredith1">[6]</xref>, <xref ref-type="bibr" rid="pone.0007298-Nappi1">[7]</xref>, or proteins such as those involved in bioluminescence and fluorescence <xref ref-type="bibr" rid="pone.0007298-Matz1">[8]</xref> . Corals are renowned for their vivid coloration <xref ref-type="bibr" rid="pone.0007298-Dove1">[9]</xref>, <xref ref-type="bibr" rid="pone.0007298-Bandaranayake1">[10]</xref>, for which fluorescent proteins (FPs) are largely responsible <xref ref-type="bibr" rid="pone.0007298-Matz1">[8]</xref>. FPs are abundant and diverse within anthozoans, ranging across four basic color types; cyan (CFP), green (GFP), red (RFP) and a blue/purple non-fluorescent chromoprotein <xref ref-type="bibr" rid="pone.0007298-Labas1">[11]</xref>, <xref ref-type="bibr" rid="pone.0007298-Mazel1">[12]</xref>, <xref ref-type="bibr" rid="pone.0007298-Alieva1">[13]</xref>, however their function within the holobiont remains undetermined and controversial <xref ref-type="bibr" rid="pone.0007298-Tsien1">[14]</xref>, <xref ref-type="bibr" rid="pone.0007298-Cox1">[15]</xref>. Analogous to other natural pigments, the differential variation of FPs <xref ref-type="bibr" rid="pone.0007298-Dove1">[9]</xref>, <xref ref-type="bibr" rid="pone.0007298-Veron1">[16]</xref>, <xref ref-type="bibr" rid="pone.0007298-Matz2">[17]</xref>, <xref ref-type="bibr" rid="pone.0007298-Kelmanson1">[18]</xref>, including temporally <xref ref-type="bibr" rid="pone.0007298-Dove2">[19]</xref>, <xref ref-type="bibr" rid="pone.0007298-SmithKeune1">[20]</xref>, <xref ref-type="bibr" rid="pone.0007298-Bay1">[21]</xref> and spatially <xref ref-type="bibr" rid="pone.0007298-Cox1">[15]</xref>, <xref ref-type="bibr" rid="pone.0007298-Kao1">[22]</xref>, <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref> within a colony, suggests multiple specific roles <xref ref-type="bibr" rid="pone.0007298-Kelmanson1">[18]</xref>, <xref ref-type="bibr" rid="pone.0007298-Salih1">[24]</xref>, <xref ref-type="bibr" rid="pone.0007298-Wiedenmann1">[25]</xref>.</p>
+<p>The most prominant hypotheses of FP function within corals are related to the maintenance of the obligate symbiosis with dinoflagellates, commonly known as zooxanthellae. The ability of FPs to convert shorter wavelengths of light into longer wavelengths has led to suggested photoprotective <xref ref-type="bibr" rid="pone.0007298-Kawaguti1">[26]</xref>, <xref ref-type="bibr" rid="pone.0007298-Kawaguti2">[27]</xref>, <xref ref-type="bibr" rid="pone.0007298-Catala1">[28]</xref>, <xref ref-type="bibr" rid="pone.0007298-Salih2">[29]</xref> and light enhancing roles <xref ref-type="bibr" rid="pone.0007298-Dove1">[9]</xref>, <xref ref-type="bibr" rid="pone.0007298-Salih1">[24]</xref>. Although the spectral properties of some FPs potentially support these hypotheses <xref ref-type="bibr" rid="pone.0007298-Mazel2">[30]</xref>, <xref ref-type="bibr" rid="pone.0007298-Salih3">[31]</xref>, <xref ref-type="bibr" rid="pone.0007298-Cox2">[32]</xref>, spectral emission of the red FP does not <xref ref-type="bibr" rid="pone.0007298-Levy1">[33]</xref>. This combined with the histological location of red FP in the epidermis of compromised tissue <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref>, as well in tissues with equivalent light environments to tissues without red FP <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref> and their presence within azooxanthellate organisms <xref ref-type="bibr" rid="pone.0007298-Wiedenmann2">[34]</xref>, implies additional roles. Other FP functions that have been proposed include use as visual triggers for other organisms <xref ref-type="bibr" rid="pone.0007298-Ward1">[35]</xref>, <xref ref-type="bibr" rid="pone.0007298-Matz3">[36]</xref> and as oxygen radical quenchers <xref ref-type="bibr" rid="pone.0007298-Mazel1">[12]</xref>, <xref ref-type="bibr" rid="pone.0007298-BouAbdallah1">[37]</xref>.</p>
+<p>Reactive oxygen species (ROS) exposure is continuous for aerobic organisms whether as part of normal cell function, from exogenous sources <xref ref-type="bibr" rid="pone.0007298-Martindale1">[38]</xref> or during stress responses <xref ref-type="bibr" rid="pone.0007298-Halliwell1">[39]</xref>, <xref ref-type="bibr" rid="pone.0007298-Fang1">[40]</xref>, <xref ref-type="bibr" rid="pone.0007298-Richier1">[41]</xref>, <xref ref-type="bibr" rid="pone.0007298-Lesser1">[42]</xref>, <xref ref-type="bibr" rid="pone.0007298-Weis1">[43]</xref>. Oxygen radicals are readily produced by a number of pathways and mechanisms <xref ref-type="bibr" rid="pone.0007298-Mydlarz1">[44]</xref> including by algal symbionts <xref ref-type="bibr" rid="pone.0007298-Lesser2">[45]</xref>, <xref ref-type="bibr" rid="pone.0007298-Mydlarz2">[46]</xref>, therefore regulation of tissue redox state is an important mechanism for the zooxanthellate scleractinian corals.The photosynthetic zooxanthellae generate high quantities of dissolved oxygen under normal conditions <xref ref-type="bibr" rid="pone.0007298-Lesser1">[42]</xref>, but during thermal and light stress events ROS levels are elevated <xref ref-type="bibr" rid="pone.0007298-Lesser1">[42]</xref>, <xref ref-type="bibr" rid="pone.0007298-Lesser2">[45]</xref>, inducing oxidative stress <xref ref-type="bibr" rid="pone.0007298-Martindale1">[38]</xref> in both the symbiont and the coral host <xref ref-type="bibr" rid="pone.0007298-Lesser1">[42]</xref>, <xref ref-type="bibr" rid="pone.0007298-Tchernov1">[47]</xref>. In addition, the coral response to thermal stress <xref ref-type="bibr" rid="pone.0007298-Weis1">[43]</xref>, injury <xref ref-type="bibr" rid="pone.0007298-Mydlarz1">[44]</xref>, <xref ref-type="bibr" rid="pone.0007298-Meszaros1">[48]</xref> and infection <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref>, <xref ref-type="bibr" rid="pone.0007298-Palmer2">[49]</xref>, <xref ref-type="bibr" rid="pone.0007298-Mydlarz3">[50]</xref> also contributes to elevated ROS in host tissues. Of the ROS, hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>) is particularly attributed to the induction of oxidative stress <xref ref-type="bibr" rid="pone.0007298-Leutenegger1">[51]</xref>, as it is the most stable of the oxygen species and easily diffuses across biological membranes <xref ref-type="bibr" rid="pone.0007298-Downs1">[52]</xref>, <xref ref-type="bibr" rid="pone.0007298-Smith1">[53]</xref>.</p>
+<p>To mitigate and regulate ROS cytotoxicity anthozoans possess a defensive suite of endogenous antioxidant enzymes <xref ref-type="bibr" rid="pone.0007298-Halliwell1">[39]</xref>, <xref ref-type="bibr" rid="pone.0007298-Sugumaran1">[54]</xref>, <xref ref-type="bibr" rid="pone.0007298-Dunlap1">[55]</xref> such as superoxide dismutase <xref ref-type="bibr" rid="pone.0007298-Dykens1">[56]</xref>, <xref ref-type="bibr" rid="pone.0007298-Hawkridge1">[57]</xref> which catalyzes the conversion of superoxide anion to water and H<sub>2</sub>O<sub>2</sub> <xref ref-type="bibr" rid="pone.0007298-Halliwell1">[39]</xref>, catalase <xref ref-type="bibr" rid="pone.0007298-Leutenegger1">[51]</xref>, <xref ref-type="bibr" rid="pone.0007298-Griffin1">[58]</xref>, <xref ref-type="bibr" rid="pone.0007298-Merle1">[59]</xref> which catalyses the decomposition of H<sub>2</sub>O<sub>2</sub> to water and oxygen <xref ref-type="bibr" rid="pone.0007298-Gordon1">[60]</xref> and peroxidases which are oxidant proteins that consume H<sub>2</sub>O<sub>2</sub> <xref ref-type="bibr" rid="pone.0007298-Mydlarz3">[50]</xref>. In addition, invertebrates including octocorals, assimilate exogenous antioxidants such as carotenoid pigments into their tissue and skeleton from food sources or symbionts <xref ref-type="bibr" rid="pone.0007298-Cvejic1">[61]</xref>, <xref ref-type="bibr" rid="pone.0007298-Leverette1">[62]</xref>. These conserved antioxidant pathways can be overwhelmed during extreme temperature stress <xref ref-type="bibr" rid="pone.0007298-Weis1">[43]</xref>, inducing the expulsion of symbionts (bleaching) <xref ref-type="bibr" rid="pone.0007298-Lesser2">[45]</xref> and during pathogen infections <xref ref-type="bibr" rid="pone.0007298-Mydlarz3">[50]</xref> both of which can cause localised tissue mortality. This implies that these well-characterised antioxidants have a physiological limitation, thus requiring supplemental scavenging activity from local proteins.</p>
+<p>Coral tissue that has been compromised by injury <xref ref-type="bibr" rid="pone.0007298-Palmer2">[49]</xref>, <xref ref-type="bibr" rid="pone.0007298-Willis1">[63]</xref> and infection <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref> frequently develops localised non-normal pigmentation, for example of blue/purple coloration in <italic>Acropora</italic> sp. (<xref ref-type="fig" rid="pone-0007298-g001">fig. 1a</xref>) and pink/red in <italic>Porites</italic> sp. (<xref ref-type="fig" rid="pone-0007298-g001">fig. 1b</xref>) <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref>, <xref ref-type="bibr" rid="pone.0007298-Palmer2">[49]</xref> of which an RFP has recently been found to be responsible <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref>. In addition, non-normally pigmented areas of compromised tissue demonstrate increased activity of the melanin-synthesis pathway <xref ref-type="bibr" rid="pone.0007298-Palmer2">[49]</xref> and thus increased abundance of oxygen radicals <xref ref-type="bibr" rid="pone.0007298-Nappi1">[7]</xref>. A potential role of FPs as radical quenchers in anthozoan host stress responses may explain the temporal and spatial localised variation in FP type and concentration <xref ref-type="bibr" rid="pone.0007298-Dove1">[9]</xref>, <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref>.</p>
+<fig id="pone-0007298-g001" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0007298.g001</object-id><label>Figure 1</label><caption>
+<title>Pigmentation responses of a) <italic>A. millepora</italic> with blue pigmentation in response to breakage and b) <italic>Porites</italic> massive sp. with pink pigmentation in response to fish bites.</title>
+</caption><graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0007298.g001" xlink:type="simple"/></fig>
+<p>Despite their prevalence among corals the basic biochemical characteristics are largely unknown and potential function(s) of FPs remain unresolved <xref ref-type="bibr" rid="pone.0007298-Tsien1">[14]</xref>, <xref ref-type="bibr" rid="pone.0007298-Matz3">[36]</xref>. In this study we document the diversity and quantify the abundance of FPs within multiple Caribbean coral species. The investigation of these primary reef-framework builders is both timely and vital given the rapid decline of Caribbean corals due to disease and bleaching <xref ref-type="bibr" rid="pone.0007298-Harvell1">[64]</xref>. In this study, we test the hypothesis that FPs have antioxidant capabilities by examining the H<sub>2</sub>O<sub>2</sub> scavenging potential of coral tissue extracts and the relationship to FP concentration, <italic>in vivo</italic>. We also examine the H<sub>2</sub>O<sub>2</sub> scavenging abilities of four pure scleractinian FPs and their colorless mutants <italic>in vitro</italic>.</p>
+</sec><sec id="s2">
+<title>Methods</title>
+<sec id="s2a">
+<title>Samples and tissue extraction protocol</title>
+<p>Three genetically distinct fragments of seven Caribbean hard coral species, <italic>Montastraea annularis, Montastraea faveolata, Montastraea cavernosa, Diploria strigosa, Porites astreoides, Dichocoenia stokseii</italic> and <italic>Sidastrea siderea</italic> were collected from the National Oceanic and Atmospheric Administration/Florida Keys National Marine Sanctuary (NOAA/FKNMS) Coral Nursery in Key West FL in May of 2007. The fragments were obtained and transferred to Mote Tropical Marine Laboratory under the specifications of research permit number FKNMS-2007-050, snap frozen in liquid nitrogen and shipped on dry ice to the University of Texas at Arlington where they were stored at −80°C.</p>
+<p>Additionally, during April 2009 three colonies of <italic>Acropora millepora</italic> with distinct blue pigmentation as a result of physical breakage were identified (<xref ref-type="fig" rid="pone-0007298-g001">fig. 1a</xref>) together with three <italic>Porites</italic> massive species with intense pink pigmentation (<xref ref-type="fig" rid="pone-0007298-g001">fig. 1b</xref>) in Pioneer Bay, Orpheus Island on the Great Barrier Reef (GBR). A subsample of the pigmented tissue was removed from each colony and an equivalent area of healthy tissue. All samples were snap frozen in liquid nitrogen and processed for enzyme assays as below. Samples were stored at −30°C.</p>
+<p>Tissue was removed from all of the frozen samples with an airbrush (Paansche) and extraction buffer (50 mM phosphate buffer, pH 7.8 with 0.05 mM dithiothreitol) over ice. The tissue slurry was homogenised with a medium sawtooth (Fisher Scientific, Power Gen 125) for 20 s and left on ice for 5 minutes to extract the proteins. Samples were then vortexed with a spatula of glass beads for 20 s and left on ice for another 5 minutes. Tissue slurries were centrifuged at 4°C at 10,000 RPM for 5 minutes to remove the supernatant from the cellular debris and stored at −80°C until use.</p>
+</sec><sec id="s2b">
+<title>Coral spectral emission</title>
+<p>Aliquots of 30 µl of each sample were added in triplicate to a black/clear 384 well microtitre plate with parallel aliquots of extraction buffer to control for independent effects. Each well was excited at 280 nm using a spectrophotometer (SpectraMax M2, Molecular Devices), and the emission spectra measured in 5 nm increments from 400 nm to 650 nm for the Caribbean coral samples. For the GBR <italic>Porites</italic> massive samples each well was excited at 540 nm and the emission between 570 nm and 590 nm recorded. Additionally, for the <italic>A. millepora</italic> GBR samples, the endpoint absorbance at 588 nm was recorded for each well. Relative fluorescence, and absorbance, of each sample was standardised to the sample's total protein concentration as determined by the Quick Start Bradford protein assay (Bio-Rad). The validity of this standardisation for fluorescent proteins was tested by measuring the fluorescence of a serial dilution of protein-quantified tissue extract (r<sup>2</sup> = 0.956). The background scatter for each fluorescent emission spectra was removed by creating individual baseline curves from three points of the spectra, 400 nm, a baseline mid point and at 600 nm points, and solving for the exponential (y = e<sup>mx</sup>). This was then subtracted from each RFU value. The total fluorescence per mg protein for each sample was calculated by summing the standardised RFUs between 465 nm and 600 nm. Total fluorescence was compared between coral species using a one-way ANOVA, as assumptions of normality and homogeneity of variance were met or the non-parametric Kruskal-Wallis test where assumptions were not met.</p>
+</sec><sec id="s2c">
+<title>Coral H<sub>2</sub>O<sub>2</sub> scavenging</title>
+<p>Using the same tissue extract as described above, 20 µl aliquots were added in triplicate to wells of a 96 well UV transparent microtitre plate (Costar). To each well 30 µl of phosphate buffer (pH 7.0, 0.05 M) and 50 µl of 50 mM H<sub>2</sub>O<sub>2</sub> were added and the absorbance at 240 nm read immediately and every 31 seconds for 8 minutes. Sample blanks were used to control for independent sample effects. The mean mM H<sub>2</sub>O<sub>2</sub> scavenged was calculated by subtracting the final absorbance from the initial and related back to mM H<sub>2</sub>O<sub>2</sub> using a standard curve run (serial dilution from 50 mM to 3.125 mM) on the same plate. Scavenging activity was normalized to mg protein for each sample. Mean scavenging rates of each species were compared using a two-way ANOVA and Tukey post-hoc tests for Caribbean coral samples and student t-tests for GBR samples, the spectral emission data was log transformed to satisfy parametric analysis constraints. The correlation between the rate of H<sub>2</sub>O<sub>2</sub> scavenging and the relative proportion of the summed standardised fluorescence for each color (cyan = 465 to 500 nm, green = 505 to 550 nm and red = 555 to 600 nm) was analysed using regression analysis.</p>
+</sec><sec id="s2d">
+<title>Expression of fluorescent and mutant proteins in E. coli</title>
+<p>The bacterial expression constructs for <italic>A. millepora</italic> FPs were designed previously <xref ref-type="bibr" rid="pone.0007298-Alieva1">[13]</xref> according to the protocol outlined in Kelmanson and Matz (2003). Briefly, the constructs were based on pGEM-T vector (Promega, WI, USA), into which a PCR-amplified fragment bearing a full Open Reading Frame (ORF) of a fluorescent protein was inserted, in an orientation corresponding to the transcription from the vector's <italic>lac</italic> promoter. The primers used for amplifying the ORF additionally encoded essential translation initiation signals and 6xHis tag at the C-terminus of the protein for affinity purification. Plasmids were transformed in to Z-Competent E. <italic>coli</italic> cells (Zymo Research, CA, USA) and plated on LB/Agar plates with 50 µg/ml Ampicillin and 1 µM isopropyl-β-D-1-thiogalactopyranoside (IPTG). After confirming fluorescent and non-fluorescent colonies under a Leica MZ FL III stereomicroscope using Chroma filter (set #11003 BL/VIO) for each construct, approximately 30 transformed colonies were picked into 0.5 ml microcentifuge tubes containing 50 µl of Super Optimal Broth (SOC) media with Ampicillin. Cell suspension for each of the constructs were streaked with toothpicks onto four large Luria-Bertani (LB) media/Agar plates with Ampicillin and IPTG. Plates were inverted and incubated at room temperature for 3–4 days, to achieve for maximal fluorescence or color development. The cells expressing the non-fluorescent mutants grew slower; therefore, these plates were incubated for 5–6 days. For control, a dummy protein expression and purification was performed using Z competent cells transformed with only pGEM-T vector with no insert.</p>
+</sec><sec id="s2e">
+<title>Mutagenesis of fluorescent proteins from <italic>Acropora millepora</italic></title>
+<p>Non-fluorescent mutants of three FPs previously cloned from <italic>Acropora millepora</italic> <xref ref-type="bibr" rid="pone.0007298-Alieva1">[13]</xref> were made, including the native fluorescent cyan (amilCFP), green (amilGFP), red (amilRFP) proteins. In all cases, the key chromophore-forming tyrosine residue (corresponding to Y66 in GFP from <italic>Aequorea victoria</italic>) was replaced by alanine. This substitution completely abolished the chromophore synthesis without disrupting the structure of the protein. The mutagenesis was carried out with QuikChange II Site-Directed Mutagenesis kit (Stratagene, CA, USA), following the provided protocol, and using associated software for designing the oligonucleotides. Mutant constructs were transformed in to <italic>E. coli</italic>, Top10 chemical competent cells (Invitrogen, CA, USA), and several non-fluorescent clones were Sanger-sequenced to confirm the success of mutagenesis.</p>
+</sec><sec id="s2f">
+<title>Protein isolation and purification</title>
+<p>Cells were harvested from each plate using 10 ml of 1 x phosphate buffered saline (PBS). Cell suspensions were frozen at −80°C and then thawed quickly at 42°C to lyse the cells, followed by sonication using Misonix Sonicator 3000 with microtip (alternating 30 sec. pulses with intensity 6.5 and 30 sec. rest periods, while keeping the tube in an ice bath). The cell lysate were centrifuged at 3900 RPM for 30 min in Eppendorf centrifuge 5810R at 8°C. Cleared supernatants were transferred into new 50 ml conical tubes.</p>
+<p>The FPs and their mutants were purified from the supernatants using the two-step protocol consisting of three-phase extraction <xref ref-type="bibr" rid="pone.0007298-Thomson1">[65]</xref> followed by affinity chromatography using Qia-Expressionist protocol and Ni-NTA agarose (Qiagen, CA, USA). Protein was eluted with 0.5 M imidazole-Na in 1 x PBS, pH 7.0. This buffer was replaced by 1 x PBS via three cycles of concentration-redilution in Ultra-15 centrifuge concentrators with Ultracel-10K filters (Amicon, MA, USA); after which the proteins were concentrated within the final volume of 250–500 µl. Purified and concentrated preparations were stored at 16°C. The purity of the resulting preparations was evaluated by SDS-PAGE on 4–15% Tris-HCl gel (Bio-Rad).</p>
+</sec><sec id="s2g">
+<title>Pure FP H<sub>2</sub>O<sub>2</sub> scavenging in vitro</title>
+<p>Pure fluorescent proteins were diluted to 2.5 mg ml<sup>−1</sup> protein in phosphate buffer (pH 7.8, 50 mM) and 10 µl aliquots of each were added in triplicate to wells of a 96-well UV transparent microtitre plate. To each well 40 µl of phosphate buffer (pH 7.0, 0.05 M) and 50 µl of 100 mM hydrogen peroxide were added and the absorbance at 240 nm read immediately and every 31seconds for 1.5 minutes. Sample blanks were used to control for independent sample effects and samples were standardised to a H<sub>2</sub>O<sub>2</sub> standard curve using a serial dilution from 50 mM to 3.125 mM. The rate of H<sub>2</sub>O<sub>2</sub> scavenging was compared between samples using a two-way ANOVA with Tukey HSD, as assumptions of normality were met.</p>
+</sec></sec><sec id="s3">
+<title>Results</title>
+<sec id="s3a">
+<title>Caribbean coral spectral emission</title>
+<p>The spectral emission differed for all seven Caribbean coral species (<xref ref-type="fig" rid="pone-0007298-g002">fig. 2</xref>) indicating inter-specific variation in the presence and concentrations of each FP. CFP (465 nm to 500 nm) is present only in <italic>M. annularis</italic>, <italic>D. strigosa</italic> and <italic>D. stokseii</italic> and as small peaks of less than 2000 RFU mg protein<sup>−1</sup>. All species had fluorescent peaks within the green spectra, indicative of the presence of GFP-like proteins, at either approximately 505 nm or 515 nm. Of these, <italic>S. siderea</italic> and <italic>M. cavernosa</italic> had the highest amounts of GFP at approximately 10000 RFU per mg protein and <italic>D. stokseii</italic> the lowest at approximately 3000 RFU per mg protein. Four of the seven corals, <italic>S. siderea, M. annularis, D. strigosa</italic> and <italic>M. faveolata</italic>, had broad peaks of relatively low magnitude (&lt;3000 RFU mg protein<sup>−1</sup>) between 575 and 590 nm, and slight peaks were detectable for <italic>P. astreoides</italic> and <italic>D. stokseii</italic>, indicating the presence of RFP. Additionally, <italic>M. cavernosa</italic> had a broad shoulder extending from the GFP peak at approximately 540 nm through the red spectrum. Despite the variation in emission spectra, the mean total fluorescence (RFU from 465 nm to 600 nm, <xref ref-type="table" rid="pone-0007298-t001">table 1</xref>) did not significantly different between species (F <sub>(6, 19)</sub> = 0.468, P = 0.82). However the three species with the highest fluorescent peaks, <italic>M. cavernosa</italic>, <italic>S. siderea</italic> and <italic>M. annularis</italic> had the highest mean summed fluorescence, although with high variation. <italic>M. faveolata, P. astreoides</italic> and <italic>D. stokseii</italic> had the lowest mean summed fluorescence. Concomitantly, mean summed RFU per mg protein for CFP, GFP and RFP did not differ between species (F <sub>(6, 19)</sub> = 0.489, P = 0.806l; K-W χ<sup>2</sup> = 1.84, P = 0.93 and K-W χ<sup>2</sup> = 9.55, P = 0.145 respectively, <xref ref-type="table" rid="pone-0007298-t001">table 1</xref>).</p>
+<fig id="pone-0007298-g002" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0007298.g002</object-id><label>Figure 2</label><caption>
+<title>The mean fluorescent emission spectra per mg protein for seven Caribbean coral species (ex. 280 nm).</title>
+</caption><graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0007298.g002" xlink:type="simple"/></fig><table-wrap id="pone-0007298-t001" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0007298.t001</object-id><label>Table 1</label><caption>
+<title>The mean summed total fluorescence (RFU mg protein<sup>−1</sup>), CFP, GFP and RFP for each species.</title>
+</caption><!--===== Grouping alternate versions of objects =====--><alternatives><graphic id="pone-0007298-t001-1" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0007298.t001" xlink:type="simple"/><table><colgroup span="1"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/></colgroup>
+<thead>
+<tr>
+<td align="left" colspan="1" rowspan="1">Species</td>
+<td align="left" colspan="1" rowspan="1"/>
+<td align="left" colspan="1" rowspan="1">Total</td>
+<td align="left" colspan="1" rowspan="1">Cyan</td>
+<td align="left" colspan="1" rowspan="1">Green</td>
+<td align="left" colspan="1" rowspan="1">Red</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" colspan="1" rowspan="1"><bold><italic>M. annularis</italic></bold></td>
+<td align="left" colspan="1" rowspan="1"><bold><italic>Mean</italic></bold></td>
+<td align="left" colspan="1" rowspan="1">53900</td>
+<td align="left" colspan="1" rowspan="1">3548.3</td>
+<td align="left" colspan="1" rowspan="1">37780.7</td>
+<td align="left" colspan="1" rowspan="1">11910.6</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"/>
+<td align="left" colspan="1" rowspan="1"><italic>Std. Err.</italic></td>
+<td align="left" colspan="1" rowspan="1">49567.2</td>
+<td align="left" colspan="1" rowspan="1">3548.3</td>
+<td align="left" colspan="1" rowspan="1">34396.0</td>
+<td align="left" colspan="1" rowspan="1">10973.5</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><bold><italic>M. faveolata</italic></bold></td>
+<td align="left" colspan="1" rowspan="1"><bold><italic>Mean</italic></bold></td>
+<td align="left" colspan="1" rowspan="1">38405.4</td>
+<td align="left" colspan="1" rowspan="1">8304.1</td>
+<td align="left" colspan="1" rowspan="1">20846.4</td>
+<td align="left" colspan="1" rowspan="1">8803.8</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"/>
+<td align="left" colspan="1" rowspan="1"><italic>Std. Err.</italic></td>
+<td align="left" colspan="1" rowspan="1">21757.0</td>
+<td align="left" colspan="1" rowspan="1">7968.2</td>
+<td align="left" colspan="1" rowspan="1">13664.3</td>
+<td align="left" colspan="1" rowspan="1">1240.9</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><bold><italic>M. cavernosa</italic></bold></td>
+<td align="left" colspan="1" rowspan="1"><bold><italic>Mean</italic></bold></td>
+<td align="left" colspan="1" rowspan="1">82575.6</td>
+<td align="left" colspan="1" rowspan="1">3575.9</td>
+<td align="left" colspan="1" rowspan="1">64956.8</td>
+<td align="left" colspan="1" rowspan="1">13466.2</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"/>
+<td align="left" colspan="1" rowspan="1"><italic>Std. Err.</italic></td>
+<td align="left" colspan="1" rowspan="1">60383.6</td>
+<td align="left" colspan="1" rowspan="1">3321.6</td>
+<td align="left" colspan="1" rowspan="1">46514.2</td>
+<td align="left" colspan="1" rowspan="1">9977.3</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><bold><italic>D. strigosa</italic></bold></td>
+<td align="left" colspan="1" rowspan="1"><bold><italic>Mean</italic></bold></td>
+<td align="left" colspan="1" rowspan="1">44328.9</td>
+<td align="left" colspan="1" rowspan="1">4779</td>
+<td align="left" colspan="1" rowspan="1">28692.8</td>
+<td align="left" colspan="1" rowspan="1">10646.5</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"/>
+<td align="left" colspan="1" rowspan="1"><italic>Std. Err.</italic></td>
+<td align="left" colspan="1" rowspan="1">17188.9</td>
+<td align="left" colspan="1" rowspan="1">4116.8</td>
+<td align="left" colspan="1" rowspan="1">13801.2</td>
+<td align="left" colspan="1" rowspan="1">346.6</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><bold><italic>P. astreoides</italic></bold></td>
+<td align="left" colspan="1" rowspan="1"><bold><italic>Mean</italic></bold></td>
+<td align="left" colspan="1" rowspan="1">33736.4</td>
+<td align="left" colspan="1" rowspan="1">8042.9</td>
+<td align="left" colspan="1" rowspan="1">23795.4</td>
+<td align="left" colspan="1" rowspan="1">1898.0</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"/>
+<td align="left" colspan="1" rowspan="1"><italic>Std. Err.</italic></td>
+<td align="left" colspan="1" rowspan="1">9965.5</td>
+<td align="left" colspan="1" rowspan="1">3798.1</td>
+<td align="left" colspan="1" rowspan="1">6903.1</td>
+<td align="left" colspan="1" rowspan="1">800.0</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><bold><italic>D. stokesii</italic></bold></td>
+<td align="left" colspan="1" rowspan="1"><bold><italic>Mean</italic></bold></td>
+<td align="left" colspan="1" rowspan="1">33482.4</td>
+<td align="left" colspan="1" rowspan="1">11052.2</td>
+<td align="left" colspan="1" rowspan="1">19174.6</td>
+<td align="left" colspan="1" rowspan="1">3166.4</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"/>
+<td align="left" colspan="1" rowspan="1"><italic>Std. Err.</italic></td>
+<td align="left" colspan="1" rowspan="1">15771.6</td>
+<td align="left" colspan="1" rowspan="1">9594.3</td>
+<td align="left" colspan="1" rowspan="1">6117.0</td>
+<td align="left" colspan="1" rowspan="1">366.5</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><bold><italic>S. siderea</italic></bold></td>
+<td align="left" colspan="1" rowspan="1"><bold><italic>Mean</italic></bold></td>
+<td align="left" colspan="1" rowspan="1">77430.8</td>
+<td align="left" colspan="1" rowspan="1">21224.4</td>
+<td align="left" colspan="1" rowspan="1">41853.5</td>
+<td align="left" colspan="1" rowspan="1">13886.4</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"/>
+<td align="left" colspan="1" rowspan="1"><italic>Std. Err.</italic></td>
+<td align="left" colspan="1" rowspan="1">42543.9</td>
+<td align="left" colspan="1" rowspan="1">12250.9</td>
+<td align="left" colspan="1" rowspan="1">25364.2</td>
+<td align="left" colspan="1" rowspan="1">5428.7</td>
+</tr>
+</tbody>
+</table></alternatives></table-wrap></sec><sec id="s3b">
+<title>Caribbean coral H<sub>2</sub>O<sub>2</sub> scavenging</title>
+<p>The mean rate of H<sub>2</sub>O<sub>2</sub> scavenged per mg protein was not significantly different between the seven Caribbean coral species (F <sub>(6, 19)</sub> = 1.035, P = 0.45, <xref ref-type="table" rid="pone-0007298-t002">table 2</xref>). <italic>M. annularis</italic> and <italic>S. siderea</italic> had the highest scavenging rate at 3.4 and 2.5 mM s<sup>−1</sup> mg protein<sup>−1</sup>, respectively. <italic>M. cavernosa</italic> had the lowest with 0.9 mM s<sup>−1</sup> mg protein<sup>−1</sup>. There was a significant positive relationship (R<sup>2</sup> = 0.25, F <sub>(1, 19)</sub> = 6.05, P = 0.02) between the H<sub>2</sub>O<sub>2</sub> scavenging rate and the total fluorescence (465 nm to 600 nm, <xref ref-type="fig" rid="pone-0007298-g003">fig. 3a</xref>). For the constituent fluorescent proteins, H<sub>2</sub>O<sub>2</sub> scavenging rate demonstrated no significant relationship with CFP (465 nm to 500 nm) (R<sup>2</sup> = 0.08, F <sub>(1, 19)</sub> = 1.63, P = 0.22, <xref ref-type="fig" rid="pone-0007298-g003">fig. 3b</xref>). H<sub>2</sub>O<sub>2</sub> scavenging rate and GFP (505 nm to 550 nm) had the second strongest and significant correlation (<xref ref-type="fig" rid="pone-0007298-g003">fig. 3c</xref>) with R<sup>2</sup> = 0.22 (F <sub>(1, 19)</sub> = 4.95, P = 0.04), and RFP (555 nm to 600 nm, <xref ref-type="fig" rid="pone-0007298-g003">fig. 3d</xref>) the strongest (R<sup>2</sup> = 0.34 (F <sub>(1, 19)</sub> = 9.37, P&lt;0.01).</p>
+<fig id="pone-0007298-g003" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0007298.g003</object-id><label>Figure 3</label><caption>
+<title>The correlation between the fluorescence and the rate of H<sub>2</sub>O<sub>2</sub> scavenged for a) total RFU from 465 nm to 600 nm (R<sup>2</sup> = 0.25, F = 6.05, P = 0.024), b) CFP from 465 nm to 500 nm (R<sup>2</sup> = 0.08, F = 1.6295, P = 0.218), c) GFP from 505 nm to 550 nm (R<sup>2</sup> = 0.22, F = 4.95, P = 0.04) and d) RFP from 555 nm to 600 nm (R<sup>2</sup> = 0.34, F = 9.37, P&lt;0.01).</title>
+</caption><graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0007298.g003" xlink:type="simple"/></fig><table-wrap id="pone-0007298-t002" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0007298.t002</object-id><label>Table 2</label><caption>
+<title>The mean H<sub>2</sub>O<sub>2</sub> scavenging rate (mM s<sup>−1</sup> mg protein<sup>−1</sup>) and standard errors for each coral species.</title>
+</caption><!--===== Grouping alternate versions of objects =====--><alternatives><graphic id="pone-0007298-t002-2" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0007298.t002" xlink:type="simple"/><table><colgroup span="1"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/></colgroup>
+<thead>
+<tr>
+<td align="left" colspan="1" rowspan="1">Species</td>
+<td align="left" colspan="1" rowspan="1">Mean</td>
+<td align="left" colspan="1" rowspan="1">Std. Err.</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" colspan="1" rowspan="1"><italic>M. annularis</italic></td>
+<td align="left" colspan="1" rowspan="1">3.4</td>
+<td align="left" colspan="1" rowspan="1">1.8</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><italic>M. faveolata</italic></td>
+<td align="left" colspan="1" rowspan="1">1.7</td>
+<td align="left" colspan="1" rowspan="1">0.3</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><italic>M. cavernosa</italic></td>
+<td align="left" colspan="1" rowspan="1">0.9</td>
+<td align="left" colspan="1" rowspan="1">0.2</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><italic>D. strigosa</italic></td>
+<td align="left" colspan="1" rowspan="1">1.5</td>
+<td align="left" colspan="1" rowspan="1">0.3</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><italic>P. astreoides</italic></td>
+<td align="left" colspan="1" rowspan="1">1.3</td>
+<td align="left" colspan="1" rowspan="1">0.3</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><italic>D. stokesii</italic></td>
+<td align="left" colspan="1" rowspan="1">1.5</td>
+<td align="left" colspan="1" rowspan="1">0.8</td>
+</tr>
+<tr>
+<td align="left" colspan="1" rowspan="1"><italic>S. siderea</italic></td>
+<td align="left" colspan="1" rowspan="1">2.5</td>
+<td align="left" colspan="1" rowspan="1">0.1</td>
+</tr>
+</tbody>
+</table></alternatives></table-wrap></sec><sec id="s3c">
+<title>GBR coral fluorescence and H<sub>2</sub>O<sub>2</sub> scavenging</title>
+<p>The mean relative fluorescence of non-normally pigmented, inflamed <italic>Porites</italic> massive tissue (<xref ref-type="fig" rid="pone-0007298-g004">fig. 4a</xref>) was significantly higher than that of healthy tissue (T <sub>(2)</sub> = 13.0067, P = 0.05). Additionally, the mean absorbance at 588 nm was significantly higher for inflamed tissue as compared to healthy tissue of <italic>A. millepora</italic> (T <sub>(2)</sub> = 4.0497, P = 0.05, <xref ref-type="fig" rid="pone-0007298-g004">fig. 4b</xref>). For H<sub>2</sub>O<sub>2</sub> scavenging, there was a significantly higher activity for the inflamed, pigmented tissue of both species (<xref ref-type="fig" rid="pone-0007298-g005">fig. 5a and b</xref>) as compared to their respective healthy tissues (t <sub>(4)</sub> = 2.8675, P = 0.05 for <italic>Porites</italic> and t <sub>(4)</sub> = 3.6235, P = 0.02 for <italic>A. millepora</italic>). Additionally, the <italic>Porites</italic> inflamed tissue scavenging activity was 10-fold that of the inflamed tissue of <italic>A. millepora</italic>.</p>
+<fig id="pone-0007298-g004" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0007298.g004</object-id><label>Figure 4</label><caption>
+<title>The mean relative FP concentration in inflamed and healthy tissue for a) RFP (RFU±SE) in <italic>Porites</italic> sp. (T <sub>(2)</sub> = 13.0067, P = 0.05) and b) CP (absorbance at 588 nm±SE) in <italic>A. millepora</italic> (T <sub>(2)</sub> = 4.0497, P = 0.05).</title>
+</caption><graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0007298.g004" xlink:type="simple"/></fig><fig id="pone-0007298-g005" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0007298.g005</object-id><label>Figure 5</label><caption>
+<title>The mean H<sub>2</sub>O<sub>2</sub> scavenging activity (±SE) of healthy and inflamed tissue of a) <italic>Porites</italic> sp. (T <sub>(4)</sub> = 2.8675 P = 0.05) and b) <italic>A. millepora</italic> (T <sub>(4)</sub> = 3.6235, P = 0.02).</title>
+</caption><graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0007298.g005" xlink:type="simple"/></fig></sec><sec id="s3d">
+<title>Pure FP H<sub>2</sub>O<sub>2</sub> scavenging in vitro</title>
+<p>The pure (wild-type) FPs all demonstrated significant dose-dependant scavenging activity (F <sub>(3)</sub> = 233.42, P&lt;0.001; <xref ref-type="fig" rid="pone-0007298-g006">fig. 6</xref>), which differed significantly between FP type (F <sub>(3)</sub> = 10.81, P&lt;0.001) with CP scavenging the highest amount of H<sub>2</sub>O<sub>2</sub> at each concentration, followed by CFP and RFP. The GFP has the lowest scavenging activity at the highest concentration. Mutants of GFP, CFP and RFP scavenged H<sub>2</sub>O<sub>2</sub> (<xref ref-type="fig" rid="pone-0007298-g007">fig. 7</xref>) up to five-fold of their wild type counterparts (F <sub>(5)</sub> = 34.4, P&lt;0.001), with no significant difference between FP (P = 0.17). CP mutants were not examined in this study. Procedural controls, i.e blank buffer as well as mock protein expression and purification from Z competent cells transformed with empty pGEM-T vector did not demonstrate any scavenging activity.</p>
+<fig id="pone-0007298-g006" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0007298.g006</object-id><label>Figure 6</label><caption>
+<title>The mean mM H<sub>2</sub>O<sub>2</sub> scavenged (±SE) for each pure fluorescent protein at a series of concentrations (F <sub>(3)</sub> = 10.81, P&lt;0.001).</title>
+</caption><graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0007298.g006" xlink:type="simple"/></fig><fig id="pone-0007298-g007" position="float"><object-id pub-id-type="doi">10.1371/journal.pone.0007298.g007</object-id><label>Figure 7</label><caption>
+<title>The mean mM of H<sub>2</sub>O<sub>2</sub> scavenged (±SE) per mg of protein for each FP and the corresponding mutant (Wild type compared to mutant F <sub>(5)</sub> = 34.4, P&lt;0.001).</title>
+</caption><graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0007298.g007" xlink:type="simple"/></fig></sec></sec><sec id="s4">
+<title>Discussion</title>
+<p>This study provides preliminary evidence that coral FPs scavenge hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>) both <italic>in vivo</italic> and <italic>in vitro</italic>, and thus describes a novel biochemical characteristic for these conspicuous proteins. Antioxidants are vital in the avoidance of lipid and DNA peroxidation and other damaging cellular effects <xref ref-type="bibr" rid="pone.0007298-Cornet1">[4]</xref>. In extreme conditions, such as prolonged temperature stress or pathogen and parasite invasion, the well-characterized and conserved antioxidant pathways, including catalase and superoxide dismutase, may be overwhelmed <xref ref-type="bibr" rid="pone.0007298-Martindale1">[38]</xref>, <xref ref-type="bibr" rid="pone.0007298-Lesser3">[66]</xref>. This study identifies an additional role of FPs as supplemental antioxidants which may work to prevent oxidative stress in coral tissue and further supports the hypothesis that FPs serve multiple functions within anthozoans <xref ref-type="bibr" rid="pone.0007298-Kelmanson1">[18]</xref>.</p>
+<sec id="s4a">
+<title>Coral spectral emission</title>
+<p>Caribbean reefs are in rapid and significant decline <xref ref-type="bibr" rid="pone.0007298-Hughes1">[67]</xref>, <xref ref-type="bibr" rid="pone.0007298-Gardner1">[68]</xref>, <xref ref-type="bibr" rid="pone.0007298-Ward2">[69]</xref>, <xref ref-type="bibr" rid="pone.0007298-Edmunds1">[70]</xref>. Despite the documented increase in emergent diseases <xref ref-type="bibr" rid="pone.0007298-Harvell2">[71]</xref> and their prevalence, <xref ref-type="bibr" rid="pone.0007298-Sutherland1">[72]</xref> the biological criteria which underlie inter-specific disease susceptibility are yet uncharacterised. Therefore the elucidation of additional immune pathways and resistance mechanisms will undoubtedly lead to a more comprehensive understanding of coral disease resistance <xref ref-type="bibr" rid="pone.0007298-Palmer2">[49]</xref>, <xref ref-type="bibr" rid="pone.0007298-Sutherland1">[72]</xref>, <xref ref-type="bibr" rid="pone.0007298-Mydlarz4">[73]</xref>. The improvement on spectral emission standardisation and quantification methods in this study <xref ref-type="bibr" rid="pone.0007298-Mazel3">[74]</xref> enabled the direct comparison of FP type and concentration in seven Caribbean coral species, highlighting inter-specific differences. Consistent across all seven species however, is the presence of GFP, supporting previous reports of GFP as a common coral FP <xref ref-type="bibr" rid="pone.0007298-Mazel1">[12]</xref>, <xref ref-type="bibr" rid="pone.0007298-Matz3">[36]</xref>. Despite this, the differing emission spectra for each species demonstrates the diversity and variation of FPs between scleractinian corals, reflecting the variation in host pigmentation directly observed on the reef <xref ref-type="bibr" rid="pone.0007298-Matz1">[8]</xref>, <xref ref-type="bibr" rid="pone.0007298-Dove1">[9]</xref>, <xref ref-type="bibr" rid="pone.0007298-Veron1">[16]</xref>, <xref ref-type="bibr" rid="pone.0007298-Matz2">[17]</xref>, <xref ref-type="bibr" rid="pone.0007298-Kelmanson1">[18]</xref>.</p>
+<p>Statistically, the levels of total FP mg protein<sup>−1</sup> did not differ among the Caribbean coral species, potentially attributable to high within species variability, low sample sizes, and low resolution of the protocol. Combining the technique described here, with gene expression tools may overcome these limitations. Further, it is well documented that coral FP expression is dynamic <xref ref-type="bibr" rid="pone.0007298-Dove1">[9]</xref>, <xref ref-type="bibr" rid="pone.0007298-Cox1">[15]</xref>, <xref ref-type="bibr" rid="pone.0007298-Kelmanson1">[18]</xref>, <xref ref-type="bibr" rid="pone.0007298-Kao1">[22]</xref> therefore it may not be expected that healthy corals differ in total FP concentrations as clearly as comprised corals do. It is also likely that corals exhibit temporal patterns in FP concentrations and our sampling design of one time point per coral would mask differences that could be temporally detectable. Therefore, observing corals over time would be more indicative of total FP fluctuations between and within coral species.</p>
+<p>The species used in this study represent corals with differing life history strategies and disease susceptibilities. Our study included members of the genus <italic>Montastraea</italic> which represent the main framework builders on many Caribbean reefs <xref ref-type="bibr" rid="pone.0007298-Hughes2">[75]</xref>. However, populations are in decline <xref ref-type="bibr" rid="pone.0007298-Edmunds1">[70]</xref> with <italic>M. annularis</italic> and <italic>M. faveolata</italic> currently listed as “endangered” on the IUCN Red List <xref ref-type="bibr" rid="pone.0007298-Aronson1">[76]</xref> partly due to their susceptibility to many of the characterised Caribbean diseases <xref ref-type="bibr" rid="pone.0007298-Sutherland1">[72]</xref>. In contrast, populations of <italic>M. cavernosa</italic> are not declining as rapidly and have been listed as a species of “least concern”<xref ref-type="bibr" rid="pone.0007298-Aronson2">[77]</xref>. <italic>M. cavernosa</italic> has a remarkably higher mean fluorescence than both <italic>M. annularis</italic> and <italic>M. faveolata</italic>, as illustrated in <xref ref-type="fig" rid="pone-0007298-g002">figure 2</xref>, although all three <italic>Montastraea</italic> species show a large degree of variability between different genotypes. Members of the <italic>Montastraea</italic> genus are known for their range of colormorphs, especially <italic>M. cavernosa</italic> <xref ref-type="bibr" rid="pone.0007298-Kelmanson1">[18]</xref> which may contribute to the extreme intra-specific variability we observed in total FP RFU/mg protein. Even with the propensity for <italic>M. cavernosa</italic> to exhibit different colormorphs, all colonies possess all FP genes, demonstrating that the differential expression is linked with environmental plasticity <xref ref-type="bibr" rid="pone.0007298-Kelmanson1">[18]</xref>. Interestingly, <italic>M. faveolata</italic> has much lower overall concentration of FPs, it remains to be seen what relationship this has to its high susceptibility to bleaching and disease <xref ref-type="bibr" rid="pone.0007298-Aronson3">[78]</xref>.</p>
+<p>Green and brown color morphs of <italic>P. astreoides</italic> have been previously documented <xref ref-type="bibr" rid="pone.0007298-Gleason1">[79]</xref>, although, unlike the <italic>Montastraea</italic> species, this did not affect the variability in total FP. <italic>P. asteroides</italic> is a very resistant coral, being tolerant to both disease and bleaching <xref ref-type="bibr" rid="pone.0007298-Green1">[80]</xref>, <xref ref-type="bibr" rid="pone.0007298-Croquer1">[81]</xref>. The GFP emission peak for <italic>P. astreoides</italic> in the current study is consistent with other <italic>Porites</italic> species <xref ref-type="bibr" rid="pone.0007298-Mazel2">[30]</xref>. Also similar to other <italic>Porites</italic> species, <italic>P. asteroides</italic> did not show a strong RFP signal. RFP has only been documented in compromised tissue of other <italic>Porites</italic> species <xref ref-type="bibr" rid="pone.0007298-Alieva1">[13]</xref>, <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref> and not in apparent healthy tissue. This reinforces the concept of plasticity and suggests differential utilisation of FPs during stress events.</p>
+<p>Spectral emission data on <italic>D. stokseii</italic> and <italic>S. siderea</italic> is documented for the first time in this study. <italic>D. stokesii</italic> has the lowest FP concentration of all seven species, with a low peak of CFP, a slightly higher peak of GFP and a slight peak of RFP. <italic>S. siderea</italic> has emission spectra of similar magnitude to that of <italic>M. cavernosa</italic>. <italic>S. siderea</italic> however has a slightly CFP shifted GFP peak at 505 nm as opposed to the 510 nm peak of <italic>M. cavernosa</italic>, and also a definite peak, but of lower concentration, of RFP. It is not yet clear what the high levels of GFP may be conferring these corals.</p>
+</sec><sec id="s4b">
+<title>FP H<sub>2</sub>O<sub>2</sub> scavenging</title>
+<p>All Caribbean coral species used in this study showed demonstrable H<sub>2</sub>O<sub>2</sub> scavenging activity, although inter-specific differences were not statistically significant. However, there was a positive correlation between the total FP and the rate of H<sub>2</sub>O<sub>2</sub> scavenging by coral tissue extracts. More specifically, RFP and GFP account for the highest amount of H<sub>2</sub>O<sub>2</sub> scavenging as compared to CFP which did not show a significant relationship and does not conclusively account for any <italic>in vivo</italic> H<sub>2</sub>O<sub>2</sub> scavenging. Even though our scavenging assays could not distinguish between catalase and FP scavenging in the mixed coral extracts, the significant positive relationship between FP concentration and scavenging activity across a range of corals species provides preliminary evidence for this novel role of anthozoan FPs. H<sub>2</sub>O<sub>2</sub> scavenging activity was further validated <italic>in vitro</italic> using purified <italic>A. millepora</italic> FPs and all four FPs exhibited dose-dependent H<sub>2</sub>O<sub>2</sub> scavenging activity, with significant differences among the FPs. CP had the highest activity, followed by CFP and RFP and GFP had the lowest activity. Therefore a role of FP's may be to supplement catalase, the main H<sub>2</sub>O<sub>2</sub> scavenging protein <xref ref-type="bibr" rid="pone.0007298-Merle1">[59]</xref>, which can become limited during oxidative stress <xref ref-type="bibr" rid="pone.0007298-Martindale1">[38]</xref>, however further investigation into the molecular mechanisms of this biochemical property is required.</p>
+<p>The differing scavenging activity of the different FPs observed in both experiments can be partially explained by the differential allocation of FPs within coral tissue <xref ref-type="bibr" rid="pone.0007298-Cox1">[15]</xref>, <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref>. GFP is found abundantly in the studied species as well as other coral species <xref ref-type="bibr" rid="pone.0007298-Gruber1">[82]</xref> and consistently throughout the coral tissue <xref ref-type="bibr" rid="pone.0007298-Mazel1">[12]</xref>, <xref ref-type="bibr" rid="pone.0007298-Matz3">[36]</xref>. Therefore it is not surprising that GFP accounted for a significant amount of <italic>in vivo</italic> H<sub>2</sub>O<sub>2</sub> scavenging in the coral species tested. However, since pure GFP was the least efficient H<sub>2</sub>O<sub>2</sub> scavenger in our <italic>in vitro</italic> assay, it may be that the <italic>in vivo</italic> GFP-scavenging correlation is driven by the high within-tissue concentrations. Conversely, maybe corals need to store higher levels of GFP in their tissues as a result of its less potent scavenging activity.</p>
+<p>CFP did not have any <italic>in vivo</italic> scavenging activity, although this result may be due to the relatively low presence of CFP within the seven coral species used in this study. This result was not entirely unexpected since CFPs are limited in their prevalence <xref ref-type="bibr" rid="pone.0007298-Gruber1">[82]</xref> and primarily located within a relatively small area of tissue on tentacle tips <xref ref-type="bibr" rid="pone.0007298-Cox1">[15]</xref>. Since pure CFP does actually have high scavenging activity, the role of CFP as an antioxidant in corals may be spatially and temporally regulated.</p>
+<p>RFP was the most efficient <italic>in vivo</italic> scavenger and purified RFP had potent <italic>in vitro</italic> activity as well. RFP is notable since it is identified and upregulated in areas of infected or compromised coral tissue, leaving conspicuous red-pink lesions <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref> as confirmed in the present study. Additionally, pure CP was a superior H<sub>2</sub>O<sub>2</sub> scavenger compared with its fluorescent counterparts and, like RFP, CP causes hyper-pigmentation in compromised tissue of <italic>A. millepora</italic> <xref ref-type="bibr" rid="pone.0007298-Palmer2">[49]</xref> as confirmed in the current study. CP is also predominantly limited to extremities of colonies, such as branch tips and basal boundaries. Furthermore, compromised tissue with higher FP concentrations, of <italic>A. millepora</italic> and <italic>Porites</italic> massive sp. scavenges H<sub>2</sub>O<sub>2</sub> more efficiently than the equivalent healthy tissue. This correlation supports the conclusion that FPs have the ability to scavenge H<sub>2</sub>O<sub>2</sub> <italic>in vivo</italic> and also eludes to the biological significance of FPs as part of innate immunity. These observations demonstrate that FPs with high H<sub>2</sub>O<sub>2</sub> scavenging efficiency are preferentially upregulated in tissue that is compromised or in frequent contact with foreign organisms <xref ref-type="bibr" rid="pone.0007298-Kelmanson1">[18]</xref>.</p>
+<p>Pigmentation responses are common within the anthozoa, documented in both scleractinian corals <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref>, <xref ref-type="bibr" rid="pone.0007298-Palmer2">[49]</xref> and the gorgonian sea fan <xref ref-type="bibr" rid="pone.0007298-Mydlarz3">[50]</xref> which become pigmented in areas of injury and infection due to increased FPs <xref ref-type="bibr" rid="pone.0007298-Palmer1">[23]</xref> and carotenoids <xref ref-type="bibr" rid="pone.0007298-Leverette1">[62]</xref> respectively. Additionally, the observation that during temperature stress and bleaching, corals have increased fluorescence in their tissues <xref ref-type="bibr" rid="pone.0007298-Dove3">[83]</xref> supports roles consistent with photoinduced FP activation <xref ref-type="bibr" rid="pone.0007298-Salih4">[84]</xref> and antioxidant potential. FPs are heat-resistant <xref ref-type="bibr" rid="pone.0007298-Ward3">[85]</xref> which is a potentially beneficial property during temperature-related oxidative stress, in order to support enzymatic antioxidants which may become overwhelmed or limited <xref ref-type="bibr" rid="pone.0007298-Martindale1">[38]</xref>, <xref ref-type="bibr" rid="pone.0007298-Merle1">[59]</xref>. Concomitantly, increased levels of SOD activity have been observed in temperature stressed coral <xref ref-type="bibr" rid="pone.0007298-Lesser2">[45]</xref>, <xref ref-type="bibr" rid="pone.0007298-Lesser3">[66]</xref> in addition to SOD-like activity documented from a jellyfish GFP <xref ref-type="bibr" rid="pone.0007298-BouAbdallah1">[37]</xref>. This supports the requirement for increased H<sub>2</sub>O<sub>2</sub> scavenging in stressed corals as H<sub>2</sub>O<sub>2</sub> is a product of SOD activity <xref ref-type="bibr" rid="pone.0007298-Lesser1">[42]</xref>. Therefore, spectrally monitoring the dynamics of FPs potentially provides a valuable and comparatively inexpensive tool for elucidating the relative health status and oxidative state of corals.</p>
+<p>Despite the differential scavenging efficiency of the four wild-type FPs and the role of pigments as antioxidants across the metazoa <xref ref-type="bibr" rid="pone.0007298-Vershinin1">[3]</xref>, <xref ref-type="bibr" rid="pone.0007298-Cornet1">[4]</xref>, <xref ref-type="bibr" rid="pone.0007298-Bendich1">[86]</xref>, H<sub>2</sub>O<sub>2</sub> scavenging rates are significantly higher for the non-fluorescent mutant counterparts. While this was unexpected, it highlights the lack of importance of the fluorophore, and therefore the color, of these proteins to their antioxidant activity. This therefore suggests alternative, more dominant roles of FPs than purely as antioxidants, which has enabled the evolution of their diverse color range <xref ref-type="bibr" rid="pone.0007298-Matz2">[17]</xref>. This therefore also supports the proposed role of coral FPs as visual triggers for other organisms, such as predatory fish <xref ref-type="bibr" rid="pone.0007298-Ward1">[35]</xref>, <xref ref-type="bibr" rid="pone.0007298-Matz3">[36]</xref>. Overall these findings support the suggestion that FPs serve multiple specific roles and functions that differ between the types of FPs <xref ref-type="bibr" rid="pone.0007298-Kelmanson1">[18]</xref>, <xref ref-type="bibr" rid="pone.0007298-Salih1">[24]</xref>, <xref ref-type="bibr" rid="pone.0007298-Wiedenmann1">[25]</xref>.</p>
+<p>This study documents H<sub>2</sub>O<sub>2</sub> scavenging by scleractinian FPs for the first time and therefore proposes an additional role of anthozoan FPs as antioxidants. The diversity, temporal and spatial variation in coral FP distribution and abundance, in conjunction with differential antioxidant potentials, suggests that FP roles may differ between coral species or with changing environmental conditions. Proposed anthozoan FP functions are numerous, potentially dynamic and not mutually exclusive. Further elucidation of these functions will be gained through time series investigations into FP responses to both biotic and abiotic stressors, in addition to molecular modelling to determine the mechanisms of H<sub>2</sub>O<sub>2</sub> breakdown.</p>
+</sec></sec></body>
+<back>
+<ack>
+<p>The authors would like to thank ES McGinty, J Lima and D Cummings (UTA), BL Willis (JCU) and JC Bythell (Newcastle University, UK) for research support and E Bartels (Mote Tropical Marine Laboratory) and J Delany and L Maclaughlin (Florida Keys National Marine Sanctuary) for permitting and facilitating coral transfers under the research permit number FKNMS-2007-050. We are grateful for 3 anonymous reviewers whose suggestions and comments greatly improved the manuscript. Special thanks to M Matz for laboratory and equipment use, advice and manuscript reviews.</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="pone.0007298-Protas1"><label>1</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Protas</surname><given-names>ME</given-names></name>
+<name name-style="western"><surname>Patel</surname><given-names>NH</given-names></name>
+</person-group>             <year>2008</year>             <article-title>Evolution of Coloration Patterns.</article-title>             <source>Annual Review of Cell and Developmental Biology</source>             <volume>24</volume>             <fpage>425</fpage>             <lpage>446</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Roulin1"><label>2</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Roulin</surname><given-names>A</given-names></name>
+</person-group>             <year>2004</year>             <article-title>The evolution, maintenance and adaptive function of genetic colour polymorphism in birds.</article-title>             <source>Biological Reviews</source>             <volume>79</volume>             <fpage>815</fpage>             <lpage>848</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Vershinin1"><label>3</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Vershinin</surname><given-names>A</given-names></name>
+</person-group>             <year>1999</year>             <article-title>Biological functions of carotenoids - diversity and evolution.</article-title>             <source>Biofactors</source>             <volume>10</volume>             <fpage>99</fpage>             <lpage>104</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Cornet1"><label>4</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Cornet</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Biard</surname><given-names>C</given-names></name>
+<name name-style="western"><surname>Moret</surname><given-names>Y</given-names></name>
+</person-group>             <year>2007</year>             <article-title>Is there a role for antioxidant carotenoids in limiting self-harming immune response in invertebrates?</article-title>             <source>Biol Lett</source>             <volume>3</volume>             <fpage>284</fpage>             <lpage>288</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Sderhll1"><label>5</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Söderhäll</surname><given-names>K</given-names></name>
+<name name-style="western"><surname>Cerenius</surname><given-names>L</given-names></name>
+</person-group>             <year>1998</year>             <article-title>Role of the prophenoloxidase-activating system in invertebrate immunity.</article-title>             <source>Current Opinion in Immunology</source>             <volume>10</volume>             <fpage>23</fpage>             <lpage>28</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Meredith1"><label>6</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Meredith</surname><given-names>P</given-names></name>
+<name name-style="western"><surname>Powell</surname><given-names>BJ</given-names></name>
+<name name-style="western"><surname>Riesz</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Nighswander-Rempel</surname><given-names>SP</given-names></name>
+<name name-style="western"><surname>Pederson</surname><given-names>MR</given-names></name>
+<etal/></person-group>             <year>2006</year>             <article-title>Towards structure-property-function relationships for eumelanin.</article-title>             <source>Soft Matter</source>             <volume>2</volume>             <fpage>37</fpage>             <lpage>44</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Nappi1"><label>7</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Nappi</surname><given-names>AJ</given-names></name>
+<name name-style="western"><surname>Christensen</surname><given-names>BM</given-names></name>
+</person-group>             <year>2005</year>             <article-title>Melanogenesis and associated cytotoxic reactions: Applications to insect innate immunity.</article-title>             <source>Insect Biochemistry and Molecular Biology</source>             <volume>35</volume>             <fpage>443</fpage>             <lpage>459</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Matz1"><label>8</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Matz</surname><given-names>MV</given-names></name>
+<name name-style="western"><surname>Fradkov</surname><given-names>AF</given-names></name>
+<name name-style="western"><surname>Labas</surname><given-names>YA</given-names></name>
+<name name-style="western"><surname>Savitsky</surname><given-names>AP</given-names></name>
+<name name-style="western"><surname>Zaraisky</surname><given-names>AG</given-names></name>
+<etal/></person-group>             <year>1999</year>             <article-title>Fluorescent proteins from nonbioluminescent Anthozoa species.</article-title>             <source>Nat Biotechnol</source>             <volume>17</volume>             <fpage>969</fpage>             <lpage>973</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Dove1"><label>9</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Dove</surname><given-names>SG</given-names></name>
+<name name-style="western"><surname>Hoegh-Guldberg</surname><given-names>O</given-names></name>
+<name name-style="western"><surname>Ranganathan</surname><given-names>S</given-names></name>
+</person-group>             <year>2001</year>             <article-title>Major colour patterns of reef-building corals are due to a family of GFP-like proteins.</article-title>             <source>Coral Reefs</source>             <volume>19</volume>          </element-citation></ref>
+<ref id="pone.0007298-Bandaranayake1"><label>10</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Bandaranayake</surname><given-names>WM</given-names></name>
+</person-group>             <year>2006</year>             <article-title>The nature and role of pigments of marine invertebrates.</article-title>             <source>Natural Product Reports</source>             <volume>23</volume>             <fpage>223</fpage>             <lpage>255</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Labas1"><label>11</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Labas</surname><given-names>YA</given-names></name>
+<name name-style="western"><surname>Gurskaya</surname><given-names>NG</given-names></name>
+<name name-style="western"><surname>Yanushevich</surname><given-names>YG</given-names></name>
+<name name-style="western"><surname>Fradkov</surname><given-names>AF</given-names></name>
+<name name-style="western"><surname>Lukyanov</surname><given-names>KA</given-names></name>
+<etal/></person-group>             <year>2002</year>             <article-title>Diversity and evolution of the green fluorescent protein family.</article-title>             <source>Proceedings of the National Academy of Sciences of the United States of America</source>             <volume>99</volume>             <fpage>4256</fpage>             <lpage>4261</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Mazel1"><label>12</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Mazel</surname><given-names>CH</given-names></name>
+<name name-style="western"><surname>Lesser</surname><given-names>MP</given-names></name>
+<name name-style="western"><surname>Gorbunov</surname><given-names>MY</given-names></name>
+<name name-style="western"><surname>Barry</surname><given-names>TM</given-names></name>
+<name name-style="western"><surname>Farrell</surname><given-names>JH</given-names></name>
+<etal/></person-group>             <year>2003</year>             <article-title>Green-fluorescent proteins in Caribbean corals.</article-title>             <source>Limnology and Oceanography</source>             <volume>48</volume>             <fpage>402</fpage>             <lpage>411</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Alieva1"><label>13</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Alieva</surname><given-names>NO</given-names></name>
+<name name-style="western"><surname>Konzen</surname><given-names>KA</given-names></name>
+<name name-style="western"><surname>Field</surname><given-names>SF</given-names></name>
+<name name-style="western"><surname>Meleshkevitch</surname><given-names>EA</given-names></name>
+<name name-style="western"><surname>Hunt</surname><given-names>ME</given-names></name>
+<etal/></person-group>             <year>2008</year>             <article-title>Diversity and evolution of coral fluorescent proteins.</article-title>             <source>PloS One</source>             <volume>3</volume>             <fpage>e2680</fpage>          </element-citation></ref>
+<ref id="pone.0007298-Tsien1"><label>14</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Tsien</surname><given-names>RY</given-names></name>
+</person-group>             <year>1998</year>             <article-title>The green fluorescent protein.</article-title>             <source>Ann Rev Biochem</source>             <volume>67</volume>             <fpage>509</fpage>             <lpage>544</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Cox1"><label>15</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Cox</surname><given-names>G</given-names></name>
+<name name-style="western"><surname>Matz</surname><given-names>MV</given-names></name>
+<name name-style="western"><surname>Salih</surname><given-names>A</given-names></name>
+</person-group>             <year>2007</year>             <article-title>Fluorescence Lifetime Imaging of Coral Fluorescent Proteins.</article-title>             <source>MICROSCOPY RESEARCH AND TECHNIQUE</source>             <volume>70</volume>             <fpage>243</fpage>             <lpage>251</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Veron1"><label>16</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Veron</surname><given-names>JEN</given-names></name>
+</person-group>             <year>2000</year>             <article-title>Corals of the world.</article-title>             <publisher-loc>Townsville</publisher-loc>             <publisher-name>Australian Institute of Marine Science</publisher-name>          </element-citation></ref>
+<ref id="pone.0007298-Matz2"><label>17</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Matz</surname><given-names>MV</given-names></name>
+<name name-style="western"><surname>Lukyanov</surname><given-names>KA</given-names></name>
+<name name-style="western"><surname>Lukyanov</surname><given-names>SA</given-names></name>
+</person-group>             <year>2002</year>             <article-title>Family of the green fluorescent protein: journey to the end of the rainbow.</article-title>             <source>Bioessays</source>             <volume>24</volume>             <fpage>953</fpage>             <lpage>959</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Kelmanson1"><label>18</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Kelmanson</surname><given-names>IV</given-names></name>
+<name name-style="western"><surname>Matz</surname><given-names>MV</given-names></name>
+</person-group>             <year>2003</year>             <article-title>Molecular basis and evolutionary origins of color diversity in great star coral Montastraea cavernosa (Scleractinia: Faviida).</article-title>             <source>Molecular Biology and Evolution</source>             <volume>20</volume>             <fpage>1125</fpage>             <lpage>1133</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Dove2"><label>19</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Dove</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Ortiz</surname><given-names>JC</given-names></name>
+<name name-style="western"><surname>Enriquez</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Fine</surname><given-names>M</given-names></name>
+<name name-style="western"><surname>Fisher</surname><given-names>P</given-names></name>
+<etal/></person-group>             <year>2006</year>             <article-title>Response of holosymbiont pigments from the scleractinian coral Montipora monasteriata to short-term heat stress.</article-title>             <source>Limnology and Oceanography</source>             <volume>51</volume>             <fpage>1149</fpage>             <lpage>1158</lpage>          </element-citation></ref>
+<ref id="pone.0007298-SmithKeune1"><label>20</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Smith-Keune</surname><given-names>C</given-names></name>
+<name name-style="western"><surname>Dove</surname><given-names>S</given-names></name>
+</person-group>             <year>2008</year>             <article-title>Gene Expression of a Green Fluorescent Protein Homolog as a Host-Specific Biomarker of Heat Stress Within a Reef-Building Coral.</article-title>             <source>Marine Biotechnology</source>             <volume>10</volume>             <fpage>166</fpage>             <lpage>180</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Bay1"><label>21</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Bay</surname><given-names>LK</given-names></name>
+<name name-style="western"><surname>Ulstrup</surname><given-names>KE</given-names></name>
+<name name-style="western"><surname>Nielsen</surname><given-names>HB</given-names></name>
+<name name-style="western"><surname>Jarmer</surname><given-names>H</given-names></name>
+<name name-style="western"><surname>Goffard</surname><given-names>N</given-names></name>
+<etal/></person-group>             <year>2009</year>             <article-title>Microarray analysis reveals transcriptional plasticity in the reef building coral Acropora millepora.</article-title>             <source>Molecular Ecology</source>             <volume>18</volume>             <fpage>3062</fpage>             <lpage>3075</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Kao1"><label>22</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Kao</surname><given-names>H</given-names></name>
+<name name-style="western"><surname>Sturgis</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>DeSalle</surname><given-names>R</given-names></name>
+<name name-style="western"><surname>Tsai</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Davis</surname><given-names>D</given-names></name>
+<etal/></person-group>             <year>2007</year>             <article-title>Dynamic Regulation of Fluorescent Proteins from a Single Species of Coral.</article-title>             <source>Marine Biotechnology</source>             <volume>9</volume>             <fpage>733</fpage>             <lpage>746</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Palmer1"><label>23</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Palmer</surname><given-names>CV</given-names></name>
+<name name-style="western"><surname>Roth</surname><given-names>MS</given-names></name>
+<name name-style="western"><surname>Gates</surname><given-names>RD</given-names></name>
+</person-group>             <year>2009</year>             <article-title>Red Fluorescent Protein Responsible for Pigmentation in Trematode-Infected Porites compressa Tissues.</article-title>             <source>Biological Bulletin</source>             <volume>215</volume>             <fpage>68</fpage>          </element-citation></ref>
+<ref id="pone.0007298-Salih1"><label>24</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Salih</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Larkum</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Cox</surname><given-names>G</given-names></name>
+<name name-style="western"><surname>Kuhl</surname><given-names>M</given-names></name>
+<name name-style="western"><surname>Hoegh-Guldberg</surname><given-names>O</given-names></name>
+</person-group>             <year>2000</year>             <article-title>Fluorescent pigments in corals are photoprotective.</article-title>             <source>Nature</source>             <volume>408</volume>             <fpage>850</fpage>             <lpage>853</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Wiedenmann1"><label>25</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Wiedenmann</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Elke</surname><given-names>C</given-names></name>
+<name name-style="western"><surname>Spindler</surname><given-names>KD</given-names></name>
+<name name-style="western"><surname>Funke</surname><given-names>W</given-names></name>
+</person-group>             <year>2002</year>             <article-title>Cracks in the beta-can: Fluorescent proteins from Anemonia sulcata (Anthozoa, Actinaria).</article-title>             <source>Proceedings of the National Academy of Sciences of the United States of America</source>             <volume>99</volume>             <fpage>13358</fpage>             <lpage>13358</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Kawaguti1"><label>26</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Kawaguti</surname><given-names>S</given-names></name>
+</person-group>             <year>1944</year>             <article-title>On the physiology of reef corals VI. Study on the pigments.</article-title>             <source>Palao Tropical Biological Station Studies</source>             <volume>2</volume>             <fpage>617</fpage>             <lpage>673</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Kawaguti2"><label>27</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Kawaguti</surname><given-names>S</given-names></name>
+</person-group>             <year>1969</year>             <article-title>Effect of the green fluorescent pigment on the productivity of reef corals.</article-title>             <source>Micronesia</source>             <volume>5</volume>             <fpage>313</fpage>          </element-citation></ref>
+<ref id="pone.0007298-Catala1"><label>28</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Catala</surname><given-names>R</given-names></name>
+</person-group>             <year>1959</year>             <article-title>Fluorescence effect from corals irradiated with ultra-violet rays.</article-title>             <source>Nature</source>             <volume>183</volume>             <fpage>949</fpage>          </element-citation></ref>
+<ref id="pone.0007298-Salih2"><label>29</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Salih</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Hoegh-Guldberg</surname><given-names>O</given-names></name>
+<name name-style="western"><surname>Cox</surname><given-names>G</given-names></name>
+</person-group>             <year>1998</year>             <article-title>Photoprotection of Symbiotic Dinoflagellates by Fluorescent Pigments in Reef Corals.</article-title>             <person-group person-group-type="editor">
+<name name-style="western"><surname>Greenwood</surname><given-names>JG</given-names></name>
+<name name-style="western"><surname>Hall</surname><given-names>NJ</given-names></name>
+</person-group>             <source>Proceedings of the Australian Coral Reef Society 75th Anniversary Conference, Heron Island October 1997</source>             <publisher-loc>Brisbane</publisher-loc>             <publisher-name>University of Queensland</publisher-name>             <fpage>217</fpage>             <lpage>230</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Mazel2"><label>30</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Mazel</surname><given-names>CH</given-names></name>
+<name name-style="western"><surname>Lesser</surname><given-names>MP</given-names></name>
+<name name-style="western"><surname>Gorbunov</surname><given-names>MY</given-names></name>
+<name name-style="western"><surname>Barry</surname><given-names>TM</given-names></name>
+<name name-style="western"><surname>Farrell</surname><given-names>JH</given-names></name>
+<etal/></person-group>             <year>2003</year>             <article-title>Green-fluorescent protiens in Caribbean corals.</article-title>             <source>Limnology and Oceanography</source>             <volume>48</volume>             <fpage>402</fpage>             <lpage>411</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Salih3"><label>31</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Salih</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Larkum</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Cronin</surname><given-names>T</given-names></name>
+<name name-style="western"><surname>Wiedenmann</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Szymczak</surname><given-names>R</given-names></name>
+<etal/></person-group>             <year>2004</year>             <article-title>Biological properties of coral GFP-type proteins provide clues for engineering novel optical probes and biosensors.</article-title>             <source>SPIE: Genetically Engineered Probes for Biomedical Applications</source>             <volume>5329</volume>             <fpage>61</fpage>             <lpage>72</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Cox2"><label>32</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Cox</surname><given-names>G</given-names></name>
+<name name-style="western"><surname>Salih</surname><given-names>A</given-names></name>
+</person-group>             <year>2006</year>             <article-title>Confocal microscopy of GFP-like pigments in corals.</article-title>             <person-group person-group-type="editor">
+<name name-style="western"><surname>Yu</surname><given-names>H</given-names></name>
+<name name-style="western"><surname>Cheng</surname><given-names>PC</given-names></name>
+<name name-style="western"><surname>Lin</surname><given-names>PC</given-names></name>
+<name name-style="western"><surname>Kao</surname><given-names>FJ</given-names></name>
+</person-group>             <source>Multimodal Microscopy</source>             <publisher-loc>Singapore</publisher-loc>             <publisher-name>World Scientific Publishing</publisher-name>          </element-citation></ref>
+<ref id="pone.0007298-Levy1"><label>33</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Levy</surname><given-names>O</given-names></name>
+<name name-style="western"><surname>Dubinsky</surname><given-names>Z</given-names></name>
+<name name-style="western"><surname>Achituv</surname><given-names>Y</given-names></name>
+</person-group>             <year>2003</year>             <article-title>Photobehaviour of stony corals: responses to light spectra and intensity.</article-title>             <source>J Exp Biol</source>             <volume>206</volume>             <fpage>4041</fpage>             <lpage>4049</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Wiedenmann2"><label>34</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Wiedenmann</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Ivanchenko</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Oswald</surname><given-names>F</given-names></name>
+<name name-style="western"><surname>Nienhaus</surname><given-names>GU</given-names></name>
+</person-group>             <year>2004</year>             <article-title>Identification of GFP-like proteins in nonbioluminescent, azooxanthellate anthozoa opens new perspectives for bioprospecting.</article-title>             <source>Marine Biotechnology</source>             <volume>6</volume>             <fpage>270</fpage>             <lpage>277</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Ward1"><label>35</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Ward</surname><given-names>WW</given-names></name>
+</person-group>             <year>2002</year>             <article-title>Fluorescent proteins: who's got 'em and why?</article-title>             <person-group person-group-type="editor">
+<name name-style="western"><surname>Stanley</surname><given-names>PE</given-names></name>
+<name name-style="western"><surname>Kricka</surname><given-names>LJ</given-names></name>
+</person-group>             <source>Bioluminescence and Chemiluminescence</source>             <publisher-loc>Cambridge</publisher-loc>             <publisher-name>World Scientific</publisher-name>             <fpage>123</fpage>             <lpage>126</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Matz3"><label>36</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Matz</surname><given-names>MV</given-names></name>
+<name name-style="western"><surname>Marshall</surname><given-names>NJ</given-names></name>
+<name name-style="western"><surname>Vorobyev</surname><given-names>M</given-names></name>
+</person-group>             <year>2006</year>             <article-title>Symposium-in-print: Green fluorescent protein and homologs.</article-title>             <source>Photochemistry and Photobiology</source>             <volume>82</volume>             <fpage>345</fpage>             <lpage>350</lpage>          </element-citation></ref>
+<ref id="pone.0007298-BouAbdallah1"><label>37</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Bou-Abdallah</surname><given-names>F</given-names></name>
+<name name-style="western"><surname>Chasteen</surname><given-names>DN</given-names></name>
+<name name-style="western"><surname>Lesser</surname><given-names>M</given-names></name>
+</person-group>             <year>2006</year>             <article-title>Quenching of superoxide radicals by green fluorescent protein.</article-title>             <source>Biochim Biophys Acta</source>             <volume>1760</volume>             <fpage>1690</fpage>             <lpage>1695</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Martindale1"><label>38</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Martindale</surname><given-names>JL</given-names></name>
+<name name-style="western"><surname>Holbrook</surname><given-names>NJ</given-names></name>
+</person-group>             <year>2002</year>             <article-title>Cellular response to oxidative stress: Signaling for suicide and survival.</article-title>             <source>Journal of Cellular Physiology</source>             <volume>192</volume>             <fpage>1</fpage>             <lpage>15</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Halliwell1"><label>39</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Halliwell</surname><given-names>B</given-names></name>
+<name name-style="western"><surname>Gutteridge</surname><given-names>JMC</given-names></name>
+</person-group>             <year>1999</year>             <article-title>Free radicals in biology and medicine.</article-title>             <publisher-loc>Oxford</publisher-loc>             <publisher-name>Oxford University Press</publisher-name> <!--===== Restructure page-count as size[@units="page"] =====--><size units="page">936</size>           </element-citation></ref>
+<ref id="pone.0007298-Fang1"><label>40</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Fang</surname><given-names>FC</given-names></name>
+</person-group>             <year>2004</year>             <article-title>Antimicrobial reactive oxygen and nitrogen species: Concepts and controversies.</article-title>             <source>Nature Reviews Microbiology</source>             <volume>2</volume>             <fpage>820</fpage>             <lpage>832</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Richier1"><label>41</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Richier</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Sabourault</surname><given-names>C</given-names></name>
+<name name-style="western"><surname>Courtiade</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Zucchini</surname><given-names>N</given-names></name>
+<name name-style="western"><surname>Allemand</surname><given-names>D</given-names></name>
+<etal/></person-group>             <year>2006</year>             <article-title>Oxidative stress and apoptotic events during thermal stress in the symbiotic sea anemone, Anemonia viridis.</article-title>             <source>Febs Journal</source>             <volume>273</volume>             <fpage>4186</fpage>             <lpage>4198</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Lesser1"><label>42</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Lesser</surname><given-names>MP</given-names></name>
+</person-group>             <year>2006</year>             <article-title>Oxidative stress in marine environments: Biochemistry and physiological ecology.</article-title>             <source>Annual Review of Physiology</source>             <volume>68</volume>             <fpage>253</fpage>             <lpage>278</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Weis1"><label>43</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Weis</surname><given-names>VM</given-names></name>
+</person-group>             <year>2008</year>             <article-title>Cellular mechanisms of Cnidarian bleaching: stress causes the collapse of symbiosis.</article-title>             <source>Journal of Experimental Biology</source>             <volume>211</volume>             <fpage>3059</fpage>             <lpage>3066</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Mydlarz1"><label>44</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Mydlarz</surname><given-names>LD</given-names></name>
+<name name-style="western"><surname>Jacobs</surname><given-names>RS</given-names></name>
+</person-group>             <year>2006</year>             <article-title>An inducible release of reactive oxygen radicals in four species of gorgonian corals.</article-title>             <source>Marine and Freshwater Behaviour and Physiology</source>             <volume>39</volume>             <fpage>143</fpage>             <lpage>152</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Lesser2"><label>45</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Lesser</surname><given-names>MP</given-names></name>
+</person-group>             <year>1996</year>             <article-title>Elevated temperatures and ultraviolet radiation cause oxidative stress and inhibit photosynthesis in symbiotic dinoflagellates.</article-title>             <source>Limnology and Oceanography</source>             <volume>41</volume>             <fpage>271</fpage>             <lpage>283</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Mydlarz2"><label>46</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Mydlarz</surname><given-names>LD</given-names></name>
+<name name-style="western"><surname>Jacobs</surname><given-names>RS</given-names></name>
+</person-group>             <year>2004</year>             <article-title>Comparison of an inducible oxidative burst in free-living and symbiotic dinoflagellates reveals properties of the pseudopterosins.</article-title>             <source>Phytochem</source>             <volume>65</volume>             <fpage>3231</fpage>             <lpage>3241</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Tchernov1"><label>47</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Tchernov</surname><given-names>D</given-names></name>
+<name name-style="western"><surname>Gorbunov</surname><given-names>MY</given-names></name>
+<name name-style="western"><surname>de Vargas</surname><given-names>C</given-names></name>
+<name name-style="western"><surname>Yadav</surname><given-names>SN</given-names></name>
+<name name-style="western"><surname>Milligan</surname><given-names>AJ</given-names></name>
+<etal/></person-group>             <year>2004</year>             <article-title>Membrane lipids of symbiotic algae are diagnostic of sensitivity to thermal bleaching in corals.</article-title>             <source>Proceedings of the National Academy of Sciences of the United States of America</source>             <volume>101</volume>             <fpage>13531</fpage>             <lpage>13535</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Meszaros1"><label>48</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Meszaros</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Bigger</surname><given-names>C</given-names></name>
+</person-group>             <year>1999</year>             <article-title>Qualitative and Quantitative Study of Wound Healing Processes in the Coelenterate, Plexaurella fusifera: Spatial, Temporal, and Environmental (Light Attenuation) Influences.</article-title>             <source>Journal of Invertebrate Pathology</source>             <volume>73</volume>             <fpage>321</fpage>             <lpage>331</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Palmer2"><label>49</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Palmer</surname><given-names>CV</given-names></name>
+<name name-style="western"><surname>Mydlarz</surname><given-names>LD</given-names></name>
+<name name-style="western"><surname>Willis</surname><given-names>BL</given-names></name>
+</person-group>             <year>2008</year>             <article-title>Evidence of an inflammatory-like response in non-normally pigmented tissues of two scleractinian corals.</article-title>             <source>Proc R Soc Lond B Biol Sci</source>             <volume>275</volume>             <fpage>2687</fpage>             <lpage>2693</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Mydlarz3"><label>50</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Mydlarz</surname><given-names>LD</given-names></name>
+<name name-style="western"><surname>Harvell</surname><given-names>CD</given-names></name>
+</person-group>             <year>2007</year>             <article-title>Peroxidase activity and inducibility in the sea fan coral exposed to a fungal pathogen.</article-title>             <source>Comp Biochem Physiol A</source>             <volume>146</volume>             <fpage>54</fpage>             <lpage>62</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Leutenegger1"><label>51</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Leutenegger</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Kredel</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Gundel</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>D'Angelo</surname><given-names>C</given-names></name>
+<name name-style="western"><surname>Salih</surname><given-names>A</given-names></name>
+<etal/></person-group>             <year>2007</year>             <article-title>Analysis of fluorescent and non-fluorescent sea anemones from the Mediterranean Sea during a bleaching event.</article-title>             <source>Journal of Experimental Marine Biology and Ecology</source>             <volume>353</volume>             <fpage>221</fpage>             <lpage>234</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Downs1"><label>52</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Downs</surname><given-names>CA</given-names></name>
+<name name-style="western"><surname>Fauth</surname><given-names>JE</given-names></name>
+<name name-style="western"><surname>Halas</surname><given-names>JC</given-names></name>
+<name name-style="western"><surname>Dustan</surname><given-names>P</given-names></name>
+<name name-style="western"><surname>Bemiss</surname><given-names>J</given-names></name>
+<etal/></person-group>             <year>2002</year>             <article-title>Oxidative stress and seasonal coral bleaching.</article-title>             <source>Free Radical Biology and Medicine</source>             <volume>33</volume>             <fpage>533</fpage>             <lpage>543</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Smith1"><label>53</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Smith</surname><given-names>DJ</given-names></name>
+<name name-style="western"><surname>Suggett</surname><given-names>DJ</given-names></name>
+<name name-style="western"><surname>Baker</surname><given-names>NR</given-names></name>
+</person-group>             <year>2005</year>             <article-title>Is photoinhibition of zooxanthellae photosynthesis the primary cause of thermal bleaching in corals?</article-title>             <source>Global Change Biology</source>             <volume>11</volume>             <fpage>1</fpage>             <lpage>11</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Sugumaran1"><label>54</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="editor">
+<name name-style="western"><surname>Sugumaran</surname><given-names>M</given-names></name>
+<name name-style="western"><surname>Kanost</surname><given-names>MR</given-names></name>
+</person-group>             <year>1993</year>             <article-title>Regulation of insect hemolymph phenoloxidases.</article-title>             <publisher-loc>San Diego</publisher-loc>             <publisher-name>Academic Press Inc</publisher-name>             <fpage>317</fpage>             <lpage>342</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Dunlap1"><label>55</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Dunlap</surname><given-names>W</given-names></name>
+<name name-style="western"><surname>Llewellyn</surname><given-names>L</given-names></name>
+<name name-style="western"><surname>Doyle</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Yamamoto</surname><given-names>Y</given-names></name>
+</person-group>             <year>2003</year>             <article-title>A Microtiter Plate Assay for Screening Antioxidant Activity in Extracts of Marine Organisms.</article-title>             <source>Mar Biotechnol</source>             <volume>5</volume>             <fpage>294</fpage>             <lpage>301</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Dykens1"><label>56</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Dykens</surname><given-names>JA</given-names></name>
+</person-group>             <year>1984</year>             <article-title>Enzymatic defenses against oxygen toxicity in marine cnidarians containing endosymbiotic algae.</article-title>             <source>Mar Biol Lett</source>             <volume>5</volume>             <fpage>291</fpage>             <lpage>301</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Hawkridge1"><label>57</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Hawkridge</surname><given-names>JM</given-names></name>
+<name name-style="western"><surname>Pipe</surname><given-names>RK</given-names></name>
+<name name-style="western"><surname>Brown</surname><given-names>BE</given-names></name>
+</person-group>             <year>2000</year>             <article-title>Localization of antioxidant enzymes in the cnidarians Anemonia viridis and Goniopora stokesi.</article-title>             <source>Mar Biol</source>             <volume>137</volume>             <fpage>1</fpage>             <lpage>9</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Griffin1"><label>58</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Griffin</surname><given-names>SP</given-names></name>
+<name name-style="western"><surname>Bhagooli</surname><given-names>R</given-names></name>
+<name name-style="western"><surname>Weil</surname><given-names>E</given-names></name>
+</person-group>             <year>2006</year>             <article-title>Evaluation of thermal acclimation capacity in corals with different thermal histories based on catalase concentrations and antioxidant potentials.</article-title>             <source>Comparative Biochemistry and Physiology, Part A</source>             <volume>144</volume>             <fpage>155</fpage>             <lpage>162</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Merle1"><label>59</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Merle</surname><given-names>PL</given-names></name>
+<name name-style="western"><surname>Sabourault</surname><given-names>C</given-names></name>
+<name name-style="western"><surname>Richier</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Allemand</surname><given-names>D</given-names></name>
+<name name-style="western"><surname>Furla</surname><given-names>P</given-names></name>
+</person-group>             <year>2007</year>             <article-title>Catalase characterization and implication in bleaching of a symbiotic sea anemone.</article-title>             <source>Free Radical Biology and Medicine</source>             <volume>42</volume>             <fpage>236</fpage>             <lpage>246</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Gordon1"><label>60</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Gordon</surname><given-names>MH</given-names></name>
+</person-group>             <year>1996</year>             <article-title>Dietary antioxidants in disease prevention.</article-title>             <source>Natural Product Report</source>             <volume>13</volume>             <fpage>265</fpage>             <lpage>273</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Cvejic1"><label>61</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Cvejic</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Tambutté</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Lotto</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Mikov</surname><given-names>M</given-names></name>
+<name name-style="western"><surname>Slacanin</surname><given-names>I</given-names></name>
+<etal/></person-group>             <year>2007</year>             <article-title>Determination of canthaxanthin in the red coral (Corallium rubrum) from Marseille by HPLC combined with UV and MS detection.</article-title>             <source>Marine Biology</source>             <volume>152</volume>             <fpage>855</fpage>             <lpage>862</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Leverette1"><label>62</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Leverette</surname><given-names>CL</given-names></name>
+<name name-style="western"><surname>Warren</surname><given-names>M</given-names></name>
+<name name-style="western"><surname>Smith</surname><given-names>M</given-names></name>
+<name name-style="western"><surname>Smith</surname><given-names>GW</given-names></name>
+</person-group>             <year>2008</year>             <article-title>Determination of carotenoid as the purple pigment in Gorgonia ventalina sclerites using Raman microscopy.</article-title>             <source>Spectrochimica Acta Part A</source>             <volume>69</volume>             <fpage>1058</fpage>             <lpage>1061</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Willis1"><label>63</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Willis</surname><given-names>BL</given-names></name>
+<name name-style="western"><surname>Page</surname><given-names>CA</given-names></name>
+<name name-style="western"><surname>Dinsdale</surname><given-names>EA</given-names></name>
+</person-group>             <year>2004</year>             <article-title>Coral disease on the Great Barrier Reef.</article-title>             <person-group person-group-type="editor">
+<name name-style="western"><surname>Rosenberg</surname><given-names>E</given-names></name>
+<name name-style="western"><surname>Loya</surname><given-names>Y</given-names></name>
+</person-group>             <source>Coral health and disease</source>             <publisher-loc>New York</publisher-loc>             <publisher-name>Springer</publisher-name>             <fpage>69</fpage>             <lpage>104</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Harvell1"><label>64</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Harvell</surname><given-names>CD</given-names></name>
+<name name-style="western"><surname>Jordan</surname><given-names>E</given-names></name>
+<name name-style="western"><surname>Merkel</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Raymundo</surname><given-names>L</given-names></name>
+<name name-style="western"><surname>Rosenberg</surname><given-names>E</given-names></name>
+<etal/></person-group>             <year>2007</year>             <article-title>Coral disease: environmental change and the balance between coral and microbes.</article-title>             <source>Oceanography</source>             <volume>20</volume>             <fpage>58</fpage>             <lpage>81</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Thomson1"><label>65</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Thomson</surname><given-names>CM</given-names></name>
+<name name-style="western"><surname>Ward</surname><given-names>WW</given-names></name>
+</person-group>             <year>2002</year>             <article-title>Three-phase partitioning (TPP): a rapid and preparative purification tool for GFP.</article-title>             <person-group person-group-type="editor">
+<name name-style="western"><surname>Stanley</surname><given-names>PE</given-names></name>
+<name name-style="western"><surname>Kricka</surname><given-names>LJ</given-names></name>
+</person-group>             <source>Bioluminesence and Chemiluminescence</source>             <publisher-name>World Scientific Publishing Company</publisher-name>          </element-citation></ref>
+<ref id="pone.0007298-Lesser3"><label>66</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Lesser</surname><given-names>MP</given-names></name>
+</person-group>             <year>1997</year>             <article-title>Oxidative stress causes coral bleaching during exposure to elevated temperatures.</article-title>             <source>Coral Reefs</source>             <volume>16</volume>             <fpage>187</fpage>             <lpage>192</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Hughes1"><label>67</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Hughes</surname><given-names>TP</given-names></name>
+</person-group>             <year>1994</year>             <article-title>Catastrophes, Phase Shifts, and Large-Scale Degradation of a Caribbean Coral Reef.</article-title>             <source>Science</source>             <volume>265</volume>             <fpage>1547</fpage>             <lpage>1551</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Gardner1"><label>68</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Gardner</surname><given-names>T</given-names></name>
+<name name-style="western"><surname>Coté Gill</surname><given-names>JA</given-names></name>
+<name name-style="western"><surname>Grant</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Watkinson</surname><given-names>AR</given-names></name>
+</person-group>             <year>2003</year>             <article-title>Longterm region-wide declines in Caribbean corals.</article-title>             <source>Science</source>             <volume>301</volume>             <fpage>958</fpage>             <lpage>960</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Ward2"><label>69</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Ward</surname><given-names>JR</given-names></name>
+<name name-style="western"><surname>Rypien</surname><given-names>KL</given-names></name>
+<name name-style="western"><surname>Bruno</surname><given-names>JF</given-names></name>
+<name name-style="western"><surname>Harvell</surname><given-names>CD</given-names></name>
+<name name-style="western"><surname>Jordan-Dahlgren</surname><given-names>E</given-names></name>
+<etal/></person-group>             <year>2006</year>             <article-title>Coral diversity and disease in Mexico.</article-title>             <source>Diseases of aquatic organisms</source>             <volume>69</volume>             <fpage>23</fpage>             <lpage>31</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Edmunds1"><label>70</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Edmunds</surname><given-names>PJ</given-names></name>
+<name name-style="western"><surname>Elahi</surname><given-names>R</given-names></name>
+</person-group>             <year>2007</year>             <article-title>The demographics of a 15-year decline in cover of the Caribbean reef coral Montastraea annularis.</article-title>             <source>Ecological Monographs</source>             <volume>77</volume>             <fpage>3</fpage>             <lpage>18</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Harvell2"><label>71</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Harvell</surname><given-names>CD</given-names></name>
+<name name-style="western"><surname>Kim</surname><given-names>K</given-names></name>
+<name name-style="western"><surname>Burkholder</surname><given-names>JM</given-names></name>
+<name name-style="western"><surname>Colwell</surname><given-names>RR</given-names></name>
+<name name-style="western"><surname>Epstein</surname><given-names>PR</given-names></name>
+<etal/></person-group>             <year>1999</year>             <article-title>Emerging Marine Diseases–Climate Links and Anthropogenic Factors.</article-title>             <source>Science</source>             <volume>285</volume>             <fpage>1505</fpage>             <lpage>1510</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Sutherland1"><label>72</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Sutherland</surname><given-names>KP</given-names></name>
+<name name-style="western"><surname>Porter</surname><given-names>JW</given-names></name>
+<name name-style="western"><surname>Torres</surname><given-names>C</given-names></name>
+</person-group>             <year>2004</year>             <article-title>Disease and immunity in Caribbean and Indo-Pacfic zooxanthellate corals.</article-title>             <source>Mar Ecol Prog Ser</source>             <volume>266</volume>             <fpage>273</fpage>             <lpage>302</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Mydlarz4"><label>73</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Mydlarz</surname><given-names>LD</given-names></name>
+<name name-style="western"><surname>Jones</surname><given-names>LE</given-names></name>
+<name name-style="western"><surname>Harvell</surname><given-names>CD</given-names></name>
+</person-group>             <year>2006</year>             <article-title>Innate Immunity, Environmental Drivers, and Disease Ecology of Marine and Freshwater Invertebrates.</article-title>             <source>Annu Rev Ecol Evol Syst</source>             <volume>37</volume>             <fpage>251</fpage>             <lpage>288</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Mazel3"><label>74</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Mazel</surname><given-names>CH</given-names></name>
+</person-group>             <year>1995</year>             <article-title>Spectral measurements of fluorescence emission in Caribbean cnidarians.</article-title>             <source>Mar Ecol Prog Ser</source>             <volume>120</volume>             <fpage>185</fpage>             <lpage>191</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Hughes2"><label>75</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Hughes</surname><given-names>TP</given-names></name>
+<name name-style="western"><surname>Tanner</surname><given-names>JE</given-names></name>
+</person-group>             <year>2000</year>             <article-title>Recruitment failure, life histories, and long-term decline of Caribbean corals.</article-title>             <source>Ecology</source>             <volume>81</volume>             <fpage>2250</fpage>             <lpage>2263</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Aronson1"><label>76</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Aronson</surname><given-names>R</given-names></name>
+<name name-style="western"><surname>Bruckner</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Moore</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Precht</surname><given-names>B</given-names></name>
+<name name-style="western"><surname>Weil</surname><given-names>E</given-names></name>
+</person-group>             <year>2008</year>             <article-title>Montastraea annularis.</article-title>             <comment>In: IUCN 2008. 2008 IUCN Red List of Threatened Species. &lt;wwwiucnredlistorg&gt;</comment>          </element-citation></ref>
+<ref id="pone.0007298-Aronson2"><label>77</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Aronson</surname><given-names>R</given-names></name>
+<name name-style="western"><surname>Bruckner</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Moore</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Precht</surname><given-names>B</given-names></name>
+<name name-style="western"><surname>Weil</surname><given-names>E</given-names></name>
+</person-group>             <year>2008</year>             <article-title>Montastraea cavernosa.</article-title>             <comment>In: IUCN 2008. 2008 IUCN Red List of Threatened Species. wwwiucnredlistorg</comment>          </element-citation></ref>
+<ref id="pone.0007298-Aronson3"><label>78</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Aronson</surname><given-names>R</given-names></name>
+<name name-style="western"><surname>Bruckner</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Moore</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Precht</surname><given-names>B</given-names></name>
+<name name-style="western"><surname>Weil</surname><given-names>E</given-names></name>
+</person-group>             <year>2008</year>             <article-title>Montastraea faveolata.</article-title>             <comment>In: IUCN 2008. 2008 IUCN Red List of Threatened Species. wwwiucnredlistorg</comment>          </element-citation></ref>
+<ref id="pone.0007298-Gleason1"><label>79</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Gleason</surname><given-names>DF</given-names></name>
+</person-group>             <year>1993</year>             <article-title>Differential-Effects of Ultraviolet-Radiation on Green and Brown Morphs of the Caribbean Coral Porites-Astreoides.</article-title>             <source>Limnology and Oceanography</source>             <volume>38</volume>             <fpage>1452</fpage>             <lpage>1463</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Green1"><label>80</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Green</surname><given-names>DH</given-names></name>
+<name name-style="western"><surname>Edmunds</surname><given-names>PJ</given-names></name>
+<name name-style="western"><surname>Carpenter</surname><given-names>RC</given-names></name>
+</person-group>             <year>2008</year>             <article-title>Increasing relative abundance of Porites astreoides on Caribbean reefs mediated by an overall decline in coral cover.</article-title>             <source>Mar Ecol Prog Ser</source>             <volume>359</volume>             <fpage>1</fpage>             <lpage>10</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Croquer1"><label>81</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Croquer</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Weil</surname><given-names>E</given-names></name>
+</person-group>             <year>2009</year>             <article-title>Spatial variability in distribution and prevalence of Caribbean coral and octocoral diseases II: Genera-species level analyses.</article-title>             <source>Diseases of aquatic organisms</source>             <volume>83</volume>             <fpage>209</fpage>             <lpage>222</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Gruber1"><label>82</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Gruber</surname><given-names>DF</given-names></name>
+<name name-style="western"><surname>Kao</surname><given-names>HT</given-names></name>
+<name name-style="western"><surname>Janoschka</surname><given-names>S</given-names></name>
+<name name-style="western"><surname>Tsai</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Pieribone</surname><given-names>VA</given-names></name>
+</person-group>             <year>2008</year>             <article-title>Patterns of Fluorescent Protein Expression in Scleractinian Corals.</article-title>             <source>Biological Bulletin</source>             <volume>215</volume>          </element-citation></ref>
+<ref id="pone.0007298-Dove3"><label>83</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Dove</surname><given-names>SG</given-names></name>
+<name name-style="western"><surname>Lovell</surname><given-names>C</given-names></name>
+<name name-style="western"><surname>Fine</surname><given-names>M</given-names></name>
+<name name-style="western"><surname>Deckenback</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Hoegh-Guldberg</surname><given-names>O</given-names></name>
+<etal/></person-group>             <year>2008</year>             <article-title>Host pigments: potential facilitators of photosynthesis in coral symbioses.</article-title>             <source>Plant Cell and Environment</source>             <volume>31</volume>             <fpage>1523</fpage>             <lpage>1533</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Salih4"><label>84</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Salih</surname><given-names>A</given-names></name>
+<name name-style="western"><surname>Wiedenmann</surname><given-names>J</given-names></name>
+<name name-style="western"><surname>Matz</surname><given-names>MV</given-names></name>
+<name name-style="western"><surname>Larkum</surname><given-names>AW</given-names></name>
+<name name-style="western"><surname>Cox</surname><given-names>G</given-names></name>
+</person-group>             <year>2006</year>             <article-title>Photoinduced activation of GFP-like proteins in tissues of reef corals.</article-title>             <source>Progress in biomedical optics and imaging</source>             <volume>7</volume>             <fpage>60980</fpage>          </element-citation></ref>
+<ref id="pone.0007298-Ward3"><label>85</label><element-citation publication-type="other" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Ward</surname><given-names>WW</given-names></name>
+</person-group>             <year>1998</year>             <article-title>Biochemical and physical properties of green fluorescent protein.</article-title>             <person-group person-group-type="editor">
+<name name-style="western"><surname>Chalfie</surname><given-names>M</given-names></name>
+<name name-style="western"><surname>Kain</surname><given-names>S</given-names></name>
+</person-group>             <source>In Green Fluorescent Protein: Properties, Applications, and Protocols</source>             <publisher-loc>New York</publisher-loc>             <publisher-name>Wiley-Liss</publisher-name>             <fpage>45</fpage>             <lpage>75</lpage>          </element-citation></ref>
+<ref id="pone.0007298-Bendich1"><label>86</label><element-citation publication-type="journal" xlink:type="simple">             <person-group person-group-type="author">
+<name name-style="western"><surname>Bendich</surname><given-names>A</given-names></name>
+</person-group>             <year>1989</year>             <article-title>Carotenoids and the Immune Response.</article-title>             <source>Journal of Nutrition</source>             <volume>119</volume>             <fpage>112</fpage>             <lpage>115</lpage>          </element-citation></ref>
+</ref-list>
+
+</back>
+</article>
