@@ -4,11 +4,51 @@ import functools
 import json
 from glob import glob
 import pubmed_parser as pp
+import transformers
 import models_pipeline as mp
 
-models = {
-    "pegasus": mp.model_pegasus
-}
+models_list = ['pegasus', 'distilbartcnn66', 'distilbartcnn126', 'bartlargecnn', "mt5multilingual"]
+
+
+def call_and_load_model(model_name:str):
+    """Instead of loading every model available, this functions loads only the selected model
+    based on the model name given.
+
+    :param model_name: Model's name
+    :type model_name: str
+    :return: The TransformersSummarizationModel loaded
+    :rtype: TransformersSummarizationModel()
+    """
+
+    if model_name == "pegasus":
+        model = mp.TransformersSummarizationModel(name_model_gz="google/pegasus-xsum",
+                                                  tokenizer_instance=transformers.PegasusTokenizer,
+                                                  model_instance=transformers.PegasusForConditionalGeneration)
+
+    elif model_name == "distilbartcnn66":
+        model = mp.TransformersSummarizationModel(name_model_gz="sshleifer/distilbart-cnn-6-6",
+                                                  tokenizer_instance=transformers.BartTokenizer,
+                                                  model_instance=transformers.BartForConditionalGeneration)
+
+    elif model_name == "distilbartcnn126":
+        model = mp.TransformersSummarizationModel(name_model_gz="sshleifer/distilbart-cnn-12-6",
+                                                  tokenizer_instance=transformers.BartTokenizer,
+                                                  model_instance=transformers.BartForConditionalGeneration)
+
+    elif model_name == "bartlargecnn":
+        model = mp.TransformersSummarizationModel(name_model_gz="sshleifer/distilbart-cnn-12-6",
+                                                  tokenizer_instance=transformers.BartTokenizer,
+                                                  model_instance=transformers.BartForConditionalGeneration)
+
+    elif model_name == "mt5multilingual":
+        model = mp.TransformersSummarizationModel(name_model_gz="csebuetnlp/mT5_multilingual_XLSum",
+                                                  tokenizer_instance=transformers.AutoTokenizer,
+                                                  model_instance=transformers.AutoModelForSeq2SeqLM)
+    else:
+        model = '' # Not really useful because there is already a check on model's name but to be sure
+
+    return model
+
 
 
 def make_dataset(path_files:str) -> list:
@@ -86,8 +126,8 @@ if __name__ == "__main__":
     parser.add_argument("path_input", default="./xml", help="Path of xml file")
     parser.add_argument("path_output", default="./result.json",
                         help="Path of file output")
-    parser.add_argument("model", default="all",
-                        help=f"Use 'all' to use all models otherwise use these following names: { '; '.join(models.keys()) }")
+    parser.add_argument("model_name", default="all",
+                        help=f"Use 'all' to use all models otherwise use these following names: { '; '.join(models_list) }")
     args = parser.parse_args()
     xml_files = glob(args.path_input+"/*.xml")
 
@@ -99,22 +139,21 @@ if __name__ == "__main__":
     dataset_with_meta = make_dataset(xml_files)
     dataset = feature_engineering(dataset_with_meta)
 
-    if not args.model in list(models.keys()):
+    if not args.model_name in list(models_list):
         raise KeyError(
-            f"ERROR: Not models with this name, but we have:{models.keys()}"
+            f"ERROR: Not models with this name, but we have:{' '.join(models_list)}"
         )
 
-    if args.model == "all":
-        choose_models = models.keys() 
+    if args.model_name == "all":
+        choose_models = models_list
     else:
-        choose_models = args.model if type(args.model)==list else [args.model] 
+        choose_models = args.model_name if type(args.model_name)==list else [args.model_name]
     
     result = []
     for m_name in choose_models:
-        model  = models[m_name]
-        model  = model()
+        model = call_and_load_model(m_name)
         result = model.make_outputs(dataset)
-        result.append(add_information(result, dataset_with_meta, model_name = m_name))
+        result.append(add_information(result, dataset_with_meta, model_name=m_name))
 
     with open(args.path_output, "w") as f:
         json.dump(result, f)
