@@ -13,6 +13,7 @@ import random
 import os
 import re
 from tqdm.auto import tqdm
+import imgaug.augmenters as iaa
 
 class ImageComposer:
     '''
@@ -190,7 +191,7 @@ class ImageComposer:
         for _ in range(n_images):
             image_path, index_class = self._random_sample_image(subclass)
             composition.append(index_class)
-            images.append(Image.open(image_path))
+            images.append(self.augment_image(Image.open(image_path)))
             
         
         # Resize images
@@ -211,6 +212,32 @@ class ImageComposer:
             
             template.paste(image, centers[idx])
         return template, yolo_entries #, images, centers, sizes
+    
+    def augment_image(self,im):
+        I = np.asarray(im)
+
+        aug = iaa.SomeOf((1, 3), [
+            iaa.AdditiveGaussianNoise(scale=0.1*255),
+            iaa.Add(50, per_channel=True),
+            iaa.Sharpen(alpha=0.5),
+            iaa.CropAndPad(percent=(-0.2, 0.2), pad_mode="constant", pad_cval=(255)),
+            iaa.AddToHueAndSaturation((-60, 60)),
+            iaa.ElasticTransformation(alpha=90, sigma=9),
+            iaa.Cutout(),
+            iaa.GaussianBlur(sigma=2.0),
+            iaa.WithChannels(0, iaa.Add((10, 100))),
+            iaa.ChannelShuffle(0.35),
+            iaa.GammaContrast((0.5, 2.0)),
+            iaa.GammaContrast((0.5, 2.0), per_channel=True),
+            iaa.WithBrightnessChannels(iaa.Add((-50, 50))),
+            iaa.MultiplyHueAndSaturation(mul_hue=(0.5, 1.5)),
+            iaa.Jigsaw(nb_rows=(1, 4), nb_cols=(1, 4)),
+
+
+        ], random_order=True)
+        a = aug(image = I)
+        im = Image.fromarray(np.uint8(a))
+        return im
 
 
 def generate_augmented_dataset(n_images, path_input_folder, path_output_folder, base_square_resolution, subclass):
@@ -234,7 +261,14 @@ def generate_augmented_dataset(n_images, path_input_folder, path_output_folder, 
         with open(os.path.join(path_output_labels, f"{k}.txt"), "w", encoding="utf-8") as f:
             for elem in yolo_entries:
                 f.write(f'{" ".join(elem)}\n')
+
     
+
+                
+                
+                
+                
+            
 
 
 
