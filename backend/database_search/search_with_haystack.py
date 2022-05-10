@@ -37,5 +37,14 @@ def load_articles(list_files)->list[dict]:
 
     for file in list_files:
         article = json.load(open(file, "r"))
+        meta_dict = {}
+        list_metadata = ['doi', 'journal', 'year', 'title', 'authors', 'keywords', 'pmid']
+        for metadata in list_metadata:
+            if metadata != 'pmid':
+                meta_dict[metadata] = article[metadata]
+            else:
+                pmid = article[metadata].split('/')[-2]
+                meta_dict[metadata] = pmid
+
 
     return []
