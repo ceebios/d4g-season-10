@@ -10,7 +10,7 @@ import logging
 # TODO: Scraper le js de plos 
 
 class PlosSpider(Spider):
-    handle_httpstatus_list = [302]
+    
     name = 'plos'
     allowed_domains = ['journals.plos.org', "storage.googleapis.com", "api.plos.org"]
     ref_urls = {
@@ -20,7 +20,8 @@ class PlosSpider(Spider):
     custom_settings = {
         "ITEM_PIPELINES": {'scrapy.pipelines.images.FilesPipeline': 1},
         "FILES_STORE": 'data/plos',
-        "ROBOTSTXT_OBEY": False
+        "ROBOTSTXT_OBEY": False,
+        "handle_httpstatus_all": True
     }
 
 
