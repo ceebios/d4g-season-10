@@ -5,7 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+*.xml
 # Distribution / packaging
 .Python
 build/
@@ -130,6 +130,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /data
+data/
 .vscode/settings.json
 HiddenProject
 backend/database_scraper/articleScraperCeebios/data
