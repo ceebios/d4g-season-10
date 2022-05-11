@@ -18,7 +18,10 @@ class PlosSpider(Spider):
         "ARTICLE": """https://journals.plos.org/plosone/article?id={}""",
     }
     custom_settings = {
-        "ITEM_PIPELINES": {'scrapy.pipelines.images.FilesPipeline': 1},
+        "ITEM_PIPELINES": {
+            'scrapy.pipelines.images.FilesPipeline': 2,
+            "articleScraperCeebios.pipelines_script.testPipe.SpiderOpenCloseLogging":1
+        },
         "FILES_STORE": 'data/plos',
         "ROBOTSTXT_OBEY": False,
         "handle_httpstatus_all": True
@@ -93,4 +96,4 @@ class PlosSpider(Spider):
         article["publisher"] = response.css("publisher-name::text").get()
         article["type"] = response.css("subj-group *::text").get()
         article["content"] = response.text
-        yield article
+        # yield article
