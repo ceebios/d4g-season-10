@@ -1,9 +1,9 @@
-from cmath import log
+import requests
 from scrapy import Request
-from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import CrawlSpider, Spider
+from scrapy.spiders import Spider
 from ..items import ArticlescraperceebiosItem
 import logging
+import re
 
 # TODO: Arriver à récuprer le xml rediriger sur google, exemple: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0052337&type=manuscript
 # ===> https://www.pythonfixing.com/2022/01/fixed-capture-redirect-response.html
@@ -19,19 +19,22 @@ class PlosSpider(Spider):
     }
     custom_settings = {
         "ITEM_PIPELINES": {
-            'scrapy.pipelines.images.FilesPipeline': 2,
-            "articleScraperCeebios.pipelines_script.testPipe.SpiderOpenCloseLogging":1
+            # 'articleScraperCeebios.pipelines.ImageRedirectPipeline': 1,
+            # 'articleScraperCeebios.pipelines.FilePipeXML_PDF': 2,
+            "scrapy.pipelines.images.ImagesPipeline":2,
+            "scrapy.pipelines.files.FilesPipeline":1,
         },
-        "FILES_STORE": 'data/plos',
-        "ROBOTSTXT_OBEY": False,
-        "handle_httpstatus_all": True
+        "handle_httpstatus_list":[302],
+        "FILES_STORE": 'data/plos/files',
+        "IMAGES_STORE": 'data/plos/images',
+        "ROBOTSTXT_OBEY": False
     }
 
 
     def start_requests(self):
         tag        = getattr(self, 'search', "test")
         begin_at   = getattr(self, 'begin_at', 0)
-        nb_article = getattr(self, 'nb_article', 10)
+        nb_article = getattr(self, 'nb_article', 2)
         if tag == "test":
             logging.log(logging.WARNING, "Attention on est en test car par d'argument trouvé")
         url = PlosSpider.ref_urls["SEARCH"].format(tag, begin_at, begin_at + nb_article)
@@ -66,20 +69,32 @@ class PlosSpider(Spider):
         article["file_urls"] = [
             response.urljoin(
                 response.css("a#downloadPdf::attr(href)").get()
-            ),
-            response.urljoin(
-                response.css("a#downloadXml::attr(href)").get()
             )
         ]
+        xml_flow = requests.get(response.urljoin(
+                    response.css("a#downloadXml::attr(href)").get()
+                    )
+                )
+        article["content"] = xml_flow.text
         article["author"] = response.css("a.author-name::text").extract()
         article["date"] = response.css("li#artPubDate::text").get()
+
+        article["image_urls"] = [
+            response.urljoin(imgs)
+                for imgs in response.css("div.figure-inline-download > ul > li > a::attr(href)").getall()
+                if re.search("image",imgs) and re.search("large",imgs)
+            ]
         yield article
+        # logging.log(logging.INFO, "2 -  Try to open file ")
+        # print("#########################",response.urljoin(
+        #             response.css("a#downloadXml::attr(href)").get()
+        #         ))
         # response.url(
         #     url=response.urljoin(
         #             response.css("a#downloadXml::attr(href)").get()
         #         ),
-        #     callback=self.parse_xml,
-        #     meta=dict(item=article)
+        #     callback = self.parse_xml ,
+        #     meta = dict(item=article)
         # )
 
     def parse_xml(self, response):
