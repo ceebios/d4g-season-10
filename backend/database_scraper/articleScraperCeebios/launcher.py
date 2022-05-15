@@ -8,6 +8,13 @@ from articleScraperCeebios.spiders import (
 
 
 settings = get_project_settings()
+settings.update(
+    {
+        "FEEDS": {
+            "items.json": {"format": "json"},
+        },
+    }
+)
 process = CrawlerProcess(settings)
 process.crawl(plos.PlosSpider)
 # process.crawl(MySpider2)
