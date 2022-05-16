@@ -14,7 +14,7 @@ class Naturespider(CrawlSpider):
     start_urls = ['https://www.nature.com/search?q=biomimetics&article_type=research&order=relevance']
 
     custom_settings = {
-        "ITEM_PIPELINES": {'scrapy.pipelines.images.FilesPipeline': 1},
+        "ITEM_PIPELINES": {'scrapy.pipelines.files.FilesPipeline': 1},
         "FILES_STORE": 'data/nature', 
         "ROBOTSTXT_OBEY": False
     }

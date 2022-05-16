@@ -22,4 +22,6 @@ class ArticlescraperceebiosItem(scrapy.Item):
     ## Notre PDF ou XML
     file      = scrapy.Field()
     file_urls = scrapy.Field()
+    images    = scrapy.Field()
+    image_urls= scrapy.Field()
     content   = scrapy.Field()

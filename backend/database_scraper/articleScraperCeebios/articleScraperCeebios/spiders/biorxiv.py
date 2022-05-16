@@ -12,7 +12,7 @@ class BiorxivSpider(CrawlSpider):
     api = "https://api.biorxiv.org/details/biorxiv/"
 
     custom_settings = {
-        "ITEM_PIPELINES": {'scrapy.pipelines.images.FilesPipeline': 1},
+        "ITEM_PIPELINES": {'scrapy.pipelines.files.FilesPipeline': 1},
         "FILES_STORE": 'data/biorxiv',
         "ROBOTSTXT_OBEY": False
     }
