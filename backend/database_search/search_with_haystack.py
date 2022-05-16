@@ -1,50 +1,26 @@
-'''
-Prerequisite: https://opensearch.org/docs/latest/opensearch/install/docker/
-'''
-import hashlib
+from haystack.nodes import (
+    EmbeddingRetriever,
+    FARMReader,
+    ElasticsearchRetriever,
+)
 from haystack.document_stores import OpenSearchDocumentStore
-from haystack.schema import Document
-import numpy
-import json
 
-# Create connection to OpenSearch DB (in fact directly to an index called 'paragraph' where we'll store all paragraphs)
 paragraph_store = OpenSearchDocumentStore(
     host="127.0.0.1",
     index="paragraph",
     index_type="hnsw",
     embedding_dim=768,
     similarity="cosine",
-    return_embedding=True,
-)
+    return_embedding=True)
 
-
-from haystack.nodes import (
-    EmbeddingRetriever,
-    FARMReader,
-    ElasticsearchRetriever,
-)
-
-# We'll use this to create IDs for the paragrahps in the DB
-hashit = lambda x: hashlib.md5(x.encode()).hexdigest()
-
-# Method to load articles
-def load_articles(list_files)->list[dict]:
+# Function to create/update vector embeddings for the paragraphs
+def update_paragraph_embeddings(model:str='sentence-transformers/msmarco-distilbert-base-tas-b'):
     '''
-    Assuming each article is a dict containing two fields: meta and text
-    'meta' is a dict containing title, abstract, authors, etc.
-    'text':list[str] is the list of paragraphs
+    This takes time!
+    Better have a handy GPU ...
     '''
-
-    for file in list_files:
-        article = json.load(open(file, "r"))
-        meta_dict = {}
-        list_metadata = ['doi', 'journal', 'year', 'title', 'authors', 'keywords', 'pmid']
-        for metadata in list_metadata:
-            if metadata != 'pmid':
-                meta_dict[metadata] = article[metadata]
-            else:
-                pmid = article[metadata].split('/')[-2]
-                meta_dict[metadata] = pmid
-
-
-    return []
+    retriever = EmbeddingRetriever(
+        document_store=paragraph_store,
+        embedding_model=model,
+    )
+    paragraph_store.update_embeddings(retriever, update_existing_embeddings=False)
