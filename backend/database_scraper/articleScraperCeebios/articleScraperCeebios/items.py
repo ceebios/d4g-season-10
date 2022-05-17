@@ -7,7 +7,6 @@ import scrapy
 
 
 class ArticlescraperceebiosItem(scrapy.Item):
-    # define the fields for your item here like:
     name      = scrapy.Field()
     title     = scrapy.Field()
     url       = scrapy.Field()
@@ -18,10 +17,9 @@ class ArticlescraperceebiosItem(scrapy.Item):
     publisher = scrapy.Field()
     type      = scrapy.Field()
     abstract  = scrapy.Field()
-    
-    ## Notre PDF ou XML
     file      = scrapy.Field()
     file_urls = scrapy.Field()
+    xml       = scrapy.Field()
+    xml_urls  = scrapy.Field()
     images    = scrapy.Field()
     image_urls= scrapy.Field()
-    content   = scrapy.Field()

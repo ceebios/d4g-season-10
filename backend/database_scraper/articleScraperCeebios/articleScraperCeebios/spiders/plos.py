@@ -5,10 +5,6 @@ from ..items import ArticlescraperceebiosItem
 import logging
 import re
 
-# TODO: Arriver à récuprer le xml rediriger sur google, exemple: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0052337&type=manuscript
-# ===> https://www.pythonfixing.com/2022/01/fixed-capture-redirect-response.html
-# TODO: Scraper le js de plos 
-
 class PlosSpider(Spider):
     
     name = 'plos'
@@ -19,14 +15,17 @@ class PlosSpider(Spider):
     }
     custom_settings = {
         "ITEM_PIPELINES": {
-            # 'articleScraperCeebios.pipelines.ImageRedirectPipeline': 1,
-            # 'articleScraperCeebios.pipelines.FilePipeXML_PDF': 2,
-            "scrapy.pipelines.images.ImagesPipeline":2,
-            "scrapy.pipelines.files.FilesPipeline":1,
+            'articleScraperCeebios.pipelines.XMLPipeline': 1,
+            'articleScraperCeebios.pipelines.PDFPipeline': 2,
+            'articleScraperCeebios.pipelines.figurePipline': 3
         },
         "handle_httpstatus_list":[302],
         "FILES_STORE": 'data/plos/files',
         "IMAGES_STORE": 'data/plos/images',
+
+        # "IMAGES_STORE":'gs://d4g-ceebios-bdd/images/',
+        # "FILES_STORE":'gs://d4g-ceebios-bdd/raw_data/',
+        
         "ROBOTSTXT_OBEY": False
     }
 
@@ -34,7 +33,8 @@ class PlosSpider(Spider):
     def start_requests(self):
         tag        = getattr(self, 'search', "test")
         begin_at   = getattr(self, 'begin_at', 0)
-        nb_article = getattr(self, 'nb_article', 2)
+        nb_article = getattr(self, 'nb_article', 1)
+        print(tag, begin_at, nb_article)
         if tag == "test":
             logging.log(logging.WARNING, "Attention on est en test car par d'argument trouvé")
         url = PlosSpider.ref_urls["SEARCH"].format(tag, begin_at, begin_at + nb_article)
@@ -71,11 +71,12 @@ class PlosSpider(Spider):
                 response.css("a#downloadPdf::attr(href)").get()
             )
         ]
-        xml_flow = requests.get(response.urljoin(
-                    response.css("a#downloadXml::attr(href)").get()
-                    )
-                )
-        article["content"] = xml_flow.text
+        article["xml_urls"] = [
+            response.urljoin(
+                response.css("a#downloadXml::attr(href)").get()
+            )
+        ]
+
         article["author"] = response.css("a.author-name::text").extract()
         article["date"] = response.css("li#artPubDate::text").get()
 

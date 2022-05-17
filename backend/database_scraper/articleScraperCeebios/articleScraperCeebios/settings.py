@@ -42,6 +42,11 @@ DEFAULT_REQUEST_HEADERS = {
 #   'Accept-Language': 'en',
 }
 
+
+# IMAGES_STORE = 'gs://raw_data/'
+GCS_PROJECT_ID = 'd4g-ceebios'
+MEDIA_ALLOW_REDIRECTS = True
+
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {

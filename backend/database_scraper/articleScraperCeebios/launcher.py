@@ -1,4 +1,5 @@
 from scrapy.crawler import CrawlerProcess
+from pathlib import Path
 from scrapy.utils.project import get_project_settings
 from articleScraperCeebios.spiders import (
     nature,
@@ -6,17 +7,25 @@ from articleScraperCeebios.spiders import (
     plos
 )
 
+p = Path(__file__)
 
 settings = get_project_settings()
 settings.update(
     {
         "FEEDS": {
-            "items.json": {"format": "json"},
+            # "gs://d4g-ceebios-bdd/raw_data/items.json": {"format": "json"},
+            str(p.parent.joinpath("items.json")) : {"format": "json"},
         },
     }
 )
-process = CrawlerProcess(settings)
-process.crawl(plos.PlosSpider)
-# process.crawl(MySpider2)
 
-process.start() # the script will block here until all crawling jobs are finished
+args = {
+    "search":"bio", 
+    "begin_at":1, 
+    "nb_article": 1
+}
+
+process = CrawlerProcess(settings)
+process.crawl(plos.PlosSpider, **args)
+
+process.start() 
