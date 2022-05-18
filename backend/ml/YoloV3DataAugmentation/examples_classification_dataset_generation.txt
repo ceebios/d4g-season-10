@@ -1,0 +1,13 @@
+
+# Generate validation or test dataset
+python dataAugmenter.py \
+-n 1000 \ # Useless because of --no_augmentation flag
+--path_input_folder /home/evan/Dev/D4G/Dataset/Dataset_validation/ \
+--path_output_folder /media/evan/scratch/dataset_cnn_d4g_class/validation/ \
+--no_augmentation \
+
+# Generate 10000 augmented images for training dataset
+python dataAugmenter.py \
+-n 10000 \
+--path_input_folder /home/evan/Dev/D4G/Dataset/Dataset_validation/ \
+--path_output_folder /media/evan/scratch/dataset_cnn_d4g_class/validation/ \

@@ -6,7 +6,6 @@
 #
 
 import argparse
-from ast import arg
 from PIL import Image
 import numpy as np
 import random
@@ -14,6 +13,7 @@ import os
 import re
 from tqdm.auto import tqdm
 import imgaug.augmenters as iaa
+import json
 
 class ImageComposer:
     '''
@@ -35,6 +35,7 @@ class ImageComposer:
         self.all_images_paths = None
         self.all_images_subclass_paths = None
         self.subclass = subclass
+        self.path_output_folder = path_output_folder
         #self.output_folder = output_folder
         
     def _get_random_template_shape(self, templates = None):
@@ -112,7 +113,7 @@ class ImageComposer:
         Returns:
             tuple[str,int]: tuple containing chosen image and class/subclass index
         """
-        if subclass is None:
+        if subclass is None or subclass != self.subclass:
             subclass = self.subclass
         
         if self.all_images_paths is None:
@@ -124,6 +125,11 @@ class ImageComposer:
                 for sub in self.all_images_paths.values():
                     for subclass_name, paths in sub.items():
                         self.all_images_subclass_paths[subclass_name] = paths
+                subclasses = sorted(list(self.all_images_subclass_paths.keys()))
+                with open(os.path.join(self.path_output_folder, "classes.names"), "w") as f:
+                    for elem in subclasses:
+                        f.write(f'{elem}\n')
+
             subclasses = sorted(list(self.all_images_subclass_paths.keys()))
             index_class = np.random.randint(len(subclasses))
             paths = self.all_images_subclass_paths[subclasses[index_class]]
@@ -191,7 +197,7 @@ class ImageComposer:
         for _ in range(n_images):
             image_path, index_class = self._random_sample_image(subclass)
             composition.append(index_class)
-            images.append(self.augment_image(Image.open(image_path)))
+            images.append(self.augment_image(Image.open(image_path).convert("RGB")))
             
         
         # Resize images
@@ -240,7 +246,7 @@ class ImageComposer:
         return im
 
 
-def generate_augmented_dataset(n_images, path_input_folder, path_output_folder, base_square_resolution, subclass):
+def generate_augmented_dataset(n_images, path_input_folder, path_output_folder, base_square_resolution, subclass, composed_image, no_augmentation):
     """Main function to generate dataset
 
     Args:
@@ -254,13 +260,46 @@ def generate_augmented_dataset(n_images, path_input_folder, path_output_folder, 
     os.mkdir(path_output_images)
     path_output_labels = os.path.join(path_output_folder, "labels")
     os.mkdir(path_output_labels)
-    composer = ImageComposer(path_input_folder, path_output_folder=path_output_folder)
-    for k in tqdm(range(n_images)):
-        template, yolo_entries = composer.create_random_composed_image(base_square_resolution=400, margin=np.random.randint(3,20))
-        template.save(os.path.join(path_output_images, f"{k}.jpg"))
-        with open(os.path.join(path_output_labels, f"{k}.txt"), "w", encoding="utf-8") as f:
-            for elem in yolo_entries:
-                f.write(f'{" ".join(elem)}\n')
+
+    composer = ImageComposer(path_input_folder, path_output_folder=path_output_folder, subclass=subclass)
+
+    if composed_image:
+        for k in tqdm(range(n_images)):
+            template, yolo_entries = composer.create_random_composed_image(base_square_resolution=base_square_resolution, margin=np.random.randint(3,20))
+            template.save(os.path.join(path_output_images, f"{k}.jpg"))
+            with open(os.path.join(path_output_labels, f"{k}.txt"), "w", encoding="utf-8") as f:
+                for elem in yolo_entries:
+                    f.write(f'{" ".join(elem)}\n')
+    else:
+        if no_augmentation:
+            _ = composer._random_sample_image(subclass)
+
+            if subclass:
+                paths = composer.all_images_subclass_paths
+                class_names_index = sorted([key for key in paths.keys()])
+                for k in range(len(class_names_index)):
+                    for i, img_path in enumerate(paths[class_names_index[k]]):
+                        im = Image.open(img_path).convert("RGB")
+                        im.save(os.path.join(path_output_images, f"{i}_{k}.jpg"))
+            else:
+                paths = composer.all_images_paths
+                class_names_index = sorted(list(paths.keys()))
+                for k in range(len(class_names_index)):
+                    for name, subclass_paths in paths[class_names_index[k]].items():
+                        for i, img_path in enumerate(subclass_paths):
+                            im = Image.open(img_path).convert("RGB")
+                            im.save(os.path.join(path_output_images, f"{name}{i}_{k}.jpg"))
+                #index_class = np.random.randint(len(class_names_index))
+                # paths = [p for sublist in composer.all_images_paths[class_names_index[index_class]].values() for p in sublist]
+
+
+        else:
+            for k in tqdm(range(n_images)):
+                img_path, class_index  = composer._random_sample_image(subclass)
+                im = composer.augment_image(Image.open(img_path).convert("RGB"))
+                im.save(os.path.join(path_output_images, f"{k}_{class_index}.jpg"))
+            
+
 
     
 
@@ -279,9 +318,11 @@ if __name__ == "__main__":
     parser.add_argument("--n_images", "-n", type=int, help="number of images to generate")
     parser.add_argument("--path_input_folder", "-d", type=str, help="path to the root folder containing the images")
     parser.add_argument("--path_output_folder", "-o", type=str, help="path to output folder where to put YoloV3 dataset")
-    parser.add_argument("--base_square_resolution", type=int , default=100)
-    parser.add_argument("--subclass", action="store_true")
+    parser.add_argument("--base_square_resolution", type=int , default=400, help="largest size in pixel of an image, for redimensioning purposes")
+    parser.add_argument("--subclass", action="store_true", help="use subclass as label")
+    parser.add_argument("--composed_image", action="store_true", help="create composed image for YoloV3 (abandoned)")
+    parser.add_argument("--no_augmentation", action="store_true", help="for test and validation, no augmentation will be made, simple copy in adequate format")
 
     args = parser.parse_args()
 
-    generate_augmented_dataset(args.n_images, args.path_input_folder, args.path_output_folder, args.base_square_resolution, args.subclass)
+    generate_augmented_dataset(args.n_images, args.path_input_folder, args.path_output_folder, args.base_square_resolution, args.subclass, args.composed_image, args.no_augmentation)
