@@ -1,4 +1,3 @@
-import requests
 from scrapy import Request
 from scrapy.spiders import Spider
 from ..items import ArticlescraperceebiosItem
@@ -13,21 +12,6 @@ class PlosSpider(Spider):
         "SEARCH": """https://api.plos.org/search?q=everything:{}&fl=id,title&start={}&rows={}""",
         "ARTICLE": """https://journals.plos.org/plosone/article?id={}""",
     }
-    custom_settings = {
-        "ITEM_PIPELINES": {
-            'articleScraperCeebios.pipelines.XMLPipeline': 1,
-            'articleScraperCeebios.pipelines.PDFPipeline': 2,
-            'articleScraperCeebios.pipelines.figurePipline': 3
-        },
-        "handle_httpstatus_list":[302],
-        "FILES_STORE": 'data/plos/files',
-        "IMAGES_STORE": 'data/plos/images',
-
-        # "IMAGES_STORE":'gs://d4g-ceebios-bdd/images/',
-        # "FILES_STORE":'gs://d4g-ceebios-bdd/raw_data/',
-        
-        "ROBOTSTXT_OBEY": False
-    }
 
 
     def start_requests(self):
@@ -35,15 +19,31 @@ class PlosSpider(Spider):
         begin_at   = getattr(self, 'begin_at', 0)
         nb_article = getattr(self, 'nb_article', 1)
         print(tag, begin_at, nb_article)
+        if nb_article < 0:
+            url = PlosSpider.ref_urls["SEARCH"].format(tag, 0, 1)
+            meta = {
+                "tag":tag,
+                "begin_at":begin_at 
+            }
+            return Request(url, self.parse_url, meta=meta)
         if tag == "test":
             logging.log(logging.WARNING, "Attention on est en test car par d'argument trouvé")
         url = PlosSpider.ref_urls["SEARCH"].format(tag, begin_at, begin_at + nb_article)
+        yield Request(url, self.parse_url) 
+
+    def getAllUrl(self, response):
+        js = response.json()
+        numArticles = js["response"]["numFound"]
+        tag = response.meta['tag']
+        begin_at = response.meta['begin_at']
+        url = PlosSpider.ref_urls["SEARCH"].format(tag, begin_at, numArticles)
         yield Request(url, self.parse_url) 
 
     def parse_url(self, response):
         jsonlist = response.json()
         jsonlist = jsonlist["response"]["docs"]
         for id_article in jsonlist:
+            #TODO: Bloom filter ici ! 
             url_page = PlosSpider.ref_urls["ARTICLE"].format(id_article["id"])
             yield Request(
                 url      = url_page,

@@ -42,10 +42,23 @@ DEFAULT_REQUEST_HEADERS = {
 #   'Accept-Language': 'en',
 }
 
+handle_httpstatus_list = [302]
+ROBOTSTXT_OBEY = False
+ITEM_PIPELINES= {
+    # 'articleScraperCeebios.pipelines.SelectItem': 98,
+    'articleScraperCeebios.pipelines.DoiPipeline': 99,
+    # 'articleScraperCeebios.pipelines.XMLPipeline': 100,
+    # 'articleScraperCeebios.pipelines.PDFPipeline': 101,
+    # 'articleScraperCeebios.pipelines.figurePipline': 102,
+}
+BLOOM_XML="./filterXML.pkl"
+BLOOM_PDF="./filterPDF.pkl"
+BLOOM_IMG="./filterIMG.pkl"
+BLOOB_XML="D:/Nouveau dossier/xml_script_search/seleted_files" 
 
 # IMAGES_STORE = 'gs://raw_data/'
 GCS_PROJECT_ID = 'd4g-ceebios'
-MEDIA_ALLOW_REDIRECTS = True
+
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
