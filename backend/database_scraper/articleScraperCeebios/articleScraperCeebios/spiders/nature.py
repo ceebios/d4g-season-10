@@ -1,7 +1,8 @@
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 from ..items import ArticlescraperceebiosItem
-import json
+from scrapy import Request
+import logging
 
 # TODO: Faire une araignée avec une query de keyword: https://www.datasciencecentral.com/scrape-data-from-google-search-using-python-and-scrapy-step-by/
 # => ,Chercher plutot dans les bests practices
@@ -11,14 +12,11 @@ import json
 class Naturespider(CrawlSpider):
     name = 'nature'
     allowed_domains = ['www.nature.com']
-    start_urls = ['https://www.nature.com/search?q=biomimetics&article_type=research&order=relevance']
-
-    custom_settings = {
-        "ITEM_PIPELINES": {'scrapy.pipelines.files.FilesPipeline': 1},
-        "FILES_STORE": 'data/nature', 
-        "ROBOTSTXT_OBEY": False
-    }
-
+    start_urls = []
+    ref_urls = {
+        "SEARCH":"""https://www.nature.com/search?q={}&article_type=research&order=relevance""",
+        "SEARCH_FILTER": """"https://www.nature.com/search?q={}&date_range=last_30_days&order=relevance"""
+        }
     rules = (
         Rule(
             LinkExtractor(
@@ -27,6 +25,25 @@ class Naturespider(CrawlSpider):
             callback='parse'
         ),
     )
+    # 
+    def start_requests(self):
+        tag = getattr(self, 'search', "species")
+        if tag is not None:
+            url = self.ref_urls["SEARCH"].format(tag)
+        yield Request(url, self.parse_url)
+
+    def parse_url(self, response):
+        for link in self.link_extractor.extract_links(response):
+            yield Request(link.url, callback=self.parse)
+            break
+        
+        nb_page = getattr(self, 'num_pages', 2)
+        NEXT_PAGE = response.xpath("//li[@data-page='next']/a/@href").get()
+        if int(NEXT_PAGE.split("=")[-1]) <= int(nb_page):
+            yield Request(
+                url=response.urljoin(NEXT_PAGE), 
+                callback=self.parse_url
+            )
 
     def parse(self, response):
         """Parse la réponse html de l'article
@@ -36,7 +53,6 @@ class Naturespider(CrawlSpider):
         :yield: _description_
         :rtype: _type_
         """
-
         # Exemple : scrapy shell https://www.nature.com/articles/srep26518
 
         article = ArticlescraperceebiosItem() # OK
@@ -52,7 +68,9 @@ class Naturespider(CrawlSpider):
         article["date"]      = response.xpath('//*[@class="c-article-identifiers__item"]/a/time/text()').get()
 
         article["journal"]   = response.xpath('//*[@class="c-article-info-details"]/a/i/text()').get()
-        article["publisher"] = ""
-        article["type"]      = ""
+        article["publisher"] = "nature"
+        article["image_urls"] = [
+            response.urljoin(urlImg) for urlImg in response.css("a.c-article-section__figure-link > picture > source > img::attr(src)").getall()
+        ]
 
         yield article

@@ -8,14 +8,8 @@ import logging
 
 class BiorxivSpider(CrawlSpider):
     name = 'biorxiv'
-    allowed_domains = ['www.biorxiv.org', "api.biorxiv.org"]
+    allowed_domains = ['www.biorxiv.org', "api.biorxiv.org", "sass.highwire.org"]
     api = "https://api.biorxiv.org/details/biorxiv/"
-
-    custom_settings = {
-        "ITEM_PIPELINES": {'scrapy.pipelines.files.FilesPipeline': 1},
-        "FILES_STORE": 'data/biorxiv',
-        "ROBOTSTXT_OBEY": False
-    }
 
     link_extractor = LinkExtractor(
         restrict_css="a.highwire-cite-linked-title"
@@ -30,16 +24,17 @@ class BiorxivSpider(CrawlSpider):
 
     def parse_url(self, response):
         for link in self.link_extractor.extract_links(response):
-            yield Request(link.url, callback=self.parse)
+            yield Request(link.url+".full", callback=self.parse)
+            break
         
-        nb_page = getattr(self, 'num_pages', 2)
-        NEXT_PAGE = response.css(
-            "ul.pager-items-last > li > a::attr(href)").get()
-        if int(NEXT_PAGE.split("=")[-1]) <= int(nb_page):
-            yield Request(
-                url=response.urljoin(NEXT_PAGE), 
-                callback=self.parse_url
-            )
+        # nb_page = getattr(self, 'num_pages', 2)
+        # NEXT_PAGE = response.css(
+        #     "ul.pager-items-last > li > a::attr(href)").get()
+        # if int(NEXT_PAGE.split("=")[-1]) <= int(nb_page):
+        #     yield Request(
+        #         url=response.urljoin(NEXT_PAGE), 
+        #         callback=self.parse_url
+        #     )
 
     def parse(self, response):
         """Parse la réponse html de l'article
@@ -49,7 +44,7 @@ class BiorxivSpider(CrawlSpider):
         :yield: _description_
         :rtype: _type_
         """
-        logging.log(logging.INFO, "1 - Open Html page")
+        logging.log(logging.INFO, "1 - Open Html page:"+response.url)
         article = ArticlescraperceebiosItem()
         article["name"] = response.css("h1#page-title::text").get()
         article["title"] = response.css("h1#page-title::text").get()
@@ -59,7 +54,9 @@ class BiorxivSpider(CrawlSpider):
         article["abstract"] = response.css("p#p-2::text").extract()
         article["file_urls"] = [response.urljoin(
             response.css("a.article-dl-pdf-link::attr(href)").get())]
-
+        article["image_urls"] = [
+            response.urljoin(urlImg) for urlImg in response.css("li.download-fig > a::attr(href)").getall()
+        ]
         yield response.follow(
             url=BiorxivSpider.api +
             article["doi"].replace(" https://doi.org/", "")[:-1],
@@ -81,8 +78,11 @@ class BiorxivSpider(CrawlSpider):
         article["author"] = data["authors"].split(";")
         article["date"] = data["date"]
         article["abstract"] = data["abstract"]
-        # BUG: l'url ne marche pas au téléchargement mais à la request après oui... bizarre..
-        article["file_urls"] += [response.urljoin(data["jatsxml"])] 
+
+        
+        article["xml_urls"] = [
+            response.urljoin(data["jatsxml"])
+        ]
 
         yield response.follow(
             url=data["jatsxml"],
@@ -103,5 +103,4 @@ class BiorxivSpider(CrawlSpider):
         article["journal"] = response.css("journal-id::text").get()
         article["publisher"] = response.css("publisher-name::text").get()
         article["type"] = response.css("subj-group *::text").get()
-        article["content"] = response.text
         yield article

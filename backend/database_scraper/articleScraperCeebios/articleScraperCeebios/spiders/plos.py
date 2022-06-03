@@ -18,7 +18,6 @@ class PlosSpider(Spider):
         tag        = getattr(self, 'search', "test")
         begin_at   = getattr(self, 'begin_at', 0)
         nb_article = getattr(self, 'nb_article', 1)
-        print(tag, begin_at, nb_article)
         if nb_article < 0:
             url = PlosSpider.ref_urls["SEARCH"].format(tag, 0, 1)
             meta = {

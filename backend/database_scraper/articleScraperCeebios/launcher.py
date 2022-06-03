@@ -5,7 +5,9 @@ from datetime import date
 from scrapy.utils.project import get_project_settings
 
 from articleScraperCeebios.spiders import (
-    plos
+    plos,
+    biorxiv,
+    nature
 )
 
 p = Path(__file__)
@@ -17,7 +19,7 @@ settings.update(
     }
 )
 
-if os.environ["USERDOMAIN"] == 'JEAN-FRANCISSE' and False:
+if os.environ["USERDOMAIN"] == 'JEAN-FRANCISSE':
     settings.update(
         {
             "FILES_STORE": 'data/plos/files',
@@ -27,24 +29,26 @@ if os.environ["USERDOMAIN"] == 'JEAN-FRANCISSE' and False:
             },
         }
     )
-else:
-    settings.update(
-        {
-            "FEEDS": {
-                f'gs://d4g-ceebios-bdd/raw_data/items25-00-2022.json': {"format": "json"},
-            }, 
-            "FILES_STORE": 'gs://d4g-ceebios-bdd/raw_data/',
-            "IMAGES_STORE": 'gs://d4g-ceebios-bdd/images/'
-        }
-    )
+# else:
+#     settings.update(
+#         {
+#             "FEEDS": {
+#                 f'gs://d4g-ceebios-bdd/raw_data/items25-00-2022.json': {"format": "json"},
+#             }, 
+#             "FILES_STORE": 'gs://d4g-ceebios-bdd/raw_data/',
+#             "IMAGES_STORE": 'gs://d4g-ceebios-bdd/images/'
+#         }
+#     )
 
 args = {
     "search":"species", 
     "begin_at":1, 
-    "nb_article":10000
+    "nb_article":1
 }
 
 process = CrawlerProcess(settings)
-process.crawl(plos.PlosSpider, **args)
+# process.crawl(plos.PlosSpider, **args)
+# process.crawl(biorxiv.BiorxivSpider, **args)
+process.crawl(nature.Naturespider, **args)
 
 process.start() 

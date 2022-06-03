@@ -11,7 +11,7 @@ import hashlib, os
 from glob import glob
 from scrapy.pipelines.files import FilesPipeline
 from scrapy.pipelines.images import ImagesPipeline
-
+import re
 from itemadapter import ItemAdapter
 from scrapy.exceptions import DropItem
 import scrapy
@@ -48,7 +48,7 @@ class DoiPipeline:
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
         if adapter.get('doi'):
-            adapter['doi'] = adapter['doi'].replace("https://doi.org/", "").replace("/", "-")
+            adapter['doi'] = adapter['doi'].replace("https://doi.org/", "").replace("/", "-").replace(" ", "")
             return item
         else:
             raise DropItem(f"Missing doi in {item}")
@@ -95,5 +95,13 @@ class figurePipline(ImagesPipeline):
 
 
     def file_path(self, request, response=None, info=None, *, item=None):
-        media_guid = item["doi"] + "." + request.url.split(".")[-1]
+        if self.spiderinfo.spider.name == "biorxiv":
+            media_guid = item["doi"] + "." + request.url.split("/")[-1].split("?")[0].split(".")[0]
+        
+        elif self.spiderinfo.spider.name == "plos":
+            media_guid = item["doi"] + "." + request.url.split(".")[-1]
+        
+        elif self.spiderinfo.spider.name == "nature":
+            p = re.compile('_(Fig.*)_')
+            media_guid = item["doi"] + "." + p.findall(request.url)[0]
         return f'{media_guid}.jpg'
