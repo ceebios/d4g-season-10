@@ -41,7 +41,7 @@ DEFAULT_REQUEST_HEADERS = {
   'Accept': '*/*', # text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 #   'Accept-Language': 'en',
 }
-
+DUPEFILTER_CLASS= 'articleScraperCeebios.filter.BLOOMDupeFilter'
 handle_httpstatus_list = [302]
 ROBOTSTXT_OBEY = False
 ITEM_PIPELINES= {

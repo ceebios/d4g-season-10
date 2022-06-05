@@ -1,14 +1,17 @@
-from scrapy.crawler import CrawlerProcess
+from scrapy.crawler import CrawlerProcess,  CrawlerRunner
 from pathlib import Path
 import os
 from datetime import date
 from scrapy.utils.project import get_project_settings
+from twisted.internet import reactor
 
 from articleScraperCeebios.spiders import (
     plos,
     biorxiv,
     nature
 )
+
+# https://www.pythonfixing.com/2022/04/fixed-scrapy-reactoralreadyinstallederr.html
 
 p = Path(__file__)
 
@@ -22,33 +25,38 @@ settings.update(
 if os.environ["USERDOMAIN"] == 'JEAN-FRANCISSE':
     settings.update(
         {
-            "FILES_STORE": 'data/plos/files',
-            "IMAGES_STORE": 'data/plos/images',
+            "FILES_STORE": 'data/nature/files',
+            "IMAGES_STORE": 'data/nature/images',
             "FEEDS": {
                 "file:" + str(p.parent.joinpath(f"items{date.today().strftime('%d-%M-%Y')}.json")) : {"format": "jsonlines"},
             },
         }
     )
-# else:
-#     settings.update(
-#         {
-#             "FEEDS": {
-#                 f'gs://d4g-ceebios-bdd/raw_data/items25-00-2022.json': {"format": "json"},
-#             }, 
-#             "FILES_STORE": 'gs://d4g-ceebios-bdd/raw_data/',
-#             "IMAGES_STORE": 'gs://d4g-ceebios-bdd/images/'
-#         }
-#     )
+else:
+    settings.update(
+        {
+            "FEEDS": {
+                f'gs://d4g-ceebios-bdd/raw_data/items{date.today().strftime("%d-%M-%Y")}.json': {"format": "jsonlines"},
+            }, 
+            "FILES_STORE": 'gs://d4g-ceebios-bdd/raw_data/',
+            "IMAGES_STORE": 'gs://d4g-ceebios-bdd/images/'
+        }
+    )
 
 args = {
     "search":"species", 
     "begin_at":1, 
     "nb_article":1
 }
+import sys
 
-process = CrawlerProcess(settings)
-# process.crawl(plos.PlosSpider, **args)
-# process.crawl(biorxiv.BiorxivSpider, **args)
-process.crawl(nature.Naturespider, **args)
+for spider in [plos.PlosSpider]:#, biorxiv.BiorxivSpider, nature.Naturespider]:
+    process = CrawlerProcess(settings)
+    process.crawl(spider, **args)
+    process.start() 
 
-process.start() 
+
+# deferred = process.join()
+# deferred.addBoth(lambda _: reactor.stop())
+
+# reactor.run() 

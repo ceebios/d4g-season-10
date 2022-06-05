@@ -14,12 +14,16 @@ class BiorxivSpider(CrawlSpider):
     link_extractor = LinkExtractor(
         restrict_css="a.highwire-cite-linked-title"
     )
+    ref_urls = {
+        "SEARCH":"""https://www.biorxiv.org/search/{}""",
+        "SEARCH_FILTER": ""
+    }
+
 
     def start_requests(self):
-        url = 'https://www.biorxiv.org/'
         tag = getattr(self, 'search', None)
         if tag is not None:
-            url = url + 'search/' + tag
+            url = self.ref_urls["search"].format(tag)
         yield Request(url, self.parse_url)
 
     def parse_url(self, response):

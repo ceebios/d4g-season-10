@@ -10,6 +10,8 @@ class PlosSpider(Spider):
     allowed_domains = ['journals.plos.org', "storage.googleapis.com", "api.plos.org"]
     ref_urls = {
         "SEARCH": """https://api.plos.org/search?q=everything:{}&fl=id,title&start={}&rows={}""",
+        ## Ne marche pas mais pourrait faire de la selection par date: https://api.plos.org/solr/search-fields/
+        "SEARCH_FILTER": """"https://api.plos.org/search?q=everything&publication_date:[2009-12-07T00:00:00Z TO 2013-02-20T23:59:59Z]&fl=id,title&start={}&rows={}""",
         "ARTICLE": """https://journals.plos.org/plosone/article?id={}""",
     }
 
