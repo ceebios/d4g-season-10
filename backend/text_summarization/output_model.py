@@ -6,6 +6,7 @@ from glob import glob
 import pubmed_parser as pp
 import transformers
 import models_pipeline as mp
+import copy
 
 models_list = ['pegasus', 'distilbartcnn66', 'distilbartcnn126', 'bartlargecnn', "mt5multilingual"]
 
@@ -36,7 +37,7 @@ def call_and_load_model(model_name:str):
                                                   model_instance=transformers.BartForConditionalGeneration)
 
     elif model_name == "bartlargecnn":
-        model = mp.TransformersSummarizationModel(name_model_gz="sshleifer/distilbart-cnn-12-6",
+        model = mp.TransformersSummarizationModel(name_model_gz="facebook/bart-large-cnn",
                                                   tokenizer_instance=transformers.BartTokenizer,
                                                   model_instance=transformers.BartForConditionalGeneration)
 
@@ -107,7 +108,7 @@ def add_information(result:list, dataset:list, model_name:str) -> list:
     :type result: list[str]
     :param dataset: Dataset with metadata
     :type dataset: list[dict]
-    :param model_name: Name of model choosed
+    :param model_name: Name of model chosen
     :type model_name: str
     :return: Dataset with metadata and output model
     :rtype: list[dict]
@@ -115,7 +116,7 @@ def add_information(result:list, dataset:list, model_name:str) -> list:
 
     for res_fig, fig in zip(result, dataset):
         fig["resultat"] = res_fig
-        fig["model_choosed"] = model_name
+        fig["model_chosen"] = model_name
 
     return dataset
 
@@ -123,10 +124,10 @@ def add_information(result:list, dataset:list, model_name:str) -> list:
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("path_input", default="./xml", help="Path of xml file")
-    parser.add_argument("path_output", default="./result.json",
+    parser.add_argument("--path_input", default="./xml", help="Path of xml file")
+    parser.add_argument("--path_output", default="./result.json",
                         help="Path of file output")
-    parser.add_argument("model_name", default="all",
+    parser.add_argument("--model_name", default="all",
                         help=f"Use 'all' to use all models otherwise use these following names: { '; '.join(models_list) }")
     args = parser.parse_args()
     xml_files = glob(args.path_input+"/*.xml")
@@ -139,7 +140,7 @@ if __name__ == "__main__":
     dataset_with_meta = make_dataset(xml_files)
     dataset = feature_engineering(dataset_with_meta)
 
-    if not args.model_name in list(models_list):
+    if not args.model_name in list(models_list) and args.model_name != 'all':
         raise KeyError(
             f"ERROR: Not models with this name, but we have:{' '.join(models_list)}"
         )
@@ -149,13 +150,18 @@ if __name__ == "__main__":
     else:
         choose_models = args.model_name if type(args.model_name)==list else [args.model_name]
     
-    result = []
+    result_to_write = []
     for m_name in choose_models:
+        print('Model used : {}'.format(m_name))
         model = call_and_load_model(m_name)
         result = model.make_outputs(dataset)
-        result.append(add_information(result, dataset_with_meta, model_name=m_name))
+        result_to_write.append(
+            copy.deepcopy(      # Need to deepcopy the json here otherwise it will replace the other one each time
+                add_information(result, dataset_with_meta, model_name=m_name)
+            )
+        )
 
     with open(args.path_output, "w") as f:
-        json.dump(result, f)
+        json.dump(result_to_write, f)
     
     print("END: File stored !")
