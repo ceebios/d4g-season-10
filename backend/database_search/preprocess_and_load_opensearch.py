@@ -64,7 +64,7 @@ def articles_to_paragraphs(articles:list[dict])->list[Document]:
     ]
     return paragraphs
 
-def write_paragraphs(paragraphs:list[Document]=):
+def write_paragraphs(paragraphs:list[Document]):
     # ASSUMING WE HAVE ALREADY A JSON OF THE FOLLOWING STRUCTURE:
     # {"meta" : {"title": "XXX", "pmid": "11111"},
     #           "fig1" : "concatenated text fig 1", "fig2" : "concatenated text fig 2"}
