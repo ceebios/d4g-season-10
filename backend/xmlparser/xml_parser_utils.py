@@ -166,6 +166,15 @@ class Plos_Parser:
     def __init__(self, xml):
         self.xml = xml
 
+    def get_doi(self):
+        # Transform the XML file into a parsable object
+        tree = ET.parse(self.xml)
+        root = tree.getroot()
+
+        # Get the DOI
+        doi = root.find(".//*[@pub-id-type='doi']").text
+        return doi
+
     def plos_paragraphs(self):
         # Transform the XML file into a parsable object
         tree = ET.parse(self.xml)
@@ -183,7 +192,6 @@ class Plos_Parser:
 
         ## Select all the paragraphs in the body with xpath (sec)
         e = root.findall(".//sec/p")
-        print(len(e))
 
         ## Extract the paragraphs and figures
         for i in e:
