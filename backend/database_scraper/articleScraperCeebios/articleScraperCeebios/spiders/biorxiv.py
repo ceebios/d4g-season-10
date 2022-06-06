@@ -21,24 +21,24 @@ class BiorxivSpider(CrawlSpider):
 
 
     def start_requests(self):
-        tag = getattr(self, 'search', None)
+        tag = getattr(self, 'search', "species")
         if tag is not None:
-            url = self.ref_urls["search"].format(tag)
+            url = self.ref_urls["SEARCH"].format(tag)
         yield Request(url, self.parse_url)
 
     def parse_url(self, response):
-        for link in self.link_extractor.extract_links(response):
+        for link in self.link_extractor.extract_links(response)[:100]:
             yield Request(link.url+".full", callback=self.parse)
-            break
         
-        # nb_page = getattr(self, 'num_pages', 2)
-        # NEXT_PAGE = response.css(
-        #     "ul.pager-items-last > li > a::attr(href)").get()
-        # if int(NEXT_PAGE.split("=")[-1]) <= int(nb_page):
-        #     yield Request(
-        #         url=response.urljoin(NEXT_PAGE), 
-        #         callback=self.parse_url
-        #     )
+        nb_page = getattr(self, 'nb_article', 2)
+        nb_page = nb_page // 10
+        NEXT_PAGE = response.css(
+            "ul.pager-items-last > li > a::attr(href)").get()
+        if int(NEXT_PAGE.split("=")[-1]) <= int(nb_page):
+            yield Request(
+                url=response.urljoin(NEXT_PAGE), 
+                callback=self.parse_url
+            )
 
     def parse(self, response):
         """Parse la réponse html de l'article

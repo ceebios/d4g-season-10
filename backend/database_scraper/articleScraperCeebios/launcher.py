@@ -3,7 +3,6 @@ from pathlib import Path
 import os
 from datetime import date
 from scrapy.utils.project import get_project_settings
-from twisted.internet import reactor
 
 from articleScraperCeebios.spiders import (
     plos,
@@ -46,11 +45,11 @@ else:
 args = {
     "search":"species", 
     "begin_at":1, 
-    "nb_article":1
+    "nb_article":20
 }
 import sys
 
-for spider in [plos.PlosSpider]:#, biorxiv.BiorxivSpider, nature.Naturespider]:
+for spider in [biorxiv.BiorxivSpider]:#, plos.PlosSpider, nature.Naturespider]:
     process = CrawlerProcess(settings)
     process.crawl(spider, **args)
     process.start() 
