@@ -5,12 +5,16 @@ import numpy
 import json
 import time
 from copy import deepcopy
+import torch
 
 # Haystack
 from haystack.document_stores import OpenSearchDocumentStore
 from haystack.nodes import EmbeddingRetriever, FARMReader, TransformersReader, ElasticsearchRetriever
 from haystack.nodes import PreProcessor, BM25Retriever, EmbeddingRetriever, TfidfRetriever
 from haystack.pipelines import ExtractiveQAPipeline
+
+# Summarization
+import transformers
 
 ##################################################
 ################# OPENSEARCH #####################
@@ -175,11 +179,7 @@ def associate_docs_to_figure(docs, figure_store):
     """
     results = []
     for doc in docs:
-        results_dict = {}
-        results_dict['doi'] = doc.meta['doi']
-        results_dict['score'] = doc.score
-        results_dict['paragraph_text'] = doc.content
-        results_dict['figure_ref'] = {}
+        results_dict = {'doi': doc.meta['doi'], 'score': doc.score, 'paragraph_text': doc.content, 'figure_ref': {}}
 
         # Loop over possible multiple figure references
         for fig in doc.meta['figure_ref']:
@@ -187,18 +187,14 @@ def associate_docs_to_figure(docs, figure_store):
             fig_id = doc.meta['doi'] + '_' + fig
 
             # Search the figure database to retrieve the figure
-            figures_in_db = figure_store.get_all_documents(filters={
-                "graphic_ref": {"$eq": fig_id}
-            })
+            figures_in_db = figure_store.get_all_documents(filters={"graphic_ref": {"$eq": fig_id}})
 
-            # Check if figure is found in figures database
+            # Check if figure is found in figures database, otherwise next iteration
             if figures_in_db == []:
                 continue
             else:
-                results_dict['figure_ref'][fig] = {}
-                results_dict['figure_ref'][fig]['caption'] = figures_in_db[0].content
-                # TODO : implement it when we have the url of figures
-                results_dict['figure_ref'][fig]['url'] = ''  # a[0].meta['url']
+                # TODO : implement figures' url when we have the url of figures
+                results_dict['figure_ref'][fig] = {'caption': figures_in_db[0].content, 'url': ''}
 
         results.append(deepcopy(results_dict))
 
@@ -273,6 +269,28 @@ def question_answering(query, pipe, params={"Retriever": {"top_k": 10}, "Reader"
     """Perform a question answering through a given pipeline (reader and retriever) on the query given.
     """
     return pipe.run(query=query, params=params)
+
+
+##################################################
+############### SUMMARIZATION ####################
+##################################################
+
+summarization_model_name = "facebook/bart-large-cnn"
+device = "cuda" if torch.cuda.is_available() else "cpu"
+tokenizer = transformers.BartTokenizer.from_pretrained(summarization_model_name)
+model = transformers.BartForConditionalGeneration.from_pretrained(summarization_model_name).to(device)
+
+
+def summarize(docs):
+    """Function that takes docs_processed with content, meta, and associate figure and return the same docs
+    with an new entry that is the paragraph summarized by the model (bartlargecnn here)
+    """
+    src_text = [doc['paragraph_text'] for doc in docs]
+    batch = tokenizer(src_text, truncation=True, padding="longest", return_tensors="pt").to(device)
+    translated = model.generate(**batch)
+    tgt_text = tokenizer.batch_decode(translated, skip_special_tokens=True)
+
+    return [dict(item, **{'summarized_paragraph': tgt_text[index]}) for index, item in enumerate(docs)]
 
 
 if __name__=='__main__':

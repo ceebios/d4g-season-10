@@ -4,6 +4,7 @@ from pydantic import BaseModel
 #import mongo
 import opensearch
 import ml
+import time
 
 app = FastAPI()
 
@@ -34,17 +35,13 @@ async def read_root():
 #
 #     return [{'figure':k,'caption':v['caption'],'paragraph':v['paragraph']} for k,v in figures.items()]
 
-# TODO : change it in order to work with "new summarization" pipeline
-#  or compute it before and then implement it in each paragraph (in meta)
+# TODO : not sure if we summarize in an other function or we do it directly in the search
 @app.post("/summarize")
 async def summarize(text:Text):
     return ml.summarize(text.text)
 
 @app.get("/search/{text}")
 async def simple_search(text):
-    # TODO : dans un premier temps on considère la summarization que sur le
-    #  paragraphe qui est ressorti par haystack
-
     # BM25 retriever
     docs = opensearch.keywords_search(opensearch.retriever_bm25, query=text, top_k=10, filters={})
 
@@ -57,8 +54,13 @@ async def simple_search(text):
     # Now perform some post-processing to get the images from the return docs
     docs_with_figures = opensearch.associate_docs_to_figure(docs, opensearch.figure_store)
 
+    # TODO : in the future we will have to search the database to get the paragraphs links to the figures in order
+    #  to do the summarization on all of theses paragraphs
+    # Perform summarization on each paragraph returned
+    docs_processed_w_summarization = opensearch.summarize(docs_with_figures)
+
     # TODO : maybe change the structure here, depends on what is needed for the frontend
-    return docs_with_figures
+    return docs_processed_w_summarization
 
 # TODO : finish QA
 @app.get("qa/{text}")
