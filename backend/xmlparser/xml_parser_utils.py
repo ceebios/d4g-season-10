@@ -159,7 +159,7 @@ def _file_to_dic(f):
     return dic
 
 
-class Plos_Parser:
+class Biorxiv_Plos_Parser:
     # This class can parse the following PLOS journals:
     # PLOS One, Genetics, Biology, Computational Biology, Clinical Trials, Neglected Tropical Diseases, Pathogens
 
@@ -176,7 +176,7 @@ class Plos_Parser:
         doi = root.find(".//*[@pub-id-type='doi']").text
         return doi
 
-    def plos_paragraphs(self):
+    def get_paragraphs(self):
         # Transform the XML file into a parsable object
         tree = ET.parse(self.xml)
         root = tree.getroot()
@@ -218,7 +218,7 @@ class Plos_Parser:
 
         return paragraphs
 
-    def plos_article(self):
+    def get_article(self):
         # Transform the XML file into a parsable object
         tree = ET.parse(self.xml)
         root = tree.getroot()
@@ -261,7 +261,7 @@ class Plos_Parser:
 
         return article
 
-    def plos_figures(self):
+    def get_figures(self):
 
         # Transform the XML file into a parsable object
         tree = ET.parse(self.xml)
