@@ -10,7 +10,7 @@
 
 # production
 /build
-
+.figure_captions.json
 # misc
 .DS_Store
 .env.local

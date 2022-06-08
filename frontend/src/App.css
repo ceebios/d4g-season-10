@@ -25,13 +25,17 @@
 }
 
 .sousTitle {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  margin-bottom: 3rem;
-  padding-left: 1.5rem;
-  position: relative;
-  left: 24%;
+ 
+}
+
+.LogoAndTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .figcaption {
@@ -47,12 +51,19 @@
   
 }
 
+.fa-search{
+  margin-top: 0.6rem;
+  
+}
 
 .gawdiLogo {
-  width: 40%;
-  height: 40%;
-  position: relative;
-  left: 30%;
+  width: 25%;
+  margin-bottom: 1rem;
+}
+
+.input-group>.form-control{
+  height: 3rem;
+  font-size: 1.5rem;
 }
 
 .form {
@@ -84,41 +95,50 @@
   transition: background-color 250ms;
 }
 
-.button:hover {
-  background-color: #B4D772;
+.fa-search {
+  cursor: pointer;
 }
 
-.card-list {
-  column-count: 3;
+.modalImage{
+  width: 500px;
+  margin-bottom: 1rem;
 }
 
-.card {
-  margin: 2rem;
+.modalText{
+  font-size: 1.5rem;
+}
+
+.form {
+  margin-bottom: 4rem;
+}
+
+.navbar-custom {
+height: 7.2rem;
+}
+
+
+
+.about {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column-reverse;
   justify-content: space-around;
-}
+  position: relative;
+  right: 75%;
+  font-size: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
 
-.card-image {
-  margin-top: 2rem;
-  border-radius: 10px;
-  transition: transform .2s;
 }
-
-.card-image:hover {
-  transform: scale(2.5);
-}
-
-.navBar {
-  display: flex;
-  justify-content: space-between;
-  margin: 1.5rem;
-}
-
 .dataLogo {
-  width: 13rem;
-  height: 7rem;
-  margin-top: 1rem;
+  width: 9rem;
+  height: 5rem;
+  margin-left: 5rem;
+}
+
+.ceebiosLogo {
+ width: 11rem;
+ margin-left: 3rem;
 }
 
 @media (min-width: 768px) {
@@ -130,11 +150,17 @@
   .input {
     margin-bottom: 0;
   }
+  
 }
 
 @media only screen and (max-width: 600px) {
     .card-list {
         column-count: 1;
+    }
+    .gawdiLogo {
+      width: 30%;
+      height: 10%;
+      margin-top: 10rem;
     }
 }
 

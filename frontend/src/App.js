@@ -10,8 +10,10 @@ export default function App() {
       <NavBar/>
       <div className="container">        
         {/* <h1 className="title">Gawdi</h1> */}
+        <div className="LogoAndTitle">
         <img className="gawdiLogo" src={GawdiLogo} alt="logo"></img>
         <h2 className="sousTitle">Biomimetic Image Search Engine</h2>
+        </div>
         <SearchPhotos />
       </div>
     </div>
