@@ -21,7 +21,7 @@ settings.update(
     }
 )
 
-if os.environ["USERDOMAIN"] == 'JEAN-FRANCISSE':
+if "USERDOMAIN" in os.environ and os.environ["USERDOMAIN"] == 'JEAN-FRANCISSE':
     settings.update(
         {
             "FILES_STORE": 'data/nature/files',
