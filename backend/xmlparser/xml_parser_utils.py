@@ -163,8 +163,9 @@ class Plos_Parser:
     # This class can parse the following PLOS journals:
     # PLOS One, Genetics, Biology, Computational Biology, Clinical Trials, Neglected Tropical Diseases, Pathogens
 
-    def __init__(self, xml):
+    def __init__(self, xml, journal_type):
         self.xml = xml
+        self.journal_type = journal_type
 
     def get_doi(self):
         # Transform the XML file into a parsable object
@@ -182,7 +183,6 @@ class Plos_Parser:
 
         # Get the DOI
         doi = root.find(".//*[@pub-id-type='doi']").text
-        print(doi)
 
         # Get the paragraphs and their associated figures
         ## Lists of paragraphs and figures in the body + list of hashes
@@ -272,12 +272,17 @@ class Plos_Parser:
         for r in root.findall(".//fig/object-id"):
             figure_url = "".join(r.itertext())
             figure_urls.append(figure_url)
+            if self.journal_type == 'biorxiv':
+                figure_urls = [f for f in figure_urls if 'biorxiv' in f]
 
         # Get the figures IDs
         ids = []
         for l in root.findall(".//fig/label"):
             label = "".join(l.itertext())
-            ids.append(label[-1])
+            if self.journal_type == 'plos':
+                ids.append(label[-1])
+            else:
+                ids.append(label[-2])
 
         # Create a string of figure title + its caption. It sometimes can happen that the title or the caption
         # are not present. It will be filled with "Not available" text.
@@ -288,6 +293,7 @@ class Plos_Parser:
                 caption = "".join(c.itertext()).replace('\t', '').replace('\n', '')
             else:
                 caption = 'Caption not found'
+
             if fig.findall('caption/title') != []:
                 t = fig.findall('caption/title')[0]
                 title = "".join(t.itertext()).replace('\t', '').replace('\n', '')
