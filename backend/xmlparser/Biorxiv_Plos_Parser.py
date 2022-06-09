@@ -44,21 +44,24 @@ class Biorxiv_Plos_Parser:
             hashes.append(hash(paragraph + doi))
 
         # Build the paragraph dictionary
-        paragraphs = []
-
+        paragraphs = {}
+        paragraphs['doi'] = self.get_doi()
+        paragraphs_text_dict = {}
+        i = 1
         for doc_id, paragraph, figure_list, id_ in zip(hashes, p, figures, hashes):
-            dic = {}
-            dic['id'] = id_
-            dic['content'] = paragraph.replace('\t', '').replace('\n', '')
-
-            meta_dic = {}
-            meta_dic['document_id'] = doc_id
-            meta_dic['figures_ids'] = figure_list
-            meta_dic['type'] = 'paragraph'
-
-            dic['meta'] = meta_dic
-            paragraphs.append(dic)
-
+            if figure_list != []:
+                temp_dic = {}
+                temp_dic['content'] = paragraph.replace('\t', '').replace('\n', '')
+                meta_dic = {}
+                meta_dic['document_id'] = doc_id
+                meta_dic['figures_ids'] = figure_list
+                meta_dic['type'] = 'paragraph'
+                temp_dic['meta'] = meta_dic
+                paragraphs_text_dict[i] = temp_dic
+                i += 1
+            else:
+                continue
+        paragraphs['paragraphs'] = paragraphs_text_dict
         return paragraphs
 
     def get_article(self):
@@ -155,6 +158,7 @@ class Biorxiv_Plos_Parser:
             meta_dic = {}
             meta_dic['url'] = url
             meta_dic['type'] = 'figure'
+            meta_dic['fig_id'] = self.get_doi() + f'_{id_}'
 
             dic['meta'] = meta_dic
             figures.append(dic)
