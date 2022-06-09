@@ -1,10 +1,10 @@
 import xml.etree.ElementTree as ET
 from xml_parser_utils import *
 
-
 class Biorxiv_Plos_Parser:
     # This class can parse the following PLOS journals:
     # PLOS One, Genetics, Biology, Computational Biology, Clinical Trials, Neglected Tropical Diseases, Pathogens
+    # And it also parses bioRxiv articles
 
     def __init__(self, xml, journal_type):
         self.xml = xml
