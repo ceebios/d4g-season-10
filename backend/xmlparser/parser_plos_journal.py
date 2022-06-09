@@ -1,5 +1,5 @@
 from pprint import pprint
-from xml_parser_utils import arborescence, Plos_Parser
+from Biorxiv_Plos_Parser import Biorxiv_Plos_Parser
 import datetime
 import logging
 import configparser
@@ -47,7 +47,7 @@ def main():
 
     for file in path_all:
         counter += 1
-        PLOS = Plos_Parser(file)
+        PLOS = Biorxiv_Plos_Parser(file, journal)
         doi = PLOS.get_doi()
         doi = doi.replace('/', '-')
         figs = PLOS.plos_figures()
