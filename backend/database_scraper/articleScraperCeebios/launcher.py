@@ -22,15 +22,15 @@ settings.update(
 )
 
 # if "USERDOMAIN" in os.environ and os.environ["USERDOMAIN"] == 'JEAN-FRANCISSE':
-#     settings.update(
-#         {
-#             "FILES_STORE": 'data/nature/files',
-#             "IMAGES_STORE": 'data/nature/images',
-#             "FEEDS": {
-#                 "file:" + str(p.parent.joinpath(f"items{date.today().strftime('%d-%M-%Y')}.json")) : {"format": "jsonlines"},
-#             },
-#         }
-#     )
+# settings.update(
+#     {
+#         "FILES_STORE": 'data/nature/files',
+#         "IMAGES_STORE": 'data/nature/images',
+#         "FEEDS": {
+#             "file:" + str(p.parent.joinpath(f"items{date.today().strftime('%d-%M-%Y')}.json")) : {"format": "jsonlines"},
+#         },
+#     }
+# )
 # else:
 settings.update(
     {
