@@ -49,7 +49,7 @@ args = {
 }
 import sys
 
-for spider in [biorxiv.BiorxivSpider]:#, plos.PlosSpider, nature.Naturespider]:
+for spider in [plos.PlosSpider]:#,biorxiv.BiorxivSpider plos.PlosSpider, nature.Naturespider]:
     process = CrawlerProcess(settings)
     process.crawl(spider, **args)
     process.start() 
