@@ -59,8 +59,12 @@ def figure_ref_detection(text):
     for index, element in enumerate(text_splitted):
         if ('fig' in element.lower()) and (
                 8 >= len(element) >= 3):  # All figure references "should" validate this condition ==> To verify
-            element_to_add = text_splitted[index + 1]  # Get next element as it is the figure reference
-            figure_ref.append(element_to_add)
+            try:
+                element_to_add = text_splitted[index + 1]  # Get next element as it is the figure reference
+                figure_ref.append(element_to_add)
+            except IndexError:
+                continue
+
             try:
                 text_splitted[index + 2]  # Case 0 : when the figure reference is at the end of paragraph
             except IndexError:
