@@ -21,35 +21,36 @@ settings.update(
     }
 )
 
-if os.environ["USERDOMAIN"] == 'JEAN-FRANCISSE':
-    settings.update(
-        {
-            "FILES_STORE": 'data/nature/files',
-            "IMAGES_STORE": 'data/nature/images',
-            "FEEDS": {
-                "file:" + str(p.parent.joinpath(f"items{date.today().strftime('%d-%M-%Y')}.json")) : {"format": "jsonlines"},
-            },
-        }
-    )
-else:
-    settings.update(
-        {
-            "FEEDS": {
-                f'gs://d4g-ceebios-bdd/raw_data/items{date.today().strftime("%d-%M-%Y")}.json': {"format": "jsonlines"},
-            }, 
-            "FILES_STORE": 'gs://d4g-ceebios-bdd/raw_data/',
-            "IMAGES_STORE": 'gs://d4g-ceebios-bdd/images/'
-        }
-    )
+# if "USERDOMAIN" in os.environ and os.environ["USERDOMAIN"] == 'JEAN-FRANCISSE':
+# settings.update(
+#     {
+#         "FILES_STORE": 'data/nature/files',
+#         "IMAGES_STORE": 'data/nature/images',
+#         "FEEDS": {
+#             "file:" + str(p.parent.joinpath(f"items{date.today().strftime('%d-%M-%Y')}.json")) : {"format": "jsonlines"},
+#         },
+#     }
+# )
+# else:
+settings.update(
+    {
+        "FEEDS": {
+            "file:" + str(p.parent.joinpath(f"items{date.today().strftime('%d-%M-%Y')}.json")) : {"format": "jsonlines"},
+            # f'gs://d4g-ceebios-bdd/raw_data/items{date.today().strftime("%d-%M-%Y")}.json': {"format": "jsonlines"},
+        }, 
+        "FILES_STORE": 'gs://d4g-ceebios-bdd/raw_data/',
+        "IMAGES_STORE": 'gs://d4g-ceebios-bdd/images/'
+    }
+)
 
 args = {
     "search":"species", 
     "begin_at":1, 
-    "nb_article":20
+    "nb_article":10000
 }
 import sys
 
-for spider in [biorxiv.BiorxivSpider]:#, plos.PlosSpider, nature.Naturespider]:
+for spider in [plos.PlosSpider]:#,biorxiv.BiorxivSpider plos.PlosSpider, nature.Naturespider]:
     process = CrawlerProcess(settings)
     process.crawl(spider, **args)
     process.start() 
