@@ -3,9 +3,11 @@ import './App.css';
 import SearchPhotos from "./components/searchPhotos"
 import NavBar from "./components/navBar";
 import GawdiLogo from "./logos/gawdi.png"
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
+    <>
     <div className="App">
       <NavBar/>
       <div className="container">        
@@ -17,6 +19,9 @@ export default function App() {
         <SearchPhotos />
       </div>
     </div>
+    <Footer/>
+    </>
+    
   );
 }
 

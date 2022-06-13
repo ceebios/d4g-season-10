@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Modal from 'react-bootstrap/Modal'
+import Filters from "./Filters";
 
 
 const data = require("./figure_captions.json")
@@ -12,27 +13,39 @@ export default function SearchPhotos() {
   const [modalShow, setModalShow] = useState(false);
   const [pic, setPic] = useState("");
   const [text, setText] = useState("");
-
-
+  const [checks, setChecks] = useState({
+    DrawingSimu:true,
+    Map:true,
+    Molecules: true,
+    PhotoMacro: true,
+    PhotoMicro: true,
+    Plots: true,
+    Table: true 
+  }
+);
+console.log(checks)
   const searchPhotos = async (e) => {
     e.preventDefault();
-    console.log(data)
+   
     axios.get(`http://35.197.87.106:8000/search/` + encodeURIComponent(query)) //34.135.15.52
+    // axios.post(`http://35.197.87.106:8000/search/`, { keywords: query, options: checks}) 
       .then(res => {
         const figs = res.data.map(f => f.figure.replace('/', '-').replace('_fig', '.pdf_figure_'))
         const urls = figs.map(f => '/figures/' + f)
         setPics(urls.map((f, i) => {
-          console.log(f + '.png')
-          return { url: f + '.png', alt: data[figs[i] + '.png'], id: f + i, paragraph: res.data[i].paragraph }
+         
+          return { url: f + '.png', alt: data[figs[i] + '.png'], id: f + i, paragraph: res.data[i].paragraph, summary:"blahodfhvzjfhvkjzdhfvkjhzdfvjk"  }
         }
         ))
       })
   };
 
+  console.log(pics)
+
   const getSummary = async (e, i) => {
     e.preventDefault();
-    console.log(pics[i].paragraph)
-    axios.post("http://34.105.13.154:8000/summarize", { text: pics[i].paragraph }).then(res => setSummary({ index: i, text: res.data[0] }))
+   
+    axios.post("http://35.197.87.106:8000/summarize", { text: pics[i].paragraph }).then(res => setSummary({ index: i, text: res.data[0] }))
   }
 
   const handleName = (i, t) => {
@@ -54,6 +67,8 @@ export default function SearchPhotos() {
           <i class="fas fa-search fa-2x " onClick={searchPhotos}></i>
         </span>
       </form>
+
+      <Filters checks={checks} setChecks={setChecks}/>
 
       <div class="row mt-4" >
         {pics.map((pic, i) =>

@@ -116,7 +116,19 @@
 height: 7.2rem;
 }
 
+.checkboxGroup {
+  display: flex;
+}
 
+.checkbox {
+  margin: 1rem;
+ 
+}
+
+.labelCheck {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
 
 .about {
   display: flex;
