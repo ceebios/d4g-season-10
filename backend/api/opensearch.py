@@ -362,10 +362,10 @@ retriever_update = EmbeddingRetriever(document_store=paragraph_store,
                                       embedding_model=model)
 
 # BM25 retriever
-retriever_bm25 = BM25Retriever(paragraph_store)
+#retriever_bm25 = BM25Retriever(paragraph_store)
 
 # TFIDF retriever
-retriever_tfidf = TfidfRetriever(paragraph_store)
+#retriever_tfidf = TfidfRetriever(paragraph_store)
 
 # Embedding retriever
 model = 'pritamdeka/S-PubMedBert-MS-MARCO-SCIFACT'  # In case we don't want the same as for update
@@ -374,13 +374,13 @@ retriever_embedding = EmbeddingRetriever(document_store=paragraph_store,
                                          model_format="sentence_transformers")
 
 # Load the reader and retriever model
-reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=True)
-retriever = EmbeddingRetriever(document_store=paragraph_store,
-                               embedding_model="sentence-transformers/msmarco-distilbert-base-tas-b",
-                               model_format="sentence_transformers")
+# reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=True)
+# retriever = EmbeddingRetriever(document_store=paragraph_store,
+#                                embedding_model="sentence-transformers/msmarco-distilbert-base-tas-b",
+#                                model_format="sentence_transformers")
 
 # Build the pipeline
-pipe_qa = ExtractiveQAPipeline(reader, retriever)
+# pipe_qa = ExtractiveQAPipeline(reader, retriever)
 
 
 def preprocess_data(text_db_to_preprocess):
