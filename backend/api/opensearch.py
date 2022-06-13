@@ -1,20 +1,24 @@
 import hashlib
-from haystack.document_stores import OpenSearchDocumentStore
-from haystack.schema import Document
-import numpy
+import numpy as np
+import glob
+import os
 import json
-import time
-from copy import deepcopy
-import torch
+import re
+import pandas as pd
+import math
 
 # Haystack
+from haystack.schema import Document
 from haystack.document_stores import OpenSearchDocumentStore
 from haystack.nodes import EmbeddingRetriever, FARMReader, TransformersReader, ElasticsearchRetriever
 from haystack.nodes import PreProcessor, BM25Retriever, EmbeddingRetriever, TfidfRetriever
 from haystack.pipelines import ExtractiveQAPipeline
+import time
+from copy import deepcopy
 
-# Summarization
+# DL
 import transformers
+import torch
 
 ##################################################
 ################# OPENSEARCH #####################
@@ -27,7 +31,7 @@ paragraph_store = OpenSearchDocumentStore(
     index_type="hnsw",
     embedding_dim=768, # TODO : maybe this is going to change
     similarity="cosine", # TODO : same
-    return_embedding=True)
+    return_embedding=False)
 
 # Create figures database
 figure_store = OpenSearchDocumentStore(
@@ -36,7 +40,7 @@ figure_store = OpenSearchDocumentStore(
     index_type="hnsw",
     embedding_dim=768, # TODO : maybe this is going to change
     similarity="cosine", # TODO : same
-    return_embedding=True)
+    return_embedding=False)
 
 # We'll use this to create IDs for the paragrahps in the DB
 hashit = lambda x: hashlib.md5(x.encode()).hexdigest()
@@ -173,32 +177,178 @@ def populate_db_figures(location:str, index:str): # location of data
     return print('Database has been populated with figures')
 
 
+def split(a, n):
+    k, m = divmod(len(a), n)
+    return (a[i*k+min(i, m):(i+1)*k+min(i+1, m)] for i in range(n))
+
+
+def populate_db_figures_from_parquet(location: str,
+                                     index: str):
+
+    df_db = pd.read_parquet(location, engine='pyarrow')
+    df_db_cleaned = df_db.drop(columns=['type', 'content_len', 'content_char_len', 'local_uri', 'img_preprocessed',
+                                        'image_embbeddings', 'image_embeddings'])
+
+    # Convert df to dict
+    dict_db_cleaned = df_db_cleaned.to_dict(orient='records')
+
+    error_counter = 0
+    dict_to_list = []
+    for key_1, value_1 in enumerate(dict_db_cleaned):
+        try:
+            # Initialize key
+            element_to_add = {}
+
+            # Add  content
+            element_to_add['content'] = value_1['content']
+
+            # Add metadata informations
+            element_to_add['meta'] = {'doi': value_1['doi'], 'fig_id': value_1['fig_id'],
+                                      'url': value_1['url'], 'full_uri': value_1['full_uri'],
+                                      'image_label': value_1['image_label'],
+                                      'image_sub_labels': value_1['image_sub_labels']}
+
+            # Check if paragraph contains either figure reference or table reference
+            if element_to_add['meta']['fig_id'] != []:
+                dict_to_list.append(deepcopy(element_to_add))
+        except KeyError as e:
+            error_counter += 1
+            continue
+
+    print('Number of figures unprocessed = {:.1%} ({} elements)'.format(error_counter / len(dict_db_cleaned),
+                                                                        error_counter))
+
+    # Insert the prepared articles into the database
+    if len(dict_to_list) >= 10000:  # Can't insert more than 10k articles at once
+        n = math.ceil(len(dict_to_list) / 10000)
+        splitted = split(dict_to_list, n)
+        for splitted_list in splitted:
+            try:
+                write_paragraphs(splitted_list, index)
+            except Exception as e:
+                print('An error has occured during the insertion in the database :\n', e)
+
+    return print('Database has been populated with figures')
+
+
+def populate_db_paragraphs_from_parquet(location: str,
+                                        index: str):
+
+    error_counter = 0
+    df_db = pd.read_parquet('paragraph_with_txt_embeddings.parquet',
+                            engine='pyarrow')
+    df_db_cleaned = df_db.drop(columns=['type', 'content_len', 'content_char_len'])
+
+    # TODO : Add empty summary for now but we will have to delete this line !
+    df_db_cleaned['paragraph_summary'] = df_db_cleaned.shape[0] * ['']
+
+    # Convert figures_ids from np.array to list
+    df_db_cleaned['figures_ids'] = df_db_cleaned['figures_ids'].apply(lambda x: list(x))
+
+    # Convert df to dict
+    dict_db_cleaned = df_db_cleaned.to_dict(orient='records')
+
+    dict_to_list = []
+
+    for key_1, value_1 in enumerate(dict_db_cleaned):
+        try:
+            # Initialize key
+            element_to_add = {}
+
+            # Add  content
+            element_to_add['content'] = value_1['content']
+
+            # Add embedding
+            element_to_add['embedding'] = np.asarray(value_1['content_embeddings'])
+
+            # Add metadata informations
+            element_to_add['meta'] = {'doi': value_1['doi'], 'document_id': value_1['document_id'],
+                                      'figures_ids': value_1['figures_ids'],
+                                      'paragraph_summary': value_1['paragraph_summary']}
+
+            # Check if paragraph contains either figure reference or table reference
+            if element_to_add['meta']['figures_ids'] != []:
+                dict_to_list.append(deepcopy(element_to_add))
+        except KeyError as e:
+            error_counter += 1
+            continue
+
+    print('Number of paragraphs unprocessed = {:.1%} ({} elements)'.format(error_counter / len(dict_db_cleaned),
+                                                                           error_counter))
+
+    # Insert the prepared articles into the database
+    if len(dict_to_list) >= 10000:  # Can't insert more than 10k articles at once
+        n = math.ceil(len(dict_to_list) / 10000)
+        splitted = split(dict_to_list, n)
+        for splitted_list in splitted:
+            try:
+                write_paragraphs(splitted_list, index)
+            except Exception as e:
+                print('An error has occured during the insertion in the database :\n', e)
+
+    return print('Database has been populated with figures')
+
+
 def associate_docs_to_figure(docs, figure_store):
     """Function that associate, based on docs given, the figures and their caption, from
     the figure_store.
     """
     results = []
     for doc in docs:
-        results_dict = {'doi': doc.meta['doi'], 'score': doc.score, 'paragraph_text': doc.content, 'figure_ref': {}}
+        results_dict = {'doi': doc.meta['doi'], 'score': doc.score, 'document_id': doc.meta['document_id'],
+                        'paragraph_text': doc.content, 'figures_ids': {},
+                        'paragraph_summary': doc.meta['paragraph_summary']}
 
         # Loop over possible multiple figure references
-        for fig in doc.meta['figure_ref']:
+        for fig in doc.meta['figures_ids']:
             # Get unique fig_id
-            fig_id = doc.meta['doi'] + '_' + fig
+            fig_id = doc.meta['doi'] + '_' + re.sub('[^0-9]', '', fig)  # In order to remove non numeric character
 
             # Search the figure database to retrieve the figure
-            figures_in_db = figure_store.get_all_documents(filters={"graphic_ref": {"$eq": fig_id}})
+            figures_in_db = figure_store.get_all_documents(filters={
+                "fig_id": {"$eq": fig_id}
+            })
 
-            # Check if figure is found in figures database, otherwise next iteration
+            # Check if figure is found in figures database
             if figures_in_db == []:
                 continue
             else:
-                # TODO : implement figures' url when we have the url of figures
-                results_dict['figure_ref'][fig] = {'caption': figures_in_db[0].content, 'url': ''}
+                results_dict['figures_ids'][fig] = {'caption': figures_in_db[0].content,
+                                                   'url': figures_in_db[0].meta['url'],
+                                                   'image_label': figures_in_db[0].meta['image_label']
+                                                  }
 
         results.append(deepcopy(results_dict))
 
     return results
+
+
+def filter_query(filter_dict, results):
+    """Function that filters results based on image label asked by user
+    """
+    # Mapping between frontend and backend
+    filters = {'drawing_simu': filter_dict['DrawingSimu'],
+               'map': filter_dict['Map'],
+               'molecules': filter_dict['Molecules'],
+               'photo_macro': filter_dict['PhotoMacro'],
+               'photo_micro': filter_dict['PhotoMicro'],
+               'plots': filter_dict['Plots'],
+               'table': filter_dict['Table']
+               }
+
+    # Build the filter
+    filters = [key for key, value in filters.items() if value == 'true']
+
+    # Filtering out all image_labels not requested
+    results_filtered = []
+    for item in results:
+        results_copy = deepcopy(item)
+        results_copy['figures_ids'] = {k: v for k, v in item['figures_ids'].items()
+                                       if v['image_label'] in filters}
+        if results_copy['figures_ids'] != {}:
+            results_filtered.append(deepcopy(results_copy))
+
+    return results_filtered
 
 ##################################################
 ################## HAYSTACK ######################
@@ -207,7 +357,7 @@ def associate_docs_to_figure(docs, figure_store):
 # Initialize haystack variables that will be needed for the search
 
 # Retriever for update
-model = 'sentence-transformers/msmarco-distilbert-base-tas-b'
+model = 'pritamdeka/S-PubMedBert-MS-MARCO-SCIFACT'
 retriever_update = EmbeddingRetriever(document_store=paragraph_store,
                                       embedding_model=model)
 
@@ -218,7 +368,7 @@ retriever_bm25 = BM25Retriever(paragraph_store)
 retriever_tfidf = TfidfRetriever(paragraph_store)
 
 # Embedding retriever
-model = "sentence-transformers/msmarco-distilbert-base-tas-b"  # In case we don't want the same as for update
+model = 'pritamdeka/S-PubMedBert-MS-MARCO-SCIFACT'  # In case we don't want the same as for update
 retriever_embedding = EmbeddingRetriever(document_store=paragraph_store,
                                          embedding_model=model,
                                          model_format="sentence_transformers")
@@ -259,7 +409,7 @@ def update_paragraph_embeddings(paragraph_store):
     paragraph_store.update_embeddings(retriever_update, update_existing_embeddings=False)
 
 
-def keywords_search(retriever_kw, query, top_k=10, filters={}):
+def keywords_search(retriever_kw, query, top_k=100, filters={}):
     """Proceed the keywords query based on model given and on the document_store given.
     """
     return retriever_kw.retrieve(query=query, top_k=top_k, filters=filters)
@@ -297,9 +447,9 @@ if __name__=='__main__':
     # TODO : Implement here the scrapping into parsing into db ingestion ?
 
     # Construct initial database
-    location_text = 'text_db.json'
-    location_figure = 'figure_db.json'
+    location_text = 'processed_database_parquet_ceebios_plos_database_parquet_20220613.parquet'
+    location_figure = 'paragraph_with_txt_embeddings.parquet'
     paragraph_store.delete_all_documents()
     figure_store.delete_all_documents()
-    populate_db_paragraphs(location_text, paragraph_store)
-    populate_db_figures(location_figure, figure_store)
+    populate_db_paragraphs_from_parquet(location_text, 'paragraph')
+    populate_db_figures_from_parquet(location_figure, 'figure')
