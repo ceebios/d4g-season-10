@@ -119,7 +119,9 @@ height: 7.2rem;
 .checkboxGroup {
   display: flex;
 }
-
+.copyright{
+  background-color: rgba(0, 0, 0, 0.05);
+}
 .checkbox {
   margin: 1rem;
  
