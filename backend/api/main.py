@@ -31,13 +31,6 @@ app.add_middleware(
 async def read_root():
     return {"Ping": "Pong"}
 
-
-# TODO : not sure if we summarize in an other function or we do it directly in the search
-@app.post("/summarize")
-async def summarize(text:Text):
-    return ml.summarize(text.text)
-
-
 @app.post("/search")
 async def search_with_specific_figures_class(text:TextWithOptions):
     results_number = 100
