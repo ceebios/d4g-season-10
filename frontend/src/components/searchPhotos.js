@@ -9,12 +9,12 @@ const data = require("./figure_captions.json")
 export default function SearchPhotos() {
   const [query, setQuery] = useState("");
   const [pics, setPics] = useState([]);
-  const [summary, setSummary] = useState({ index: 0, text: '' })
+  // const [summary, setSummary] = useState({ index: 0, text: '' })
   const [modalShow, setModalShow] = useState(false);
   const [pic, setPic] = useState("");
   const [text, setText] = useState("");
   const [summaryText, setSummaryText] = useState("");
-  
+  //filters states :
   const [checks, setChecks] = useState({
     
     Map:true,
@@ -26,6 +26,8 @@ export default function SearchPhotos() {
   }
 );
 console.log(checks)
+
+
   const searchPhotos = async (e) => {
     e.preventDefault();
    

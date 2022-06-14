@@ -44,9 +44,9 @@ export default function Footer() {
 
                 {/* <!-- Section: Links  --> */}
                 <section class="">
-                    <div class="container h-25 text-center text-md-start mt-5">
+                    <div class="container h-25 text-center text-md-start mt-4">
                         {/* <!-- Grid row --> */}
-                        <div class="row mt-3">
+                        <div class="row ">
                             {/* <!-- Grid column --> */}
                             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                                 {/* <!-- Content --> */}
@@ -55,12 +55,13 @@ export default function Footer() {
                                 </h6>
                                 <p>
                                 Réseau national d’acteurs industriels, académiques et institutionnels, Ceebios a pour objectif d’accélérer la transition écologique et sociétale par le biomimétisme.
+                                
                                 </p>
                             </div>
                             {/* <!-- Grid column -->
 
         <!-- Grid column --> */}
-                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
                                 {/* <!-- Links --> */}
                                 <h6 class="text-uppercase fw-bold mb-4">
                                     <i class="fa-solid fa-kiwi-bird me-3"></i>
