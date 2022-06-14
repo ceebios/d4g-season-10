@@ -81,7 +81,7 @@ def articles_to_paragraphs(articles:list)->list:
     par_ids = list(map(hashit, [d["content"] for d in pars]))
 
     # Keep only unique paragraphs
-    _, ix = numpy.unique(par_ids, return_index=True)
+    _, ix = np.unique(par_ids, return_index=True)
     upars = [pars[i] for i in ix]
     par_ids = [par_ids[i] for i in ix]
 
