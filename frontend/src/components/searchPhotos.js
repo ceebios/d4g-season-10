@@ -1,76 +1,136 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+import Modal from 'react-bootstrap/Modal'
+import Filters from "./Filters";
+import ReactTooltip from 'react-tooltip';
+
 
 const data = require("./figure_captions.json")
 
 export default function SearchPhotos() {
-    const [query, setQuery] = useState(""); 
-    const [pics, setPics] = useState([]);
-    const [summary, setSummary] = useState({index:0,text:''})
+  const [query, setQuery] = useState("");
+  const [pics, setPics] = useState([]);
+  // const [summary, setSummary] = useState({ index: 0, text: '' })
+  const [modalShow, setModalShow] = useState(false);
+  const [pic, setPic] = useState("");
+  const [caption, setCaption] = useState("");
+  const [paragraphText, setParagraphText] = useState("");
+  const [summaryText, setSummaryText] = useState("");
+  //filters states :
+  const [checks, setChecks] = useState({
     
+<<<<<<< HEAD
     const searchPhotos = async (e) => {
       setSummary({...summary, index:-1,summary:""})
       e.preventDefault();    
       console.log(data)
      axios.get(`http://34.105.13.154:8000/search/`+encodeURIComponent(query)) //34.135.15.52
+=======
+    Map:true,
+    Molecules: true,
+    PhotoMacro: true,
+    PhotoMicro: true,
+    Plots: true,
+    Table: true 
+  }
+);
+console.log(summaryText)
+
+
+  const searchPhotos = async (e) => {
+    e.preventDefault();
+   
+    axios.get(`http://34.123.14.190:8000/search/` + encodeURIComponent(query))
+    // axios.post(`http://34.123.14.190:8000/search/`, { keywords: query, options: checks}) 
+>>>>>>> 66201503ea0b28c74c17611c92b3ac121040f233
       .then(res => {
-        const figs = res.data.map(f=>f.figure.replace('/','-').replace('_fig','.pdf_figure_'))
-        const urls = figs.map(f=>'/figures/'+f)
-        setPics(urls.map((f,i)=>{
-          console.log(f+'.png')
-          return {url:f+'.png', alt:data[figs[i]+'.png'], id:f+i,paragraph:res.data[i].paragraph}
+        const figs = res.data.map(f => f.figure.replace('/', '-').replace('_fig', '.pdf_figure_'))
+        const urls = figs.map(f => '/figures/' + f)
+        setPics(urls.map((f, i) => {
+         
+          return { doi: "doi_value_1", score: "score_value", paragraph_text: "text_value_1", figure_ref: "figure_ref_value", caption: "caption_value_1", url: f + '.png',   summary:"summary_text blablabala,lds "  }
         }
         ))
-      })  
-    };
-    
-    const getSummary = async(e,i)=>{
-      e.preventDefault();
-      console.log(pics[i].paragraph)
-      axios.post("http://34.105.13.154:8000/summarize",{text:pics[i].paragraph}).then(res=>setSummary({index:i,text:res.data[0]}))
-    }
+      })
+  };
 
-    console.log(pics.alt)
+  console.log(pics)
+  
+
+  // const getSummary = async (e, i) => {
+  //   e.preventDefault();
+  //   axios.post("http://34.123.14.190:8000/summarize", { text: pics[i].paragraph }).then(res => setSummary({ index: i, text: res.data[0] }))
+  // }
+
+
+  const handleName = (i, c, p) => {
+    setPic(i);
+    setCaption(c);
+    setParagraphText(p)
+    
+    setModalShow(true);
+  };
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = (s) => {
+    setSummaryText(s);
+  };
+
+  
 
   return (
     <>
-      <form className="form" onSubmit={searchPhotos}>
-        <label className="label" htmlFor="query">
-        </label>
-        <input
-          type="text"
+      <form class="input-group rounded" onSubmit={searchPhotos}>
+        <input type="search" className="form-control rounded h-110 " aria-label="Search" aria-describedby="search-addon" rows="4"
           name="query"
-          className="input"
           placeholder={`Try "UV protection"`}
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button type="submit" className="button">
-          Search
-        </button>
+          onChange={(e) => setQuery(e.target.value)} />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search fa-2x " onClick={searchPhotos}></i>
+        </span>
       </form>
-      <div className="card-list">      
-        {pics.map((pic,i) => 
-        <div className="card" key={pic.id}>
-          <figure className="figure" onClick={(e)=>getSummary(e,i)} >
+
+      <Filters checks={checks} setChecks={setChecks}/>
+
+      <div class="row mt-4" >
+        {pics.map((pic, i) =>
+          <div class="col-lg-3 col-md-20 mt-4" onClick={() => setModalShow(true)} >
+
             <img
-                className="card-image"
-                alt={pic.alt}
-                src={pic.url}
-                width="70%"
-                height="70%"
-                onError={(event) => event.target.style.display = 'none'}
-              ></img>
-              <Popup trigger={<button className="buttonShow">Show more</button>} position="right center">
-                <div><p className="figcaption">{pic.alt}</p></div>
-              </Popup>
-            </figure>
-          {i===summary.index?<p className="figcaption">{summary.text}</p>:<></>}
-        </div>)
-        }  
+               onMouseOver={() => handleMouseOver(pic.summary)} 
+              data-tip={`${summaryText}`}
+              onClick={() => handleName(pic.url, pic.caption, pic.paragraph_text)}
+              src={pic.url}
+              class="img-thumbnail"
+              alt={pic.alt}
+            />
+            {/* {i === summary.index ? <p className="figcaption">{pic.summary}</p> : <></>} */}
+            
+            {/* <p > Summary </p> */}
+
+<ReactTooltip className="tooltip" effect="solid" />
+
+          </div>
         
+          )
+        }
+      
+     
+       
+        <Modal
+        
+          data={setPic}
+          show={modalShow}
+          onHide={() => setModalShow(false)} >
+          <Modal.Body><img className="modalImage" src={pic}></img>
+            <h2>Caption</h2>
+            <p className="modalText">{caption}</p>
+            <h2>Paragraph</h2>
+            <p className="modalText">{paragraphText}</p>
+          </Modal.Body>
+        </Modal>
       </div>
     </>
   );
