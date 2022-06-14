@@ -36,8 +36,7 @@ async def search_with_specific_figures_class(text:TextWithOptions):
     results_number = 100
 
     # Embedding retriever
-    docs = opensearch.keywords_search(opensearch.retriever_embedding, query=text.keywords,
-                                      top_k=results_number, filters={})
+    docs = opensearch.keywords_search(opensearch.retriever_embedding, query=text.keywords,top_k=results_number, filters={})
 
     # Now perform some post-processing to get the images from the return docs
     docs_with_figures = opensearch.associate_docs_to_figure(docs, opensearch.figure_store)

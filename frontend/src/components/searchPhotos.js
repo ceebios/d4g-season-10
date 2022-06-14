@@ -19,19 +19,13 @@ export default function SearchPhotos() {
   //filters states :
   const [checks, setChecks] = useState({
     
-<<<<<<< HEAD
-    const searchPhotos = async (e) => {
-      setSummary({...summary, index:-1,summary:""})
-      e.preventDefault();    
-      console.log(data)
-     axios.get(`http://34.105.13.154:8000/search/`+encodeURIComponent(query)) //34.135.15.52
-=======
     Map:true,
     Molecules: true,
     PhotoMacro: true,
     PhotoMicro: true,
     Plots: true,
-    Table: true 
+    Table: true,
+    DrawingSimu: true
   }
 );
 console.log(summaryText)
@@ -40,29 +34,21 @@ console.log(summaryText)
   const searchPhotos = async (e) => {
     e.preventDefault();
    
-    axios.get(`http://34.123.14.190:8000/search/` + encodeURIComponent(query))
-    // axios.post(`http://34.123.14.190:8000/search/`, { keywords: query, options: checks}) 
->>>>>>> 66201503ea0b28c74c17611c92b3ac121040f233
+    //axios.post(`http://35.224.166.241:8000/search/`, { keywords: query, option: checks}) 
+    axios.post(`http://localhost:8000/search/`, { keywords: query, option: checks}) 
       .then(res => {
-        const figs = res.data.map(f => f.figure.replace('/', '-').replace('_fig', '.pdf_figure_'))
-        const urls = figs.map(f => '/figures/' + f)
-        setPics(urls.map((f, i) => {
-         
-          return { doi: "doi_value_1", score: "score_value", paragraph_text: "text_value_1", figure_ref: "figure_ref_value", caption: "caption_value_1", url: f + '.png',   summary:"summary_text blablabala,lds "  }
-        }
-        ))
+        //const figs = res.data.map(f => f.figure.replace('/', '-').replace('_fig', '.pdf_figure_'))
+        //const urls = figs.map(f => '/figures/' + f)
+        console.log(res.data)
+        //setPics(urls.map((f, i) => {         
+        //  return { doi: "doi_value_1", score: "score_value", paragraph_text: "text_value_1", figure_ref: "figure_ref_value", caption: "caption_value_1", url: f + '.png',   summary:"summary_text blablabala,lds "  }
+        //}
+        //))
       })
   };
 
   console.log(pics)
   
-
-  // const getSummary = async (e, i) => {
-  //   e.preventDefault();
-  //   axios.post("http://34.123.14.190:8000/summarize", { text: pics[i].paragraph }).then(res => setSummary({ index: i, text: res.data[0] }))
-  // }
-
-
   const handleName = (i, c, p) => {
     setPic(i);
     setCaption(c);

@@ -11,7 +11,7 @@ import math
 from haystack.schema import Document
 from haystack.document_stores import OpenSearchDocumentStore
 from haystack.nodes import EmbeddingRetriever, FARMReader, TransformersReader, ElasticsearchRetriever
-from haystack.nodes import PreProcessor, BM25Retriever, EmbeddingRetriever, TfidfRetriever
+from haystack.nodes import PreProcessor, BM25Retriever, TfidfRetriever
 from haystack.pipelines import ExtractiveQAPipeline
 import time
 from copy import deepcopy
@@ -26,7 +26,7 @@ import torch
 
 # Create connection to OpenSearch DB (in fact directly to an index called 'paragraph' where we'll store all paragraphs)
 paragraph_store = OpenSearchDocumentStore(
-    host="127.0.0.1", # TODO : change it for the instance on GCP, the true db
+    host="35.224.166.241", # TODO : change it for the instance on GCP, the true db
     index="paragraph",
     index_type="hnsw",
     embedding_dim=768, # TODO : maybe this is going to change
@@ -35,7 +35,7 @@ paragraph_store = OpenSearchDocumentStore(
 
 # Create figures database
 figure_store = OpenSearchDocumentStore(
-    host="127.0.0.1", # TODO : change it for the instance on GCP, the true db
+    host="35.224.166.241", # TODO : change it for the instance on GCP, the true db
     index="figure",
     index_type="hnsw",
     embedding_dim=768, # TODO : maybe this is going to change
@@ -289,9 +289,9 @@ def populate_db_paragraphs_from_parquet(location: str,
 
 def flatten_figures(docs):
     flat_docs = []
-    same = ['doi','score','paragraph_text','summary']
+    same = ['doi','score','paragraph_text','paragraph_summary']
     for doc in docs:
-        for k,v in doc['figure_ref'].items():
+        for k,v in doc['figures_ids'].items():
             newdoc = {s:doc[s] for s in same}
             newdoc.update({'figure_ref':k,'caption':v['caption'],'url':v['url']})
             flat_docs.append(newdoc)
@@ -345,7 +345,7 @@ def filter_query(filter_dict, results):
                }
 
     # Build the filter
-    filters = [key for key, value in filters.items() if value == 'true']
+    filters = [key for key, value in filters.items() if value != 'true']
 
     # Filtering out all image_labels not requested
     results_filtered = []
