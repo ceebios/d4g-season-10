@@ -186,8 +186,7 @@ def populate_db_figures_from_parquet(location: str,
                                      index: str):
 
     df_db = pd.read_parquet(location, engine='pyarrow')
-    df_db_cleaned = df_db.drop(columns=['type', 'content_len', 'content_char_len', 'local_uri', 'img_preprocessed',
-                                        'image_embbeddings', 'image_embeddings'])
+    df_db_cleaned = df_db.drop(columns=['type', 'content_len', 'content_char_len', 'local_uri', 'img_preprocessed','image_embbeddings', 'image_embeddings'])
 
     # Convert df to dict
     dict_db_cleaned = df_db_cleaned.to_dict(orient='records')
@@ -288,6 +287,15 @@ def populate_db_paragraphs_from_parquet(location: str,
 
     return print('Database has been populated with figures')
 
+def flatten_figures(docs):
+    flat_docs = []
+    same = ['doi','score','paragraph_text','summary']
+    for doc in docs:
+        for k,v in doc['figure_ref'].items():
+            newdoc = {s:doc[s] for s in same}
+            newdoc.update({'figure_ref':k,'caption':v['caption'],'url':v['url']})
+            flat_docs.append(newdoc)
+    return flat_docs
 
 def associate_docs_to_figure(docs, figure_store):
     """Function that associate, based on docs given, the figures and their caption, from
@@ -447,8 +455,8 @@ if __name__=='__main__':
     # TODO : Implement here the scrapping into parsing into db ingestion ?
 
     # Construct initial database
-    location_text = 'processed_database_parquet_ceebios_plos_database_parquet_20220613.parquet'
-    location_figure = 'paragraph_with_txt_embeddings.parquet'
+    location_figure = 'processed_database_parquet_ceebios_plos_database_parquet_20220613.parquet'
+    location_text = 'paragraph_with_txt_embeddings.parquet'
     paragraph_store.delete_all_documents()
     figure_store.delete_all_documents()
     populate_db_paragraphs_from_parquet(location_text, 'paragraph')
