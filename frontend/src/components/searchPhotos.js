@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Modal from 'react-bootstrap/Modal'
 import Filters from "./Filters";
+import ReactTooltip from 'react-tooltip';
 
 
 const data = require("./figure_captions.json")
@@ -12,7 +13,8 @@ export default function SearchPhotos() {
   // const [summary, setSummary] = useState({ index: 0, text: '' })
   const [modalShow, setModalShow] = useState(false);
   const [pic, setPic] = useState("");
-  const [text, setText] = useState("");
+  const [caption, setCaption] = useState("");
+  const [paragraphText, setParagraphText] = useState("");
   const [summaryText, setSummaryText] = useState("");
   //filters states :
   const [checks, setChecks] = useState({
@@ -25,7 +27,7 @@ export default function SearchPhotos() {
     Table: true 
   }
 );
-console.log(checks)
+console.log(summaryText)
 
 
   const searchPhotos = async (e) => {
@@ -38,7 +40,7 @@ console.log(checks)
         const urls = figs.map(f => '/figures/' + f)
         setPics(urls.map((f, i) => {
          
-          return { url: f + '.png', alt: data[figs[i] + '.png'], id: f + i, paragraph: res.data[i].paragraph, summary:"bContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.bContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.  "  }
+          return { doi: "doi_value_1", score: "score_value", paragraph_text: "text_value_1", figure_ref: "figure_ref_value", caption: "caption_value_1", url: f + '.png',   summary:"summary_text blablabala,lds "  }
         }
         ))
       })
@@ -53,12 +55,21 @@ console.log(checks)
   // }
 
 
-  const handleName = (i, t, s) => {
+  const handleName = (i, c, p) => {
     setPic(i);
-    setText(t);
-    setSummaryText(s)
+    setCaption(c);
+    setParagraphText(p)
+    
     setModalShow(true);
   };
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = (s) => {
+    setSummaryText(s);
+  };
+
+  
 
   return (
     <>
@@ -77,27 +88,39 @@ console.log(checks)
 
       <div class="row mt-4" >
         {pics.map((pic, i) =>
-          <div class="col-lg-3 col-md-20 mt-4" onClick={() => setModalShow(true)}>
+          <div class="col-lg-3 col-md-20 mt-4" onClick={() => setModalShow(true)} >
 
             <img
-              onClick={() => handleName(pic.url, pic.alt, pic.summary)}
+               onMouseOver={() => handleMouseOver(pic.summary)} 
+              data-tip={`${summaryText}`}
+              onClick={() => handleName(pic.url, pic.caption, pic.paragraph_text)}
               src={pic.url}
               class="img-thumbnail"
               alt={pic.alt}
             />
             {/* {i === summary.index ? <p className="figcaption">{pic.summary}</p> : <></>} */}
+            
+            {/* <p > Summary </p> */}
 
-          </div>)
+<ReactTooltip className="tooltip" effect="solid" />
+
+          </div>
+        
+          )
         }
+      
+     
+       
         <Modal
+        
           data={setPic}
           show={modalShow}
           onHide={() => setModalShow(false)} >
           <Modal.Body><img className="modalImage" src={pic}></img>
+            <h2>Caption</h2>
+            <p className="modalText">{caption}</p>
             <h2>Paragraph</h2>
-            <p className="modalText">{text}</p>
-            <h2>Summary</h2>
-            <p className="modalText">{summaryText}</p>
+            <p className="modalText">{paragraphText}</p>
           </Modal.Body>
         </Modal>
       </div>

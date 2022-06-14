@@ -13,6 +13,7 @@
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
     "react-scripts": "^2.1.3",
+    "react-tooltip": "^4.2.21",
     "reactjs-popup": "^2.0.5",
     "unsplash-js": "^7.0.15",
     "web-vitals": "^2.1.4"

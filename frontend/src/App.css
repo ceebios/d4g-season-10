@@ -126,6 +126,9 @@ height: 7.2rem;
   margin: 1rem;
  
 }
+.tooltip {
+  width: auto;
+}
 
 .labelCheck {
   font-size: 1.5rem;
