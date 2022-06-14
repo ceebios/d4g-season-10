@@ -44,9 +44,9 @@ export default function Footer() {
 
                 {/* <!-- Section: Links  --> */}
                 <section class="">
-                    <div class="container h-25 text-center text-md-start mt-4">
+                    <div class="container h-25 text-center text-md-start mt-5">
                         {/* <!-- Grid row --> */}
-                        <div class="row ">
+                        <div class="row mt-3">
                             {/* <!-- Grid column --> */}
                             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                                 {/* <!-- Content --> */}
@@ -61,7 +61,7 @@ export default function Footer() {
                             {/* <!-- Grid column -->
 
         <!-- Grid column --> */}
-                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                                 {/* <!-- Links --> */}
                                 <h6 class="text-uppercase fw-bold mb-4">
                                     <i class="fa-solid fa-kiwi-bird me-3"></i>
