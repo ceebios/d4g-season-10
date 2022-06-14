@@ -52,12 +52,15 @@ async def search_with_specific_figures_class(text:TextWithOptions):
     # Filter the documents with specified image class asked
     docs_filtered = opensearch.filter_query(text.option, docs_with_figures)
 
+    # Flatten
+    docs_flat = opensearch.flatten_figures(docs_filtered)
+
     # TODO : in the future we will have to search the database to get the paragraphs links to the figures in order
     #  to do the summarization on all of theses paragraphs
     # Perform summarization on each paragraph returned
     #docs_processed_w_summarization = opensearch.summarize(docs_with_figures)
 
-    return docs_filtered
+    return docs_flat
 
 # TODO : finish QA
 # @app.get("qa/{text}")
