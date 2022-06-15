@@ -10,9 +10,9 @@ export default function Filters({checks, setChecks}) {
                 {
                     Object.entries(checks).map(([key,value])=>{
                         return (
-                        <div className="checkbox">
+                        <div key={key} className="checkbox">
                             <input type="checkbox" checked={value} id={key} name={key} onChange={(e)=>setChecks({...checks,[key]:!value})} />
-                            <label className='labelCheck' for={key}>{key}</label>
+                            <label className='labelCheck' htmlFor={key}>{key}</label>
                         </div>)                      
                     })
                 }

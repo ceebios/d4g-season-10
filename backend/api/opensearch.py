@@ -302,6 +302,9 @@ def associate_docs_to_figure(docs, figure_store):
     the figure_store.
     """
     results = []
+    all_fig_ids = sum([[doc.meta['doi'] + '_' + re.sub('[^0-9]', '', fig) for fig in doc.meta['figures_ids']] for doc in docs],[])
+    figures = figure_store.get_all_documents(filters={"fig_id":all_fig_ids})
+    fig_map = {fig.meta['fig_id']:fig for fig in figures}
     for doc in docs:
         results_dict = {'doi': doc.meta['doi'], 'score': doc.score, 'document_id': doc.meta['document_id'],
                         'paragraph_text': doc.content, 'figures_ids': {},
@@ -311,23 +314,12 @@ def associate_docs_to_figure(docs, figure_store):
         for fig in doc.meta['figures_ids']:
             # Get unique fig_id
             fig_id = doc.meta['doi'] + '_' + re.sub('[^0-9]', '', fig)  # In order to remove non numeric character
-
-            # Search the figure database to retrieve the figure
-            figures_in_db = figure_store.get_all_documents(filters={
-                "fig_id": {"$eq": fig_id}
-            })
-
-            # Check if figure is found in figures database
-            if figures_in_db == []:
-                continue
-            else:
-                results_dict['figures_ids'][fig] = {'caption': figures_in_db[0].content,
-                                                   'url': figures_in_db[0].meta['url'],
-                                                   'image_label': figures_in_db[0].meta['image_label']
-                                                  }
-
-        results.append(deepcopy(results_dict))
-
+            if fig_id in fig_map:
+                results_dict['figures_ids'][fig] = {'caption': fig_map[fig_id].content,
+                                                   'url': fig_map[fig_id].meta['url'],
+                                                   'image_label': fig_map[fig_id].meta['image_label']
+                                                  }                
+        results.append(results_dict)
     return results
 
 

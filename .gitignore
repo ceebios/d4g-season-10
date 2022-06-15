@@ -136,4 +136,5 @@ HiddenProject
 backend/database_scraper/articleScraperCeebios/data
 *.zip
 figures/
+images/
 backend/database_scraper/articleScraperCeebios/google-cloud-storage-credentials.json
