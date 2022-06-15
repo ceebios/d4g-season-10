@@ -337,7 +337,7 @@ def filter_query(filter_dict, results):
                }
 
     # Build the filter
-    filters = [key for key, value in filters.items() if value == False]
+    filters = [key for key, value in filters.items() if value == True]
 
     # Filtering out all image_labels not requested
     results_filtered = []
