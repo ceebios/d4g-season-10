@@ -52,12 +52,12 @@ async def search_with_specific_figures_class(text:TextWithOptions):
     # Perform summarization on each paragraph returned
     #docs_processed_w_summarization = opensearch.summarize(docs_with_figures)
 
-    return docs_flat
+    return docs_flat[:20]
 
 @app.post("/summarize")
 async def summarize(text:Text):
     return ml.summarize(text.text)
-    
+
 # TODO : finish QA
 # @app.get("qa/{text}")
 # async def question_answering(text):
