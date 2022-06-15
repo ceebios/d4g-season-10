@@ -35,12 +35,12 @@ export default function SearchPhotos() {
   };
  
   const handleName = (i, p) => { 
+    setSummary("")
     setPic(i);
     setParagraphText(p)
     setModalShow(true);
     axios.post(`http://35.224.166.241:8000/summarize/`, { text: p}) 
       .then(res => {
-        console.log(res.data)
         setSummary(res.data)
       })       
   };
@@ -87,7 +87,7 @@ export default function SearchPhotos() {
           show={modalShow}
           onHide={() => setModalShow(false)} >
           <Modal.Body><img className="modalImage" src={pic}></img>
-            <h2>Caption</h2>
+            <h2>Summary</h2>
             <p className="modalText">{summary}</p>
             <h2>Paragraph</h2>
             <p className="modalText">{paragraphText}</p>
