@@ -62,17 +62,17 @@ export default function SearchPhotos() {
 
       <Filters checks={checks} setChecks={setChecks}/>
 
-      <div className="row mt-4" >
+      <div className="row mt-4"           
+        onMouseOver={() => showTooltip(true)}
+        onMouseOut={() => showTooltip(false)}>
         {pics.map((pic, i) =>
-          <div className="col-lg-3 col-md-20 mt-4" onClick={() => setModalShow(true)} >
+          <div className="col-lg-3 col-md-20 mt-4" onClick={() => setModalShow(true)}>
             <img
               data-tip={`${pic.caption}`}
               onClick={() => handleName("./images/images/"+pic.url.replace('/','-')+'.jpg', pic.paragraph_text)}
               src={"./images/images/"+pic.url.replace('/','-')+'.jpg'}
               className="img-thumbnail"
               alt={pic.url}
-              onMouseOver={() => showTooltip(true)}
-              onMouseOut={() => showTooltip(false)}              
             />
             {tooltip && <ReactTooltip className="tooltip" effect="solid" />}
           </div>
