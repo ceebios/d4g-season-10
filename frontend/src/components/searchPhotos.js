@@ -11,6 +11,7 @@ export default function SearchPhotos() {
   const [pic, setPic] = useState("");
   const [paragraphText, setParagraphText] = useState("");
   const [summary, setSummary] = useState("");
+  const [tooltip, showTooltip] = useState(true);
   const [checks, setChecks] = useState({
       Map:true,
       Molecules: true,
@@ -64,19 +65,19 @@ export default function SearchPhotos() {
       <div className="row mt-4" >
         {pics.map((pic, i) =>
           <div className="col-lg-3 col-md-20 mt-4" onClick={() => setModalShow(true)} >
-
             <img
               data-tip={`${pic.caption}`}
               onClick={() => handleName("./images/images/"+pic.url.replace('/','-')+'.jpg', pic.paragraph_text)}
               src={"./images/images/"+pic.url.replace('/','-')+'.jpg'}
               className="img-thumbnail"
               alt={pic.url}
+              onMouseEnter={() => showTooltip(true)}
+              onMouseLeave={() => {
+                showTooltip(false);
+                setTimeout(() => showTooltip(true), 50);
+              }}              
             />
-            {/* {i === summary.index ? <p className="figcaption">{pic.summary}</p> : <></>} */}
-            {/* <p > Summary </p> */}
-
-        <ReactTooltip className="tooltip" effect="solid" />
-
+            {tooltip && <ReactTooltip className="tooltip" effect="solid" />}
           </div>
         
           )
