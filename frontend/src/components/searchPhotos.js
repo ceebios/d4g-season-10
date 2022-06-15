@@ -76,7 +76,7 @@ export default function SearchPhotos() {
               onClick={() => handleName(pic.url, pic.caption, pic.paragraph_text)}
               src={"./images/images/"+pic.url}
               className="img-thumbnail"
-              alt={pic.summary}
+              alt={"./images/images/"+pic.url}
             />
             {/* {i === summary.index ? <p className="figcaption">{pic.summary}</p> : <></>} */}
             
