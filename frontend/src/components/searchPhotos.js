@@ -27,8 +27,8 @@ export default function SearchPhotos() {
   const searchPhotos = async (e) => {
     e.preventDefault();
    
-    axios.post(`http://35.224.166.241:8000/search/`, { keywords: query, option: checks}) 
-    //axios.post(`http://localhost:8000/search/`, { keywords: query, option: checks}) 
+    //axios.post(`http://35.224.166.241:8000/search/`, { keywords: query, option: checks}) 
+    axios.post(`http://localhost:8000/search/`, { keywords: query, option: checks}) 
       .then(res => {
         console.log(res.data)
         setPics(res.data)
@@ -50,7 +50,6 @@ export default function SearchPhotos() {
   };
 
   
-
   return (
     <>
       <form className="input-group rounded" onSubmit={searchPhotos}>
@@ -73,13 +72,12 @@ export default function SearchPhotos() {
             <img
                onMouseOver={() => handleMouseOver(pic.summary)} 
               data-tip={`${summaryText}`}
-              onClick={() => handleName(pic.url, pic.caption, pic.paragraph_text)}
+              onClick={() => handleName("./images/images/"+pic.url.replace('/','-')+'.jpg', pic.caption, pic.paragraph_text)}
               src={"./images/images/"+pic.url.replace('/','-')+'.jpg'}
               className="img-thumbnail"
               alt={pic.url}
             />
             {/* {i === summary.index ? <p className="figcaption">{pic.summary}</p> : <></>} */}
-            
             {/* <p > Summary </p> */}
 
         <ReactTooltip className="tooltip" effect="solid" />
