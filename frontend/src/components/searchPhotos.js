@@ -27,8 +27,8 @@ export default function SearchPhotos() {
   const searchPhotos = async (e) => {
     e.preventDefault();
    
-    //axios.post(`http://35.224.166.241:8000/search/`, { keywords: query, option: checks}) 
-    axios.post(`http://localhost:8000/search/`, { keywords: query, option: checks}) 
+    axios.post(`http://35.224.166.241:8000/search/`, { keywords: query, option: checks}) 
+    //axios.post(`http://localhost:8000/search/`, { keywords: query, option: checks}) 
       .then(res => {
         console.log(res.data)
         setPics(res.data)
