@@ -26,7 +26,7 @@ import torch
 
 # Create connection to OpenSearch DB (in fact directly to an index called 'paragraph' where we'll store all paragraphs)
 paragraph_store = OpenSearchDocumentStore(
-    host="35.224.166.241", # TODO : change it for the instance on GCP, the true db
+    host="127.0.0.1", # TODO : change it for the instance on GCP, the true db
     index="paragraph",
     index_type="hnsw",
     embedding_dim=768, # TODO : maybe this is going to change
@@ -35,7 +35,7 @@ paragraph_store = OpenSearchDocumentStore(
 
 # Create figures database
 figure_store = OpenSearchDocumentStore(
-    host="35.224.166.241", # TODO : change it for the instance on GCP, the true db
+    host="127.0.0.1", # TODO : change it for the instance on GCP, the true db
     index="figure",
     index_type="hnsw",
     embedding_dim=768, # TODO : maybe this is going to change
