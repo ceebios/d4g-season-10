@@ -74,9 +74,9 @@ export default function SearchPhotos() {
                onMouseOver={() => handleMouseOver(pic.summary)} 
               data-tip={`${summaryText}`}
               onClick={() => handleName(pic.url, pic.caption, pic.paragraph_text)}
-              src={"./images/images/"+pic.url}
+              src={"./images/"+pic.url+'.jpg'}
               className="img-thumbnail"
-              alt={"./images/images/"+pic.url}
+              alt={pic.url}
             />
             {/* {i === summary.index ? <p className="figcaption">{pic.summary}</p> : <></>} */}
             
