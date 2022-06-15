@@ -9,9 +9,8 @@ export default function SearchPhotos() {
   const [pics, setPics] = useState([]);
   const [modalShow, setModalShow] = useState(false);
   const [pic, setPic] = useState("");
-  const [caption, setCaption] = useState("");
   const [paragraphText, setParagraphText] = useState("");
-  const [summar, setSummary] = useState("");
+  const [summary, setSummary] = useState("");
   const [checks, setChecks] = useState({
       Map:true,
       Molecules: true,
@@ -46,13 +45,7 @@ export default function SearchPhotos() {
       })       
   };
 
-  const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseOver = (s) => {
-    setSummaryText(s);
-  };
-
-  
   return (
     <>
       <form className="input-group rounded" onSubmit={searchPhotos}>
@@ -73,8 +66,7 @@ export default function SearchPhotos() {
           <div className="col-lg-3 col-md-20 mt-4" onClick={() => setModalShow(true)} >
 
             <img
-               onMouseOver={() => handleMouseOver(pic.caption)} 
-              data-tip={`${summaryText}`}
+              data-tip={`${pic.caption}`}
               onClick={() => handleName("./images/images/"+pic.url.replace('/','-')+'.jpg', pic.paragraph_text)}
               src={"./images/images/"+pic.url.replace('/','-')+'.jpg'}
               className="img-thumbnail"
