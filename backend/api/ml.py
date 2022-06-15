@@ -32,6 +32,8 @@ def summarize(paragraph):
     early_stopping=False
 
     text = paragraph #clean_text(paragraph)
+    if len(text)<128:
+        return text
 
     inputs = tokenizer(
         ["summarize: " + text],
