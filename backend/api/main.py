@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 #import mongo
 import opensearch
-#import ml
+import ml
 import time
 
 app = FastAPI()
@@ -54,6 +54,10 @@ async def search_with_specific_figures_class(text:TextWithOptions):
 
     return docs_flat
 
+@app.post("/summarize")
+async def summarize(text:Text):
+    return ml.summarize(text.text)
+    
 # TODO : finish QA
 # @app.get("qa/{text}")
 # async def question_answering(text):

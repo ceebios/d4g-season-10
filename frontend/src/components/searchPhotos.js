@@ -11,7 +11,7 @@ export default function SearchPhotos() {
   const [pic, setPic] = useState("");
   const [caption, setCaption] = useState("");
   const [paragraphText, setParagraphText] = useState("");
-  const [summaryText, setSummaryText] = useState("");
+  const [summar, setSummary] = useState("");
   const [checks, setChecks] = useState({
       Map:true,
       Molecules: true,
@@ -35,12 +35,15 @@ export default function SearchPhotos() {
       })
   };
  
-  const handleName = (i, c, p) => {
+  const handleName = (i, p) => { 
     setPic(i);
-    setCaption(c);
     setParagraphText(p)
-    
     setModalShow(true);
+    axios.post(`http://35.224.166.241:8000/summarize/`, { text: p}) 
+      .then(res => {
+        console.log(res.data)
+        setSummary(res.data)
+      })       
   };
 
   const [isHovering, setIsHovering] = useState(false);
@@ -70,9 +73,9 @@ export default function SearchPhotos() {
           <div className="col-lg-3 col-md-20 mt-4" onClick={() => setModalShow(true)} >
 
             <img
-               onMouseOver={() => handleMouseOver(pic.summary)} 
+               onMouseOver={() => handleMouseOver(pic.caption)} 
               data-tip={`${summaryText}`}
-              onClick={() => handleName("./images/images/"+pic.url.replace('/','-')+'.jpg', pic.caption, pic.paragraph_text)}
+              onClick={() => handleName("./images/images/"+pic.url.replace('/','-')+'.jpg', pic.paragraph_text)}
               src={"./images/images/"+pic.url.replace('/','-')+'.jpg'}
               className="img-thumbnail"
               alt={pic.url}
@@ -93,7 +96,7 @@ export default function SearchPhotos() {
           onHide={() => setModalShow(false)} >
           <Modal.Body><img className="modalImage" src={pic}></img>
             <h2>Caption</h2>
-            <p className="modalText">{caption}</p>
+            <p className="modalText">{summary}</p>
             <h2>Paragraph</h2>
             <p className="modalText">{paragraphText}</p>
           </Modal.Body>
