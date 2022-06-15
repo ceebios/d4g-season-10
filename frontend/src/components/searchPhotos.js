@@ -68,7 +68,7 @@ export default function SearchPhotos() {
         {pics.map((pic, i) =>
           <div className="col-lg-3 col-md-20 mt-4" onClick={() => setModalShow(true)}>
             <img
-              data-tip={`${pic.caption}`}
+              data-tip={`${pic.caption.replace('Caption not found','')}`}
               onClick={() => handleName("./images/images/"+pic.url.replace('/','-')+'.jpg', pic.paragraph_text)}
               src={"./images/images/"+pic.url.replace('/','-')+'.jpg'}
               className="img-thumbnail"
