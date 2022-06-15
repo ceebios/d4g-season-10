@@ -71,10 +71,10 @@ export default function SearchPhotos() {
               src={"./images/images/"+pic.url.replace('/','-')+'.jpg'}
               className="img-thumbnail"
               alt={pic.url}
-              onMouseEnter={() => showTooltip(true)}
-              onMouseLeave={() => {
+              onMouseOver={() => showTooltip(true)}
+              onMouseOut={() => {
                 showTooltip(false);
-                setTimeout(() => showTooltip(true), 50);
+                setTimeout(() => showTooltip(true), 5);
               }}              
             />
             {tooltip && <ReactTooltip className="tooltip" effect="solid" />}
