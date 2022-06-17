@@ -63,6 +63,8 @@ def run(keyword):
 #         pmids_truncated = pmids[i:i+30]
 #         for pmid in pmids_truncated:
 #             fetch_xml(pmid)
+
+
 #    Parallel(n_jobs=5)(delayed(fetch_xml_by_batch)(i) for i in tqdm.tqdm(range(0, len(pmids), 30)))
 
 if __name__ == "__main__":
