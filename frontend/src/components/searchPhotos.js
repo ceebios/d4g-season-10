@@ -3,8 +3,9 @@ import axios from "axios";
 import Modal from 'react-bootstrap/Modal'
 import Filters from "./Filters";
 import ReactTooltip from 'react-tooltip';
-
 export default function SearchPhotos() {
+  const backurl = "35.194.22.132"
+
   const [query, setQuery] = useState("");
   const [pics, setPics] = useState([]);
   const [modalShow, setModalShow] = useState(false);
@@ -27,7 +28,7 @@ export default function SearchPhotos() {
   const searchPhotos = async (e) => {
     e.preventDefault();
    
-    axios.post(`http://35.224.166.241:8000/search/`, { keywords: query, option: checks}) 
+    axios.post(`http://${backurl}:8000/search/`, { keywords: query, option: checks}) 
     //axios.post(`http://localhost:8000/search/`, { keywords: query, option: checks}) 
       .then(res => {
         console.log(res.data)
@@ -40,7 +41,7 @@ export default function SearchPhotos() {
     setPic(i);
     setParagraphText(p)
     setModalShow(true);
-    axios.post(`http://35.224.166.241:8000/summarize/`, { text: p}) 
+    axios.post(`http://${backurl}:8000/summarize/`, { text: p}) 
       .then(res => {
         setSummary(res.data)
       })       
